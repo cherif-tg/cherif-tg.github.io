@@ -46,6 +46,15 @@ footer_fixed: false
 search_enabled: true
 socials_in_navbar: false
 
+nav_bar:
+  - name: About
+    permalink: /
+  - name: Projects
+    permalink: /projects/
+  - name: CV
+    permalink: /cv/
+  - name: Blog
+    permalink: /blog/
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
 # -----------------------------------------------------------------------------
