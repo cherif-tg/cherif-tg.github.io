@@ -69,5 +69,25 @@ en se basant sur une base de connaissances personnalisée.
 Je suis à la recherche d'un **stage en Data Science / AI Engineering** pour mettre
 en pratique mes compétences sur des problèmes réels et continuer à progresser
 aux côtés d'une équipe passionnée.
-
+<div style="margin: 24px 0;">
+  <a href="/assets/pdf/cherif_tenga_cv.pdf" target="_blank"
+     style="
+       display: inline-flex;
+       align-items: center;
+       gap: 8px;
+       background: linear-gradient(135deg, #6c63ff, #a78bfa);
+       color: white;
+       padding: 12px 28px;
+       border-radius: 10px;
+       font-weight: 600;
+       font-size: 0.95rem;
+       text-decoration: none;
+       box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+       transition: all 0.3s ease;
+     ">
+    📄 Télécharger mon CV
+  </a>
+</div>
 > *"The best way to learn is to build."*
+>
+> 
