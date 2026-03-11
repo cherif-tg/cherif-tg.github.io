@@ -23,6 +23,7 @@ Le système se décompose en deux grandes phases :
 **Phase 1 — Pipeline d'Ingestion** ✅ *(Finalisée)*
 - Chargement des documents sources
 - Découpage intelligent en chunks
+- taille de chunks predefinis
 - Génération des embeddings avec `models/gemini-embedding-001`
 - Stockage dans une base vectorielle
 
