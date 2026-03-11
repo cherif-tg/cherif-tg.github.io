@@ -37,3 +37,168 @@
 @use "font-awesome/brands";
 @use "font-awesome/solid";
 @use "font-awesome/regular";
+
+
+
+// ============================================================
+// AMÉLIORATIONS VISUELLES MODERNES — Cherif Portfolio
+// ============================================================
+
+// --- Fonts Google ---
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif !important;
+  letter-spacing: -0.01em;
+}
+
+code, pre {
+  font-family: 'Fira Code', monospace !important;
+}
+
+// --- Navbar moderne ---
+.navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid var(--global-divider-color);
+  box-shadow: 0 1px 20px rgba(108, 99, 255, 0.08);
+  transition: all 0.3s ease;
+
+  html[data-theme="dark"] & {
+    background-color: rgba(15, 15, 26, 0.85) !important;
+  }
+}
+
+// --- Cards projets ---
+.card {
+  border: 1px solid var(--global-divider-color) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 24px rgba(108, 99, 255, 0.08) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 40px rgba(108, 99, 255, 0.18) !important;
+  }
+}
+
+// --- Profil photo ---
+.profile img {
+  border-radius: 50%;
+  border: 3px solid var(--global-theme-color);
+  box-shadow: 0 0 30px rgba(108, 99, 255, 0.25);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 50px rgba(108, 99, 255, 0.4);
+  }
+}
+
+// --- Liens ---
+a {
+  color: var(--global-theme-color);
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--global-hover-color);
+    text-decoration: none;
+  }
+}
+
+// --- Titres ---
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  background: linear-gradient(135deg, #6c63ff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// --- Boutons ---
+.btn-primary, button[type="submit"] {
+  background: linear-gradient(135deg, #6c63ff, #a78bfa) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 10px 24px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3) !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(108, 99, 255, 0.45) !important;
+  }
+}
+
+// --- Section hero about ---
+.post-title, .profile-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+// --- Footer ---
+footer {
+  border-top: 1px solid var(--global-divider-color);
+  background: var(--global-footer-bg-color) !important;
+}
+
+// --- Badges / Skills ---
+img[alt="Python"], img[alt="SQL"], img[alt="PyTorch"],
+img[alt="Scikit-learn"], img[alt="LangChain"],
+img[alt="Power BI"], img[alt="Matplotlib"], img[alt="Seaborn"] {
+  transition: transform 0.2s ease;
+  margin: 4px;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
+// --- Tables ---
+table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(108, 99, 255, 0.08);
+
+  thead {
+    background: linear-gradient(135deg, #6c63ff, #a78bfa);
+    color: white;
+  }
+}
+
+// --- Scrollbar personnalisée ---
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--global-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--global-theme-color);
+  border-radius: 10px;
+}
+
+// --- Animations d'entrée ---
+.post-description, .profile, .card {
+  animation: fadeInUp 0.6s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
