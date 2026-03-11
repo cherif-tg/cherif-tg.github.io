@@ -2,33 +2,72 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: >
+  Étudiant en Data Science & AI Engineering
+  @ <a href="https://epl.tg" target="_blank">École Polytechnique de Lomé</a>
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>📍 Lomé, Togo</p>
+    <p>📧 <a href="mailto:tengacherif@gmail.com">tengacherif@gmail.com</a></p>
+    <p>💼 <a href="https://www.linkedin.com/in/cherif-tenga-070089323" target="_blank">LinkedIn</a></p>
+    <p>🐙 <a href="https://github.com/cherif-tg" target="_blank">GitHub</a></p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
-
-announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+news: false
+selected_papers: false
+social: true
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Passionné par la donnée et les systèmes intelligents, je construis des solutions
+qui transforment des données brutes en insights actionnables.
+**Toujours en apprentissage, toujours en train de construire.**
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Je suis actuellement étudiant en **Licence Data Science** à l'École Polytechnique
+de Lomé, avec une spécialisation en **AI Engineering et LLMs**. Mon objectif :
+concevoir des systèmes intelligents capables de résoudre des problèmes concrets
+à fort impact.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+---
+
+### 🛠️ Compétences Techniques
+
+**Langages & Data**
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logo=mysql&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
+
+**Machine Learning & AI**
+
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat&logo=chainlink&logoColor=white)
+
+**Visualisation & BI**
+
+![Power BI](https://img.shields.io/badge/PowerBI-F2C811?style=flat&logo=powerbi&logoColor=black)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=flat)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=flat)
+
+---
+
+### Ce sur quoi je travaille
+
+Actuellement en train de construire un **système RAG (Retrieval-Augmented Generation)**
+from scratch — une architecture qui permet à un LLM de répondre à des questions
+en se basant sur une base de connaissances personnalisée.
+
+**Stack :** LangChain · Gemini Embeddings (`models/gemini-embedding-001`) · Python
+
+---
+
+### Ce que je recherche
+
+Je suis à la recherche d'un **stage en Data Science / AI Engineering** pour mettre
+en pratique mes compétences sur des problèmes réels et continuer à progresser
+aux côtés d'une équipe passionnée.
+
+> *"The best way to learn is to build."*
