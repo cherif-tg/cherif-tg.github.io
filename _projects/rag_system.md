@@ -2,7 +2,7 @@
 layout: page
 title: Système RAG
 description: Pipeline d'ingestion intelligente avec LangChain & Gemini Embeddings
-img: assets/img/rag_project.png
+img: assets/img/rhino.png
 importance: 1
 category: AI & LLMs
 related_publications: false
@@ -55,13 +55,3 @@ moteur de retrieval en cours de construction.
 ## 🔗 Liens
 
 [![GitHub](https://img.shields.io/badge/GitHub-Voir%20le%20code-black?style=flat&logo=github)](https://github.com/cherif-tg)
-```
-
----
-
-## ✅ Ordre des modifications sur GitHub
-```
-1 → _config.yml          (paramètres principaux)
-2 → _pages/about.md      (ta page d'accueil)
-3 → _projects/rag_system.md  (ton projet RAG)
-4 → Ajoute ta photo      (assets/img/prof_pic.jpg)
