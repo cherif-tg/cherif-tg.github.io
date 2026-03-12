@@ -236,6 +236,43 @@ imagemagick:
 # Optional features
 # -----------------------------------------------------------------------------
 
+toc:
+  beginning: false
+
+external_sources:
+  - name: medium.com
+  - name: wikipedia.org
+
+# -----------------------------------------------------------------------------
+# Comments
+# -----------------------------------------------------------------------------
+
+# Disqus comments (disable by default)
+disqus_shortname:
+
+# Giscus comments (disable by default)
+# See https://giscus.app for setup instructions
+giscus:
+  repo: cherif-tg/cherif-tg.github.io
+  repo_id:
+  category: Comments
+  category_id:
+  mapping: title
+  strict: 1
+  reactions_enabled: 1
+  emit_metadata: 0
+  input_position: bottom
+  theme: preferred_color_scheme
+  lang: fr
+
+# -----------------------------------------------------------------------------
+# Jekyll settings (encoding etc.)
+# -----------------------------------------------------------------------------
+
+encoding: "utf-8"
+highlighter: rouge
+
+
 tikzjax: false
 typograms: false
 mermaid:
