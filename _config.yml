@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank
+title: Cherif A. TENGA
 first_name: Cherif A.
 middle_name:
 last_name: TENGA
@@ -125,6 +125,8 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+
+enable_project_categories: true
 
 announcements:
   enabled: false

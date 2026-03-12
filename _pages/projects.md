@@ -1,11 +1,11 @@
 ---
 layout: page
-title: projects
+title: Projets
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Mes projets en Data Science, AI Engineering et LLMs.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: ["AI & LLMs"]
 horizontal: false
 ---
 
