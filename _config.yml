@@ -43,8 +43,12 @@ rss_icon: true
 
 navbar_fixed: true
 footer_fixed: false
+max_width: 930px
 search_enabled: true
 socials_in_navbar: false
+socials_in_search: true
+posts_in_search: true
+bib_search: true
 
 nav_bar:
   - name: About
