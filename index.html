@@ -114,8 +114,8 @@ nav .links a.active{font-weight:500}
 /* Photo column */
 .hero-photo-col{display:none;position:relative;height:100vh;overflow:hidden;z-index:3}
 @media(min-width:768px){.hero-photo-col{display:block}}
-.hero-photo-col .photo-mask{-webkit-mask-image:linear-gradient(to bottom,black 75%,transparent 100%),linear-gradient(to left,black 80%,transparent 100%),radial-gradient(circle at 50% 35%,black 60%,transparent 100%);mask-image:linear-gradient(to bottom,black 75%,transparent 100%),linear-gradient(to left,black 80%,transparent 100%),radial-gradient(circle at 50% 35%,black 60%,transparent 100%);mask-composite:intersect;-webkit-mask-composite:source-in;height:100%}
-.hero-photo-col img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:grayscale(10%) contrast(1.03) brightness(1.02)}
+.hero-photo-col .photo-mask{display:flex;align-items:center;justify-content:center;height:100%;padding:2rem}
+.hero-photo-col img{max-width:100%;max-height:85vh;object-fit:contain;display:block;filter:grayscale(10%) contrast(1.02)}
 .hero-arc{position:absolute;right:8%;top:50%;transform:translateY(-60%);z-index:5;pointer-events:none}
 .hero-arc svg{width:240px;height:240px;opacity:.12;stroke:var(--accent);fill:none;stroke-width:1}
 .hero-sparkle{position:absolute;right:15%;top:25%;z-index:5;pointer-events:none;animation:pulseSoft 2.5s ease-in-out infinite}
