@@ -79,12 +79,11 @@ nav .links a.active{font-weight:500}
 #back-to-top svg{width:1.25rem;height:1.25rem}
 
 /* ===== HERO ===== */
-#hero{display:grid;grid-template-columns:1fr;align-items:center;min-height:100vh;position:relative;overflow:hidden}
-@media(min-width:768px){#hero{grid-template-columns:1.3fr 1fr}}
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
 #particle-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(250,247,242,0.6),transparent,rgba(250,247,242,0.95));pointer-events:none;z-index:2}
-.hero-content{position:relative;z-index:10;max-width:100%;padding:8rem 1.5rem 0}
-@media(min-width:768px){.hero-content{padding:0 0 0 3rem}}
+.hero-content{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:8rem 1.5rem 0}
+@media(min-width:768px){.hero-content{padding:0 3rem}}
 .hero-content .mono{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.875rem;color:var(--accent)}
 .hero-content h1{font-family:'DM Serif Display',Georgia,serif;font-size:2.25rem;line-height:1.05;color:var(--warm-800);margin-bottom:1.5rem;opacity:0;animation:fadeInUp .8s ease-out .2s forwards}
 @media(min-width:640px){.hero-content h1{font-size:2.5rem}}
@@ -111,17 +110,6 @@ nav .links a.active{font-weight:500}
 .hero-socials a{color:var(--warm-400);transition:color .3s}
 .hero-socials a:hover{color:var(--warm-700)}
 .hero-socials svg{width:1.25rem;height:1.25rem}
-/* Photo column */
-.hero-photo-col{display:none;position:relative;height:100vh;overflow:hidden;z-index:3}
-@media(min-width:768px){.hero-photo-col{display:block}}
-.hero-photo-col .photo-mask{display:flex;align-items:center;justify-content:center;height:100%;padding:2rem}
-.hero-photo-col img{max-width:100%;max-height:85vh;object-fit:contain;display:block;filter:grayscale(10%) contrast(1.02)}
-.hero-arc{position:absolute;right:8%;top:50%;transform:translateY(-60%);z-index:5;pointer-events:none}
-.hero-arc svg{width:240px;height:240px;opacity:.12;stroke:var(--accent);fill:none;stroke-width:1}
-.hero-sparkle{position:absolute;right:15%;top:25%;z-index:5;pointer-events:none;animation:pulseSoft 2.5s ease-in-out infinite}
-.hero-sparkle svg{width:28px;height:28px;color:var(--accent);opacity:.5}
-.hero-badge{position:absolute;right:1.5rem;bottom:15%;z-index:5;font-size:.75rem;font-weight:600;color:var(--warm-700);background:rgba(255,255,255,.85);backdrop-filter:blur(6px);padding:.5rem 1rem;border-radius:9999px;white-space:nowrap;box-shadow:0 4px 16px rgba(61,52,46,.06)}
-.hero-badge .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:.4rem}
 .scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);animation:pulseSoft 3s ease-in-out infinite;z-index:10}
 .scroll-indicator svg{width:1.5rem;height:1.5rem;color:var(--warm-300)}
 
@@ -343,11 +331,6 @@ section[id]{scroll-margin-top:5rem}
       <a href="https://www.linkedin.com/in/cherif-tenga-070089323" target="_blank" rel="noopener" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
       <a href="mailto:tengacherif@gmail.com" aria-label="Email"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
     </div>
-  </div>
-  <div class="hero-photo-col">
-    <div class="hero-arc"><svg viewBox="0 0 200 200"><path d="M180 100A80 80 0 00100 20" stroke-linecap="round"/></svg></div>
-    <div class="hero-sparkle"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l.97 3.03L16 6l-3.03.97L12 10l-.97-3.03L8 6l3.03-.97L12 2z"/></svg></div>
-    <div class="photo-mask"><img src="photo.png" alt="TENGA Chérif"></div>
   </div>
   <div class="scroll-indicator"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg></div>
 </section>
