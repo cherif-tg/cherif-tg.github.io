@@ -154,7 +154,7 @@ nav .links a.active{font-weight:500}
 .terminal .term-line{margin-bottom:.15rem;min-height:1.4em}
 .terminal .term-prompt{color:#7CB87C}
 .terminal .term-output{color:#D4BFA0}
-.terminal .term-cursor{display:inline-block;width:7px;height:1em;background:#7CB87C;vertical-align:text-bottom;animation:blink 1s step-end infinite;margin-left:1px}
+
 /* ===== SKILLS 3D CLOUD ===== */
 .skills-3d{perspective:600px;height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
 .skills-3d .cloud-sphere{position:relative;width:300px;height:300px;transform-style:preserve-3d;animation:rotateCloud 25s linear infinite}
@@ -370,7 +370,11 @@ section[id]{scroll-margin-top:5rem}
 <!-- ===== SKILLS ===== -->
 <section id="skills" class="py-section">
   <div class="section fade-in"><p class="section-label">&gt; compétences</p><h2 class="section-title">Stack technique</h2>
-    <div id="cloud-container" class="skills-3d" style="margin-top:2.5rem"><div class="cloud-sphere"></div></div></div></section><!-- ===== PROJECTS ===== -->
+    <div id="cloud-container" class="skills-3d" style="margin-top:2.5rem"><div class="cloud-sphere"></div></div>
+
+
+
+<!-- ===== PROJECTS ===== -->
 <section id="projects" class="py-section bg-warm">
   <div class="section fade-in"><p class="section-label">&gt; projets</p><h2 class="section-title">Ce que j'ai construit</h2>
     <div class="projects-list" style="margin-top:3rem">
@@ -526,9 +530,9 @@ function closeModal(){
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
 
 // 3D Skills Cloud
-!function(){var t=document.querySelector(".cloud-sphere");if(!t)return;var e=["Python","SQL","MongoDB","PostgreSQL","Pandas","NumPy","Scikit-learn","XGBoost","SHAP","Power BI","Data Mining","Feature Eng.","PyTorch","CNN/ResNet","OpenCV","Fine-tuning","ONNX","Augmentation","LangChain","RAG","FastAPI","LlamaIndex","Ollama","Prompt Eng.","PySpark","Docker","Git","Streamlit","Jupyter","Hadoop"],r=140,N=e.length;e.forEach(function(t,n){var o=Math.acos(-1+2*n/N),a=Math.sqrt(N*Math.PI)*o,s=document.createElement("span");s.className="cloud-tag",s.textContent=t;var i=r*Math.cos(a)*Math.sin(o),d=r*Math.sin(a)*Math.sin(o),c=r*Math.cos(o);s.style.transform="translate(-50%,-50%) translate3d("+i.toFixed(0)+"px,"+d.toFixed(0)+"px,"+c.toFixed(0)+"px)",s.title=t,sphere=document.querySelector(".cloud-sphere");sphere.appendChild(s)})}();
+!function(){var t=document.querySelector(".cloud-sphere");if(!t)return;var e=["Python","SQL","MongoDB","PostgreSQL","Pandas","NumPy","Scikit-learn","XGBoost","SHAP","Power BI","Data Mining","Feature Eng.","PyTorch","CNN/ResNet","OpenCV","Fine-tuning","ONNX","Augmentation","LangChain","RAG","FastAPI","LlamaIndex","Ollama","Prompt Eng.","PySpark","Docker","Git","Streamlit","Jupyter","Hadoop"],r=140,N=e.length;e.forEach(function(e,n){var o=Math.acos(-1+2*n/N),a=Math.sqrt(N*Math.PI)*o,s=document.createElement("span");s.className="cloud-tag",s.textContent=e;var i=r*Math.cos(a)*Math.sin(o),d=r*Math.sin(a)*Math.sin(o),c=r*Math.cos(o);s.style.transform="translate(-50%,-50%) translate3d("+i.toFixed(0)+"px,"+d.toFixed(0)+"px,"+c.toFixed(0)+"px)",s.title=e,t.appendChild(s)})}();
 
 // Terminal Animation
-!function(){var e=document.getElementById("terminal-output");if(!e)return;var t=[{p:1,t:">>> import cherif as profile"},{p:1,t:">>> profile.load()"},{p:0,t:"Chargement du profil..."},{p:0,t:"[██████████] 100%"},{p:0,t:""},{p:1,t:">>> profile.role"},{p:0,t:'"AI Engineer & Data Scientist"'},{p:0,t:""},{p:1,t:">>> profile.skills"},{p:0,t:'["Deep Learning", "NLP", "Computer Vision", "RAG Pipelines",'},{p:0,t:' "Fraud Detection", "Python", "TensorFlow"]'},{p:0,t:""},{p:1,t:">>> profile.focus"},{p:0,t:'"Solutions IA ancr\u00e9es localement \u2014 impact r\u00e9el en sant\u00e9'},{p:0,t:"et agriculture en Afrique de l'Ouest\"},{p:0,t:""},{p:1,t:">>> profile.status"},{p:0,t:'"Disponible pour de nouveaux projets"'}],n=0,o=0,a=null;function r(){if(n>=t.length)return;var i=t[n];a||(a=document.createElement("div"),a.className="term-line",e.appendChild(a),e.scrollTop=e.scrollHeight);var l=document.createElement("span");l.className=i.p?"term-prompt":"term-output",a.appendChild(l);if(o<i.t.length){l.textContent+=i.t[o],o++,setTimeout(r,12+28*Math.random())}else{var d=i.p?400:700;if(!i.t)d=200;var s=document.createElement("span");s.className="term-cursor",l.appendChild(s),setTimeout(function(){s.remove(),n++,o=0,a=null,r()},d)}}setTimeout(r,600)}();</script>
+!function(){var e=document.getElementById("terminal-output");if(!e)return;var t=[{p:1,t:">>> import cherif as profile"},{p:1,t:">>> profile.load()"},{p:0,t:"Chargement du profil..."},{p:0,t:"[██████████] 100%"},{p:0,t:""},{p:1,t:">>> profile.role"},{p:0,t:'"AI Engineer & Data Scientist"'},{p:0,t:""},{p:1,t:">>> profile.skills"},{p:0,t:'["Deep Learning", "NLP", "Computer Vision", "RAG Pipelines",'},{p:0,t:' "Fraud Detection", "Python", "TensorFlow"]'},{p:0,t:""},{p:1,t:">>> profile.focus"},{p:0,t:'"Solutions IA ancr\u00e9es localement \u2014 impact r\u00e9el en sant\u00e9'},{p:0,t:"et agriculture en Afrique de l'Ouest\""},{p:0,t:""},{p:1,t:">>> profile.status"},{p:0,t:'"Disponible pour de nouveaux projets"'}],n=0,o=0,a=null;function r(){if(n>=t.length)return;var i=t[n];a||(a=document.createElement("div"),a.className="term-line",e.appendChild(a),e.scrollTop=e.scrollHeight);var l=document.createElement("span");l.className=i.p?"term-prompt":"term-output",a.appendChild(l);if(o<i.t.length){l.textContent+=i.t[o],o++,setTimeout(r,12+28*Math.random())}else{var d=i.p?400:700;if(!i.t)d=200;var s=document.createElement("span");s.className="term-cursor",l.appendChild(s),setTimeout(function(){s.remove(),n++,o=0,a=null,r()},d)}}setTimeout(r,600)}();</script>
 </body>
 </html>
