@@ -141,17 +141,19 @@ nav .links a.active{font-weight:500}
 .download-cv svg{width:1rem;height:1rem}
 
 /* Profile photo */
-.about-photo{width:100%;border-radius:1.5rem;overflow:hidden;margin-bottom:1.5rem;aspect-ratio:1;background:var(--warm-100)}
+.about-photo{width:180px;height:180px;margin:0 auto 1.5rem;border-radius:50%;overflow:hidden;background:var(--warm-100);border:4px solid #fff;box-shadow:0 8px 32px rgba(92,76,66,.12)}
 .about-photo img{width:100%;height:100%;object-fit:cover;display:block}
 
-/* ===== SKILLS ===== */
-.skills-grid{display:grid;gap:1.5rem}
-@media(min-width:640px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.skills-grid{grid-template-columns:repeat(3,1fr)}}
-.skill-card{padding:1.5rem;transition:box-shadow .3s}
-.skill-card:hover{box-shadow:0 4px 16px rgba(61,52,46,0.06)}
-.skill-card h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.125rem;color:var(--warm-800);margin-bottom:1rem}
-.skill-card .tags{display:flex;flex-wrap:wrap;gap:.5rem}
+/* ===== SKILLS CAROUSEL ===== */
+.skills-wrapper{overflow:hidden;padding:0.5rem 0}
+.skills-track{display:flex;gap:1rem;width:max-content;animation:scrollSkills 40s linear infinite}
+.skills-track:hover{animation-play-state:paused}
+@keyframes scrollSkills{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.skill-row{margin-bottom:2rem}
+.skill-row:last-child{margin-bottom:0}
+.skill-row-title{font-family:'DM Serif Display',Georgia,serif;font-size:1rem;color:var(--warm-500);margin-bottom:.75rem;padding-left:.25rem}
+.skill-tag{display:inline-flex;align-items:center;padding:.5rem 1rem;font-size:.875rem;font-weight:500;border-radius:9999px;background:rgba(255,255,255,0.8);border:1px solid rgba(232,217,192,0.6);color:var(--warm-700);white-space:nowrap;transition:all .3s;flex-shrink:0}
+.skill-tag:hover{background:var(--soft-green);border-color:var(--accent-muted);color:var(--accent-dark);transform:translateY(-2px);box-shadow:0 2px 8px rgba(92,76,66,.06)}
 
 /* ===== PROJECTS ===== */
 .projects-list{display:flex;flex-direction:column;gap:2rem}
@@ -355,12 +357,12 @@ section[id]{scroll-margin-top:5rem}
 <!-- ===== SKILLS ===== -->
 <section id="skills" class="py-section">
   <div class="section fade-in"><p class="section-label">&gt; compétences</p><h2 class="section-title">Stack technique</h2>
-    <div class="skills-grid" style="margin-top:3rem">
-      <div class="skill-card glass-card"><h3>Langages &amp; Bases de données</h3><div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">NoSQL</span><span class="tag">MongoDB</span><span class="tag">PostgreSQL</span><span class="tag">Pandas</span><span class="tag">NumPy</span></div></div>
-      <div class="skill-card glass-card"><h3>Machine Learning &amp; Data Science</h3><div class="tags"><span class="tag">Scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Data Mining</span><span class="tag">Analyse statistique</span><span class="tag">Feature Engineering</span><span class="tag">SHAP</span><span class="tag">ROC/AUC</span><span class="tag">Validation croisée</span></div></div>
-      <div class="skill-card glass-card"><h3>Deep Learning &amp; Vision</h3><div class="tags"><span class="tag">PyTorch</span><span class="tag">CNN</span><span class="tag">ResNet-50</span><span class="tag">Fine-tuning</span><span class="tag">OpenCV</span><span class="tag">Augmentation de données</span></div></div>
-      <div class="skill-card glass-card"><h3>Systèmes d'Information &amp; IA</h3><div class="tags"><span class="tag">LangChain</span><span class="tag">LlamaIndex</span><span class="tag">RAG</span><span class="tag">Vector DBs</span><span class="tag">Prompt Engineering</span><span class="tag">FastAPI</span><span class="tag">Architecture SI</span><span class="tag">ONNX</span></div></div>
-      <div class="skill-card glass-card"><h3>Big Data &amp; Outils</h3><div class="tags"><span class="tag">Apache PySpark</span><span class="tag">Git/GitHub</span><span class="tag">Streamlit</span><span class="tag">Jupyter</span><span class="tag">Power BI</span><span class="tag">Docker</span><span class="tag">Hadoop</span></div></div>
+    <div class="skills-wrapper" style="margin-top:2.5rem">
+      <div class="skill-row"><p class="skill-row-title">Langages &amp; Bases de données</p><div class="skills-track"><span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">NoSQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">NoSQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span></div></div>
+      <div class="skill-row"><p class="skill-row-title">Machine Learning &amp; Data Science</p><div class="skills-track"><span class="skill-tag">Scikit-learn</span><span class="skill-tag">XGBoost</span><span class="skill-tag">Data Mining</span><span class="skill-tag">Analyse statistique</span><span class="skill-tag">Feature Engineering</span><span class="skill-tag">SHAP</span><span class="skill-tag">ROC/AUC</span><span class="skill-tag">Validation croisée</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">XGBoost</span><span class="skill-tag">Data Mining</span><span class="skill-tag">Analyse statistique</span><span class="skill-tag">Feature Engineering</span><span class="skill-tag">SHAP</span><span class="skill-tag">ROC/AUC</span><span class="skill-tag">Validation croisée</span></div></div>
+      <div class="skill-row"><p class="skill-row-title">Deep Learning &amp; Vision</p><div class="skills-track"><span class="skill-tag">PyTorch</span><span class="skill-tag">CNN</span><span class="skill-tag">ResNet-50</span><span class="skill-tag">Fine-tuning</span><span class="skill-tag">OpenCV</span><span class="skill-tag">Augmentation de données</span><span class="skill-tag">PyTorch</span><span class="skill-tag">CNN</span><span class="skill-tag">ResNet-50</span><span class="skill-tag">Fine-tuning</span><span class="skill-tag">OpenCV</span><span class="skill-tag">Augmentation de données</span></div></div>
+      <div class="skill-row"><p class="skill-row-title">Systèmes d'Information &amp; IA</p><div class="skills-track"><span class="skill-tag">LangChain</span><span class="skill-tag">LlamaIndex</span><span class="skill-tag">RAG</span><span class="skill-tag">Vector DBs</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Architecture SI</span><span class="skill-tag">ONNX</span><span class="skill-tag">LangChain</span><span class="skill-tag">LlamaIndex</span><span class="skill-tag">RAG</span><span class="skill-tag">Vector DBs</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Architecture SI</span><span class="skill-tag">ONNX</span></div></div>
+      <div class="skill-row"><p class="skill-row-title">Big Data &amp; Outils</p><div class="skills-track"><span class="skill-tag">Apache PySpark</span><span class="skill-tag">Git/GitHub</span><span class="skill-tag">Streamlit</span><span class="skill-tag">Jupyter</span><span class="skill-tag">Power BI</span><span class="skill-tag">Docker</span><span class="skill-tag">Hadoop</span><span class="skill-tag">Apache PySpark</span><span class="skill-tag">Git/GitHub</span><span class="skill-tag">Streamlit</span><span class="skill-tag">Jupyter</span><span class="skill-tag">Power BI</span><span class="skill-tag">Docker</span><span class="skill-tag">Hadoop</span></div></div>
     </div>
   </div>
 </section>
