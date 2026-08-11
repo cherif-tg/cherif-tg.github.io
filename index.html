@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TENGA Chérif Abdel Azize | Data Scientist & AI Engineer</title>
+<meta name="description" content="Portfolio de TENGA Chérif Abdel Azize — Data Scientist & AI Engineer spécialisé en Machine Learning, Analyse statistique et Modélisation prédictive.">
+<meta name="keywords" content="Data Scientist, AI Engineer, Machine Learning, Deep Learning, Portfolio, TENGA Chérif, Togo">
+<meta property="og:title" content="TENGA Chérif | Data Scientist & AI Engineer">
+<meta property="og:description" content="Machine Learning · Analyse statistique · Modélisation prédictive">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%235B8C5A'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Georgia,serif' font-size='18' font-weight='bold'>CT</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:#FAF7F2;color:#3D342E;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.modal-open{overflow:hidden}
+::selection{background:#A8C8A7;color:#3D342E}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto}
+
+:root{
+  --cream:#FAF7F2;--accent:#5B8C5A;--accent-light:#7BAF7A;--accent-dark:#3D6B3C;--accent-muted:#A8C8A7;
+  --warm-50:#FDF8F0;--warm-100:#F5EDE0;--warm-200:#E8D9C0;--warm-300:#D4BFA0;--warm-400:#B8A088;
+  --warm-500:#9C8470;--warm-600:#7A6658;--warm-700:#5C4C42;--warm-800:#3D342E;--warm-900:#1F1A17;
+  --soft-gray:#E8E4DF;--soft-rose:#E8DDD8;--soft-green:#DCE5DA;--soft-blue:#DAE0E8;
+}
+
+.section{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+@media(min-width:768px){.section{padding:0 3rem}}
+@media(min-width:1024px){.section{padding:0 4rem}}
+.py-section{padding:5rem 0}
+@media(min-width:768px){.py-section{padding:7rem 0}}
+.glass-card{background:rgba(255,255,255,0.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.8);border-radius:1.5rem;box-shadow:0 1px 3px rgba(61,52,46,0.04)}
+.bg-warm{background:rgba(255,255,255,0.4)}
+.tag{display:inline-block;padding:.375rem .75rem;font-size:.875rem;font-weight:500;border-radius:9999px;background:var(--soft-green);color:var(--warm-700);transition:background .3s}
+.tag:hover{background:var(--accent-muted)}
+.mono{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.875rem;color:var(--accent)}
+.section-label{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.875rem;color:var(--accent);margin-bottom:.75rem}
+.section-title{font-family:'DM Serif Display',Georgia,serif;font-size:2rem;color:var(--warm-800)}
+@media(min-width:768px){.section-title{font-size:2.5rem}}
+
+/* ===== NAVBAR ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:all .5s;padding:0 1.5rem}
+@media(min-width:768px){nav{padding:0 3rem}}
+nav.scrolled{background:rgba(250,247,242,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(232,217,192,0.5);box-shadow:0 1px 3px rgba(61,52,46,0.04)}
+nav .inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:4rem}
+@media(min-width:768px){nav .inner{height:5rem}}
+nav .logo{font-family:'DM Serif Display',Georgia,serif;font-size:1.125rem;color:var(--warm-800);cursor:pointer;transition:color .3s}
+@media(min-width:768px){nav .logo{font-size:1.25rem}}
+nav .logo:hover{color:var(--accent)}
+nav .logo span{color:var(--accent)}
+nav .links{display:none;align-items:center;gap:.25rem}
+@media(min-width:768px){nav .links{display:flex}}
+nav .links a{padding:.375rem .75rem;font-size:.875rem;border-radius:9999px;color:var(--warm-500);transition:all .3s}
+nav .links a:hover,nav .links a.active{color:var(--warm-800);background:var(--warm-50)}
+nav .links a.active{font-weight:500}
+.menu-btn{display:block;padding:.5rem;color:var(--warm-600);background:none;border:none;cursor:pointer}
+@media(min-width:768px){.menu-btn{display:none}}
+.menu-btn:hover{color:var(--warm-800)}
+.mobile-menu{display:none;background:rgba(250,247,242,0.95);backdrop-filter:blur(12px);padding:1rem 1.5rem;flex-direction:column;gap:.25rem;border-bottom:1px solid rgba(232,217,192,0.5)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{display:block;padding:.75rem 1rem;font-size:.875rem;color:var(--warm-600);border-radius:.75rem;transition:all .3s}
+.mobile-menu a:hover{background:var(--warm-50);color:var(--warm-800)}
+
+/* Back to top */
+#back-to-top{position:fixed;bottom:2rem;right:2rem;z-index:40;width:3rem;height:3rem;border-radius:1rem;background:var(--accent);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s;box-shadow:0 4px 12px rgba(61,52,46,0.15)}
+#back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
+#back-to-top:hover{background:var(--accent-dark);transform:translateY(-2px)}
+#back-to-top svg{width:1.25rem;height:1.25rem}
+
+/* ===== HERO ===== */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+#particle-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(250,247,242,0.6),transparent,rgba(250,247,242,0.95));pointer-events:none;z-index:2}
+.hero-content{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:8rem 1.5rem 0}
+@media(min-width:768px){.hero-content{padding:0 3rem}}
+.hero-content .greeting{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.875rem;color:var(--accent);margin-bottom:1.5rem}
+.hero-content .greeting .letter{display:inline-block;opacity:0;animation:letterIn .3s ease-out forwards}
+@keyframes letterIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.hero-content h1{font-family:'DM Serif Display',Georgia,serif;font-size:2.25rem;line-height:1.05;color:var(--warm-800);margin-bottom:1.5rem;opacity:0;animation:fadeInUp .8s ease-out 1.6s forwards}
+@media(min-width:640px){.hero-content h1{font-size:3rem}}
+@media(min-width:768px){.hero-content h1{font-size:4rem}}
+.hero-content h1 .accent{color:var(--accent)}
+.hero-content .title{font-size:1.125rem;color:var(--warm-600);font-weight:300;margin-bottom:.5rem;opacity:0;animation:fadeInUp .8s ease-out 1.8s forwards}
+@media(min-width:768px){.hero-content .title{font-size:1.25rem}}
+.hero-content .subtitle{font-size:1rem;color:var(--warm-400);font-weight:300;max-width:36rem;opacity:0;animation:fadeInUp .8s ease-out 2s forwards}
+.hero-content .subtitle .cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent);margin-left:2px;vertical-align:text-bottom;animation:blink 1s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-content .tagline{margin-top:2rem;font-size:.875rem;color:var(--warm-400);font-style:italic;border-left:2px solid var(--accent-muted);padding-left:1rem;max-width:30rem;opacity:0;animation:fadeInUp .8s ease-out 2.2s forwards}
+.hero-stats{display:flex;flex-wrap:wrap;gap:2rem;margin-top:1.5rem;opacity:0;animation:fadeInUp .8s ease-out 2.4s forwards}
+.hero-stat{text-align:center}
+.hero-stat .number{font-family:'DM Serif Display',Georgia,serif;font-size:1.75rem;color:var(--accent);line-height:1}
+.hero-stat .label{font-size:.75rem;color:var(--warm-400);margin-top:.25rem;text-transform:uppercase;letter-spacing:.05em}
+.hero-btns{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem;opacity:0;animation:fadeInUp .8s ease-out 2.6s forwards}
+.btn{display:inline-flex;align-items:center;padding:.75rem 1.5rem;border-radius:1rem;font-weight:500;font-size:.875rem;cursor:pointer;transition:all .3s;border:none}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 1px 3px rgba(61,52,46,0.1)}
+.btn-primary:hover{background:var(--accent-dark);box-shadow:0 4px 12px rgba(61,52,46,0.12)}
+.btn-outline{border:1px solid var(--warm-300);color:var(--warm-600);background:transparent}
+.btn-outline:hover{border-color:var(--warm-400);color:var(--warm-800)}
+.hero-socials{display:flex;gap:1rem;margin-top:3rem;opacity:0;animation:fadeInUp .8s ease-out 2.8s forwards}
+.hero-socials a{color:var(--warm-400);transition:color .3s}
+.hero-socials a:hover{color:var(--warm-700)}
+.hero-socials svg{width:1.25rem;height:1.25rem}
+.scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);animation:pulseSoft 3s ease-in-out infinite;z-index:10}
+.scroll-indicator svg{width:1.5rem;height:1.5rem;color:var(--warm-300)}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulseSoft{0%,100%{opacity:1}50%{opacity:.6}}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .8s ease-out,transform .8s ease-out}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* ===== ABOUT ===== */
+.about-grid{display:grid;gap:3rem}
+@media(min-width:768px){.about-grid{grid-template-columns:3fr 2fr;gap:4rem}}
+.about-text{font-size:1.125rem;color:var(--warm-600);line-height:1.7}
+.edu-item{display:flex;gap:1rem;margin-top:1.5rem}
+.edu-line{width:.25rem;background:var(--accent-muted);border-radius:9999px;flex-shrink:0}
+.edu-item h4{font-weight:500;color:var(--warm-700)}
+.edu-item p{font-size:.875rem;color:var(--warm-500);margin-top:.25rem}
+.edu-badge{display:inline-block;margin-top:.25rem;font-size:.75rem;font-weight:500;color:var(--accent);background:var(--soft-green);padding:.125rem .5rem;border-radius:9999px}
+.about-side .card{padding:1.5rem;margin-bottom:1.5rem}
+.about-side .card h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.125rem;color:var(--warm-800);margin-bottom:1rem}
+.about-side .card .row{display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:var(--warm-600);margin-bottom:.5rem}
+.about-side .card .row svg{width:1rem;height:1rem;color:var(--accent);flex-shrink:0}
+.lang-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
+.lang-row span:first-child{font-size:.875rem;color:var(--warm-600)}
+.lang-row .level{font-size:.75rem;font-weight:500;color:var(--accent);background:var(--soft-green);padding:.125rem .5rem;border-radius:9999px}
+.download-cv{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;padding:.75rem;border:2px solid var(--accent);color:var(--accent);border-radius:1rem;font-weight:500;font-size:.875rem;transition:all .3s;text-align:center}
+.download-cv:hover{background:var(--accent);color:#fff}
+.download-cv svg{width:1rem;height:1rem}
+
+/* Profile photo */
+.about-photo{width:100%;border-radius:1.5rem;overflow:hidden;margin-bottom:1.5rem;aspect-ratio:1;background:var(--warm-100)}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ===== SKILLS ===== */
+.skills-grid{display:grid;gap:1.5rem}
+@media(min-width:640px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.skills-grid{grid-template-columns:repeat(3,1fr)}}
+.skill-card{padding:1.5rem;transition:box-shadow .3s}
+.skill-card:hover{box-shadow:0 4px 16px rgba(61,52,46,0.06)}
+.skill-card h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.125rem;color:var(--warm-800);margin-bottom:1rem}
+.skill-card .tags{display:flex;flex-wrap:wrap;gap:.5rem}
+
+/* ===== PROJECTS ===== */
+.projects-list{display:flex;flex-direction:column;gap:2rem}
+.project-item{padding:1.5rem;overflow:hidden;transition:transform .4s cubic-bezier(.25,.8,.25,1.2),box-shadow .4s}
+@media(min-width:768px){.project-item{padding:2rem}}
+.project-item:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(92,76,66,.08)}
+.project-item .proj-header{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem}
+.project-item .proj-icon{width:3rem;height:3rem;border-radius:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.project-item .proj-icon svg{width:1.5rem;height:1.5rem}
+.proj-icon-vision{background:#E8DDD8;color:#C4775A}
+.proj-icon-data{background:#F5EDE0;color:#9C8470}
+.proj-icon-nlp{background:#DAE0E8;color:#4A6FA5}
+.proj-icon-ml{background:#DCE5DA;color:#5B8C5A}
+.project-item .num{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.75rem;color:var(--accent)}
+.project-item .proj-title{font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;color:var(--warm-800);margin-top:.25rem}
+@media(min-width:768px){.project-item .proj-title{font-size:1.5rem}}
+.project-item .proj-subtitle{font-size:.875rem;color:var(--warm-400);margin-top:.25rem}
+.project-item .proj-desc{color:var(--warm-600);margin:1rem 0;line-height:1.6}
+.project-item .highlights{list-style:none;margin-bottom:1.5rem}
+.project-item .highlights li{display:flex;gap:.75rem;font-size:.875rem;color:var(--warm-600);margin-bottom:.5rem}
+.project-item .highlights li .arrow{color:var(--accent);flex-shrink:0;margin-top:.15rem}
+.project-item .stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.project-item .stack span{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.75rem;color:var(--warm-500);background:var(--warm-50);padding:.25rem .5rem;border-radius:.5rem}
+.proj-links{display:flex;flex-wrap:wrap;gap:.75rem}
+.proj-link{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;font-size:.813rem;font-weight:500;border-radius:.75rem;transition:all .3s}
+.proj-link-github{background:var(--warm-800);color:#fff}
+.proj-link-github:hover{background:var(--warm-900);transform:translateY(-1px)}
+.proj-link-demo{border:1px solid var(--warm-300);color:var(--warm-600)}
+.proj-link-demo:hover{border-color:var(--accent);color:var(--accent)}
+.proj-link svg{width:.875rem;height:.875rem}
+
+/* ===== BLOG ===== */
+.blog-grid{display:grid;gap:1.5rem}
+@media(min-width:640px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.blog-grid{grid-template-columns:repeat(3,1fr)}}
+.blog-card{padding:1.5rem;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.blog-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(92,76,66,.06)}
+.blog-card .blog-date{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.75rem;color:var(--accent)}
+.blog-card .blog-title{font-family:'DM Serif Display',Georgia,serif;font-size:1.125rem;color:var(--warm-800);margin:.5rem 0}
+.blog-card .blog-excerpt{font-size:.875rem;color:var(--warm-500);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-card .blog-tag{display:inline-block;margin-top:.75rem;font-size:.75rem;font-weight:500;padding:.25rem .625rem;border-radius:9999px;background:var(--soft-green);color:var(--accent)}
+.blog-card .blog-read{display:inline-flex;align-items:center;gap:.25rem;margin-top:.75rem;font-size:.813rem;color:var(--accent);font-weight:500}
+.blog-card .blog-read svg{width:.875rem;height:.875rem;transition:transform .3s}
+.blog-card:hover .blog-read svg{transform:translateX(3px)}
+.blog-empty{text-align:center;padding:3rem 1rem;color:var(--warm-400)}
+.blog-empty svg{width:3rem;height:3rem;margin-bottom:1rem;opacity:.4}
+
+/* ===== BLOG MODAL ===== */
+#blog-modal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+#blog-modal.open{opacity:1;visibility:visible}
+#blog-modal .modal-backdrop{position:absolute;inset:0;background:rgba(31,26,23,0.6);backdrop-filter:blur(4px)}
+#blog-modal .modal-content{position:relative;background:var(--cream);border-radius:2rem;max-width:700px;width:calc(100% - 2rem);max-height:85vh;overflow-y:auto;padding:2.5rem;margin:1rem;box-shadow:0 24px 64px rgba(31,26,23,0.2);animation:modalIn .4s ease-out}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+#blog-modal .modal-close{position:absolute;top:1.25rem;right:1.25rem;width:2.5rem;height:2.5rem;border-radius:.75rem;border:none;background:var(--warm-100);color:var(--warm-600);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+#blog-modal .modal-close:hover{background:var(--warm-200);color:var(--warm-800)}
+#blog-modal .modal-date{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.75rem;color:var(--accent);margin-bottom:.5rem}
+#blog-modal .modal-title{font-family:'DM Serif Display',Georgia,serif;font-size:1.75rem;color:var(--warm-800);margin-bottom:1.5rem;line-height:1.2}
+#blog-modal .modal-body{font-size:.938rem;color:var(--warm-600);line-height:1.8}
+#blog-modal .modal-body p{margin-bottom:1rem}
+#blog-modal .modal-body h3{font-family:'Inter',system-ui,sans-serif;font-size:1.1rem;font-weight:600;color:var(--warm-800);margin:1.5rem 0 .5rem}
+#blog-modal .modal-body ul{margin:.5rem 0 1rem 1.25rem}
+#blog-modal .modal-body li{margin-bottom:.35rem}
+#blog-modal .modal-tag{display:inline-block;margin-top:1.5rem;font-size:.75rem;font-weight:500;padding:.25rem .625rem;border-radius:9999px;background:var(--soft-green);color:var(--accent)}
+
+/* ===== CERTS ===== */
+.certs-list{display:flex;flex-direction:column;gap:1rem}
+.cert-item{padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+@media(min-width:640px){.cert-item{flex-direction:row;align-items:center;justify-content:space-between}}
+.cert-item h3{font-weight:500;color:var(--warm-800);font-family:'Inter',system-ui,sans-serif;font-size:1rem}
+.cert-item .cert-meta{font-size:.875rem;color:var(--warm-500);margin-top:.25rem}
+.cert-item .cert-id{font-size:.75rem;color:var(--warm-400);font-family:'JetBrains Mono','Fira Code',monospace;margin-top:.25rem}
+.cert-link{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;font-size:.875rem;border:1px solid var(--warm-300);color:var(--warm-600);border-radius:.75rem;transition:all .3s;flex-shrink:0}
+.cert-link:hover{border-color:var(--accent);color:var(--accent)}
+.cert-link svg{width:1rem;height:1rem}
+
+/* ===== CONTACT ===== */
+.contact-grid{display:grid;gap:2rem}
+@media(min-width:768px){.contact-grid{grid-template-columns:1fr 1fr}}
+.contact-card{padding:2rem}
+.contact-card .link-item{display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:1rem;transition:background .3s}
+.contact-card .link-item:hover{background:var(--warm-50)}
+.link-item .icon{width:3rem;height:3rem;border-radius:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.link-item .icon svg{width:1.25rem;height:1.25rem}
+.icon-email{background:var(--soft-green);color:var(--accent)}
+.icon-gh{background:var(--soft-gray);color:var(--warm-600)}
+.icon-li{background:var(--soft-blue);color:#2563EB}
+.link-item .info .label{font-weight:500;color:var(--warm-800);font-size:.875rem}
+.link-item .info .val{font-size:.875rem;color:var(--warm-500)}
+.link-item:hover .info .label{color:var(--accent);transition:color .3s}
+.intern-card{padding:2rem;display:flex;flex-direction:column;justify-content:center}
+.intern-card .icon-big{width:3.5rem;height:3.5rem;background:rgba(168,200,167,.3);border-radius:1rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.intern-card .icon-big svg{width:1.75rem;height:1.75rem;color:var(--accent)}
+.intern-card h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;color:var(--warm-800);margin-bottom:.75rem}
+
+/* ===== FOOTER ===== */
+footer{border-top:1px solid rgba(232,217,192,.5);padding:2rem 1.5rem}
+@media(min-width:768px){footer{padding:2rem 3rem}}
+footer .inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1rem}
+@media(min-width:640px){footer .inner{flex-direction:row;justify-content:space-between}}
+footer p{font-size:.875rem;color:var(--warm-400)}
+footer .made-with{font-size:.75rem;font-family:'JetBrains Mono','Fira Code',monospace;color:var(--warm-300)}
+
+section[id]{scroll-margin-top:5rem}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--warm-300);border-radius:9999px}
+::-webkit-scrollbar-thumb:hover{background:var(--warm-400)}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="inner">
+    <span class="logo" onclick="scrollToSection('hero')">Chérif<span>.</span></span>
+    <div class="links" id="navLinks">
+      <a href="#hero" onclick="scrollToSection('hero');return false">Accueil</a>
+      <a href="#about" onclick="scrollToSection('about');return false">À propos</a>
+      <a href="#skills" onclick="scrollToSection('skills');return false">Compétences</a>
+      <a href="#projects" onclick="scrollToSection('projects');return false">Projets</a>
+      <a href="#blog" onclick="scrollToSection('blog');return false">Blog</a>
+      <a href="#certifications" onclick="scrollToSection('certifications');return false">Certifications</a>
+      <a href="#contact" onclick="scrollToSection('contact');return false">Contact</a>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+      <svg id="menuIconOpen" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="menuIconClose" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#hero" onclick="mobileNav('hero')">Accueil</a>
+    <a href="#about" onclick="mobileNav('about')">À propos</a>
+    <a href="#skills" onclick="mobileNav('skills')">Compétences</a>
+    <a href="#projects" onclick="mobileNav('projects')">Projets</a>
+    <a href="#blog" onclick="mobileNav('blog')">Blog</a>
+    <a href="#certifications" onclick="mobileNav('certifications')">Certifications</a>
+    <a href="#contact" onclick="mobileNav('contact')">Contact</a>
+  </div>
+</nav>
+
+<button id="back-to-top" onclick="scrollToSection('hero')" aria-label="Retour en haut">
+  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+</button>
+
+<!-- ===== BLOG MODAL ===== -->
+<div id="blog-modal">
+  <div class="modal-backdrop" onclick="closeModal()"></div>
+  <div class="modal-content" id="modal-content"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="greeting" id="greeting"></p>
+    <h1>TENGA Chérif<br><span class="accent">Abdel Azize</span></h1>
+    <p class="title">Data Scientist &amp; AI Engineer</p>
+    <p class="subtitle"><span id="typewriter"></span><span class="cursor"></span></p>
+    <p class="tagline">&ldquo;Des données brutes aux systèmes intelligents — je construis des solutions IA qui passent du notebook à la production.&rdquo;</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="number">4</div><div class="label">Projets</div></div>
+      <div class="hero-stat"><div class="number">2</div><div class="label">Certifications</div></div>
+      <div class="hero-stat"><div class="number">15+</div><div class="label">Technologies</div></div>
+    </div>
+    <div class="hero-btns">
+      <button class="btn btn-primary" onclick="scrollToSection('projects')">Voir mes projets</button>
+      <button class="btn btn-outline" onclick="scrollToSection('contact')">Me contacter</button>
+    </div>
+    <div class="hero-socials">
+      <a href="https://github.com/cherif-tg" target="_blank" rel="noopener" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+      <a href="https://www.linkedin.com/in/cherif-tenga-070089323" target="_blank" rel="noopener" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="mailto:tengacherif@gmail.com" aria-label="Email"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg></div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="py-section bg-warm">
+  <div class="section fade-in">
+    <p class="section-label">&gt; à propos</p><h2 class="section-title">Qui je suis</h2>
+    <div class="about-grid" style="margin-top:3rem">
+      <div>
+        <p class="about-text">Data Scientist &amp; AI Engineer certifié, passionné par l'IA appliquée aux systèmes critiques. Je m'intéresse particulièrement à l'exploitation des données au service de la prise de décision et de la sécurité. Je maîtrise l'ensemble du pipeline Data Science ainsi que la conception de systèmes d'information optimisés par l'intelligence artificielle.</p>
+        <div style="margin-top:2rem">
+          <h3 style="font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;color:var(--warm-800);margin-bottom:1rem">Formation</h3>
+          <div class="edu-item"><div class="edu-line"></div><div><h4>Licence Fondamentale — IA &amp; Big Data</h4><p>Université de Lomé / École Polytechnique de Lomé — Lomé, Togo</p><p style="margin-top:0">2023 – 2026</p></div></div>
+          <div class="edu-item"><div class="edu-line"></div><div><h4>Baccalauréat — Série C</h4><p>Lycée Scientifique Catholique Robert Mattle — Sotouboua, Togo</p><p style="margin-top:0">2020 – 2023</p><span class="edu-badge">Mention Très Bien</span></div></div>
+        </div>
+      </div>
+      <div class="about-side">
+        <div class="about-photo"><img src="photo.png" alt="TENGA Chérif Abdel Azize" loading="lazy"></div>
+        <div class="card glass-card"><h3>Contact</h3><div class="row"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>Lomé, Togo</div><div class="row"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><a href="mailto:tengacherif@gmail.com" class="accent-link">tengacherif@gmail.com</a></div><div class="row"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>+228 71 51 80 61</div></div>
+        <div class="card glass-card"><h3>Langues</h3><div class="lang-row"><span>Français</span><span class="level">Courant</span></div><div class="lang-row"><span>Anglais</span><span class="level">Intermédiaire</span></div></div>
+        <a href="cv.pdf" download class="download-cv"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Télécharger mon CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="py-section">
+  <div class="section fade-in"><p class="section-label">&gt; compétences</p><h2 class="section-title">Stack technique</h2>
+    <div class="skills-grid" style="margin-top:3rem">
+      <div class="skill-card glass-card"><h3>Langages &amp; Bases de données</h3><div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">NoSQL</span><span class="tag">MongoDB</span><span class="tag">PostgreSQL</span><span class="tag">Pandas</span><span class="tag">NumPy</span></div></div>
+      <div class="skill-card glass-card"><h3>Machine Learning &amp; Data Science</h3><div class="tags"><span class="tag">Scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Data Mining</span><span class="tag">Analyse statistique</span><span class="tag">Feature Engineering</span><span class="tag">SHAP</span><span class="tag">ROC/AUC</span><span class="tag">Validation croisée</span></div></div>
+      <div class="skill-card glass-card"><h3>Deep Learning &amp; Vision</h3><div class="tags"><span class="tag">PyTorch</span><span class="tag">CNN</span><span class="tag">ResNet-50</span><span class="tag">Fine-tuning</span><span class="tag">OpenCV</span><span class="tag">Augmentation de données</span></div></div>
+      <div class="skill-card glass-card"><h3>Systèmes d'Information &amp; IA</h3><div class="tags"><span class="tag">LangChain</span><span class="tag">LlamaIndex</span><span class="tag">RAG</span><span class="tag">Vector DBs</span><span class="tag">Prompt Engineering</span><span class="tag">FastAPI</span><span class="tag">Architecture SI</span><span class="tag">ONNX</span></div></div>
+      <div class="skill-card glass-card"><h3>Big Data &amp; Outils</h3><div class="tags"><span class="tag">Apache PySpark</span><span class="tag">Git/GitHub</span><span class="tag">Streamlit</span><span class="tag">Jupyter</span><span class="tag">Power BI</span><span class="tag">Docker</span><span class="tag">Hadoop</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="py-section bg-warm">
+  <div class="section fade-in"><p class="section-label">&gt; projets</p><h2 class="section-title">Ce que j'ai construit</h2>
+    <div class="projects-list" style="margin-top:3rem">
+
+      <div class="project-item glass-card">
+        <div class="proj-header"><div class="proj-icon proj-icon-vision"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l5 5" stroke-linecap="round"/><circle cx="8.5" cy="11" r="1.5" fill="currentColor" stroke="none"/><circle cx="13.5" cy="11" r="1.5" fill="currentColor" stroke="none"/></svg></div><div><span class="num">01</span><h3 class="proj-title">Analyse et Détection du Paludisme</h3><p class="proj-subtitle">Projet de Fin de Licence &bull; 2026</p></div></div>
+        <p class="proj-desc">Analyse approfondie de sources de données hétérogènes (frottis sanguins, symptômes, données hématologiques) avec une architecture de traitement de données critiques en temps réel.</p>
+        <ul class="highlights"><li><span class="arrow">▸</span> Architecture SI multicouche : collecte (NLP + Vision + tabulaire), traitement ML, API de diffusion</li><li><span class="arrow">▸</span> Pipeline de données robuste sur 100 000+ dossiers simulés via Apache PySpark</li><li><span class="arrow">▸</span> Modèles ML/DL : XGBoost + ResNet-50 fine-tuné pour 8 pathologies (SHAP + Grad-CAM)</li><li><span class="arrow">▸</span> Déploiement : API FastAPI + Streamlit + mode hors-ligne ONNX</li></ul>
+        <div class="stack"><span>Python</span><span>PyTorch</span><span>Scikit-learn</span><span>XGBoost</span><span>spaCy</span><span>PySpark</span><span>FastAPI</span><span>Streamlit</span><span>ONNX</span><span>MongoDB</span></div>
+        <div class="proj-links"><span class="proj-link proj-link-demo" style="opacity:0.5;cursor:default">Dépôt à venir</span></div>
+      </div>
+
+      <div class="project-item glass-card">
+        <div class="proj-header"><div class="proj-icon proj-icon-data"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l2.5 7.5H22l-6 4.5 2.5 7.5L12 17l-6.5 4.5L8 14l-6-4.5h7.5z"/></svg></div><div><span class="num">02</span><h3 class="proj-title">Système de Détection de Fraude</h3><p class="proj-subtitle">Machine Learning appliqué à la détection d'anomalies</p></div></div>
+        <p class="proj-desc">Système intelligent de détection de transactions frauduleuses en temps réel, combinant modèles supervisés et non supervisés.</p>
+        <ul class="highlights"><li><span class="arrow">▸</span> Analyse exploratoire sur données transactionnelles réelles</li><li><span class="arrow">▸</span> Modèles : Isolation Forest, Auto-encodeurs, XGBoost</li><li><span class="arrow">▸</span> Pipeline de feature engineering avancé</li><li><span class="arrow">▸</span> Dashboard monitoring avec Power BI</li></ul>
+        <div class="stack"><span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>Pandas</span><span>NumPy</span><span>Power BI</span></div>
+        <div class="proj-links"><a href="https://github.com/cherif-tg/fraudDetection" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a></div>
+      </div>
+
+      <div class="project-item glass-card">
+        <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="8" height="8" rx="1"/><rect x="14" y="3" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="7" rx="1"/><rect x="14" y="14" width="8" height="7" rx="1"/></svg></div><div><span class="num">03</span><h3 class="proj-title">Système RAG — Gestion de Documents</h3><p class="proj-subtitle">Moteur de recherche documentaire IA</p></div></div>
+        <p class="proj-desc">Moteur de recherche documentaire IA. Déploiement local sécurisé sans transmission de données à l'extérieur.</p>
+        <ul class="highlights"><li><span class="arrow">▸</span> Ingestion et indexation en base vectorielle</li><li><span class="arrow">▸</span> Orchestration LangChain : retrieval sémantique → réponses sourcées</li><li><span class="arrow">▸</span> Déploiement local sécurisé (Ollama)</li></ul>
+        <div class="stack"><span>Python</span><span>LangChain</span><span>LlamaIndex</span><span>OpenAI API</span><span>Ollama</span><span>FAISS</span><span>ChromaDB</span></div>
+        <div class="proj-links"><a href="https://github.com/cherif-tg/RAG_Systeme" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a></div>
+      </div>
+
+      <div class="project-item glass-card">
+        <div class="proj-header"><div class="proj-icon proj-icon-ml"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M17 18H7a2 2 0 01-2-2v-1h14v1a2 2 0 01-2 2z" stroke-linejoin="round"/><path d="M21 15a2 2 0 01-2 2m-14 0a2 2 0 01-2-2"/></svg></div><div><span class="num">04</span><h3 class="proj-title">Traitement du Lexique Sara</h3><p class="proj-subtitle">NLP appliqué aux langues africaines</p></div></div>
+        <p class="proj-desc">Traitement automatique du langage naturel appliqué au lexique Sara. Analyse lexicale et modélisation linguistique.</p>
+        <ul class="highlights"><li><span class="arrow">▸</span> Constitution d'un corpus lexical en langue Sara</li><li><span class="arrow">▸</span> Analyse morphologique et extraction de racines</li><li><span class="arrow">▸</span> Modélisation statistique des patterns linguistiques</li></ul>
+        <div class="stack"><span>Python</span><span>NLP</span><span>NLTK</span><span>Pandas</span><span>Regex</span></div>
+        <div class="proj-links"><a href="https://github.com/cherif-tg/NLP_Lexique_Sara" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG ===== -->
+<section id="blog" class="py-section">
+  <div class="section fade-in"><p class="section-label">&gt; blog &amp; publications</p><h2 class="section-title">Actualités &amp; Articles</h2>
+    <div class="blog-grid" style="margin-top:3rem">
+
+      <div class="blog-card glass-card" onclick="openBlogPost('cahier-vacances')">
+        <p class="blog-date">Été 2026</p>
+        <h3 class="blog-title">Cahier de Vacances — Défi Data Science</h3>
+        <p class="blog-excerpt">Je relève le défi « Cahier de Vacances » lancé par Guillaume Saint-Cirgue, un programme intensif d'exercices et de projets pour monter en compétences sur tout le spectre de la Data Science et du Machine Learning pendant l'été.</p>
+        <span class="blog-tag">Défi • Formation</span>
+        <span class="blog-read">Lire l'article <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+      </div>
+
+      <div class="blog-card glass-card blog-empty" style="cursor:default">
+        <svg fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m0 0H7"/></svg>
+        <p>Bientôt plus d'articles…</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CERTIFICATIONS ===== -->
+<section id="certifications" class="py-section bg-warm">
+  <div class="section fade-in"><p class="section-label">&gt; certifications</p><h2 class="section-title">Certifications &amp; Diplômes</h2>
+    <div class="certs-list" style="margin-top:3rem">
+      <div class="cert-item glass-card"><div><h3>AI Engineer for Data Scientists Associate</h3><p class="cert-meta">DataCamp — Mai 2026</p><p class="cert-id">ID : AEDS0013884572128</p></div><a href="certif-ai-engineer.pdf" target="_blank" rel="noopener" class="cert-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Voir le certificat</a></div>
+      <div class="cert-item glass-card"><div><h3>Data Scientist Career Track</h3><p class="cert-meta">DataCamp — 2025 – 2026</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="py-section bg-warm">
+  <div class="section fade-in"><p class="section-label">&gt; contact</p><h2 class="section-title">Travaillons ensemble</h2>
+    <p style="color:var(--warm-500);margin-top:1rem;max-width:36rem">Actuellement à la recherche d'un stage (Août – Octobre 2026).</p>
+    <div class="contact-grid" style="margin-top:3rem">
+      <div class="contact-card glass-card">
+        <a href="mailto:tengacherif@gmail.com" class="link-item"><div class="icon icon-email"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div class="info"><div class="label">Email</div><div class="val">tengacherif@gmail.com</div></div></a>
+        <a href="https://github.com/cherif-tg" target="_blank" rel="noopener" class="link-item"><div class="icon icon-gh"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></div><div class="info"><div class="label">GitHub</div><div class="val">github.com/cherif-tg</div></div></a>
+        <a href="https://www.linkedin.com/in/cherif-tenga-070089323" target="_blank" rel="noopener" class="link-item"><div class="icon icon-li"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div><div class="info"><div class="label">LinkedIn</div><div class="val">linkedin.com/in/cherif-tenga</div></div></a>
+      </div>
+      <div class="intern-card glass-card">
+        <div class="icon-big"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+        <h3>Recherche de stage</h3>
+        <p style="color:var(--warm-500);margin-bottom:.5rem"><strong style="color:var(--warm-700)">Période :</strong> 1<sup>er</sup> Août – 31 Octobre 2026</p>
+        <p style="color:var(--warm-500)"><strong style="color:var(--warm-700)">Disponible pour :</strong> Data Science, Machine Learning, IA appliquée.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="inner"><p>&copy; 2026 TENGA Chérif Abdel Azize. Tous droits réservés.</p><p class="made-with">Construit avec passion</p></div></footer>
+
+<script>
+// Particle Background
+(function(){var c=document.getElementById('particle-canvas');if(!c)return;var t=c.getContext('2d'),p=[],m={x:-1000,y:-1000},n=50,d=140,cl='#5B8C5A';function rz(){c.width=c.offsetWidth;c.height=c.offsetHeight}function cr(){p=[];for(var i=0;i<n;i++)p.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-0.5)*0.5,vy:(Math.random()-0.5)*0.5,r:Math.random()*2.5+1})}function dr(){t.clearRect(0,0,c.width,c.height);for(var i=0;i<p.length;i++){var a=p[i];a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>c.width)a.vx*=-1;if(a.y<0||a.y>c.height)a.vy*=-1;var dx=m.x-a.x,dy=m.y-a.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<200&&dist>0){a.vx+=(dx/dist)*0.02;a.vy+=(dy/dist)*0.02}a.vx*=0.999;a.vy*=0.999;t.beginPath();t.arc(a.x,a.y,a.r,0,Math.PI*2);t.fillStyle=cl;t.globalAlpha=0.3;t.fill();for(var j=i+1;j<p.length;j++){var b=p[j],dx2=a.x-b.x,dy2=a.y-b.y,dist2=Math.sqrt(dx2*dx2+dy2*dy2);if(dist2<d){t.beginPath();t.moveTo(a.x,a.y);t.lineTo(b.x,b.y);t.strokeStyle=cl;t.globalAlpha=0.08*(1-dist2/d);t.lineWidth=0.5;t.stroke()}}}t.globalAlpha=1;requestAnimationFrame(dr)}c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});c.addEventListener('mouseleave',function(){m.x=-1000;m.y=-1000});window.addEventListener('resize',function(){rz();cr()});rz();cr();dr()})();
+
+// Letter-by-letter greeting
+(function(){var g=document.getElementById('greeting');if(!g)return;var text='> Bonjour, je suis';g.innerHTML='';for(var i=0;i<text.length;i++){var span=document.createElement('span');span.className='letter';span.textContent=text[i];span.style.animationDelay=(i*0.04)+'s';g.appendChild(span)}})();
+
+// Typewriter
+(function(){var w=['Machine Learning','Analyse statistique','Modélisation prédictive','Deep Learning','NLP & RAG','Big Data'],el=document.getElementById('typewriter');if(!el)return;var wi=0,ci=0,del=false,sp=80;function tick(){var wd=w[wi];if(!del){el.textContent=wd.substring(0,ci+1);ci++;if(ci===wd.length){del=true;sp=2000}else{sp=60+Math.random()*40}}else{el.textContent=wd.substring(0,ci-1);ci--;if(ci===0){del=false;wi=(wi+1)%w.length;sp=300}else{sp=30}}setTimeout(tick,sp)}setTimeout(tick,1500)})();
+
+// Navbar + Back to top
+var nb=document.getElementById('navbar'),bt=document.getElementById('back-to-top');
+window.addEventListener('scroll',function(){if(nb)nb.classList.toggle('scrolled',window.scrollY>20);if(bt)bt.classList.toggle('visible',window.scrollY>500)});
+
+// Scroll reveal
+var ob=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(function(e){ob.observe(e)});
+
+// Navigation
+function scrollToSection(id){var e=document.getElementById(id);if(e)e.scrollIntoView({behavior:'smooth'});var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');document.getElementById('menuIconOpen').style.display='block';document.getElementById('menuIconClose').style.display='none'}
+function toggleMenu(){var m=document.getElementById('mobileMenu'),o=m.classList.toggle('open');document.getElementById('menuIconOpen').style.display=o?'none':'block';document.getElementById('menuIconClose').style.display=o?'block':'none'}
+function mobileNav(id){document.getElementById('mobileMenu').classList.remove('open');document.getElementById('menuIconOpen').style.display='block';document.getElementById('menuIconClose').style.display='none';var e=document.getElementById(id);if(e)e.scrollIntoView({behavior:'smooth'})}
+
+// Active section
+var sects=['hero','about','skills','projects','blog','certifications','contact'];
+window.addEventListener('scroll',function(){var c='';for(var i=sects.length-1;i>=0;i--){var e=document.getElementById(sects[i]);if(e&&e.getBoundingClientRect().top<=120){c=sects[i];break}}var l=document.getElementById('navLinks');if(l)l.querySelectorAll('a').forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+c)})});
+
+// ===== BLOG MODAL SYSTEM =====
+var blogPosts={
+  'cahier-vacances':{
+    date:'Été 2026',
+    title:'Cahier de Vacances — Défi Data Science',
+    tag:'Défi • Formation',
+    body:'<p>Cet été, j\'ai décidé de relever le <strong>« Cahier de Vacances »</strong>, un défi lancé par <strong>Guillaume Saint-Cirgue</strong> — connu pour sa chaîne YouTube et ses formations en Data Science.</p>'+
+      '<h3>🎯 Le concept</h3>'+
+      '<p>Le Cahier de Vacances est un programme intensif d\'exercices et de mini-projets conçu pour les aspirants data scientists. L\'objectif : <strong>monter en compétences de façon structurée</strong> pendant la période estivale, en couvrant l\'ensemble du spectre Data Science.</p>'+
+      '<h3>📅 Organisation</h3>'+
+      '<p>Chaque semaine est dédiée à une thématique différente :</p>'+
+      '<ul><li><strong>Semaine 1 :</strong> Python avancé & structures de données</li><li><strong>Semaine 2 :</strong> Analyse exploratoire & visualisation (Matplotlib, Seaborn, Plotly)</li><li><strong>Semaine 3 :</strong> Machine Learning supervisé — régression & classification</li><li><strong>Semaine 4 :</strong> Machine Learning non supervisé — clustering & réduction de dimension</li><li><strong>Semaine 5 :</strong> Deep Learning — CNN, transfer learning</li><li><strong>Semaine 6 :</strong> NLP & modèles de langage</li><li><strong>Semaine 7 :</strong> MLOps — déploiement, API, Docker</li><li><strong>Semaine 8 :</strong> Projet final — pipeline complet de A à Z</li></ul>'+
+      '<h3>💡 Pourquoi ce défi ?</h3>'+
+      '<p>En tant que futur AI Engineer, je considère que la <strong>pratique régulière et variée</strong> est la clé pour maîtriser les outils du métier. Ce défi me permet de :</p>'+
+      '<ul><li>Consolider mes acquis de licence</li><li>Explorer des outils que je n\'ai pas encore utilisés en profondeur</li><li>Constituer un portfolio d\'exercices commentés</li><li>Créer une routine d\'apprentissage quotidienne</li></ul>'+
+      '<h3>🔗 Suivre ma progression</h3>'+
+      '<p>Je partagerai mes solutions et mes notes sur <a href="https://github.com/cherif-tg" target="_blank" rel="noopener" style="color:var(--accent)">mon GitHub</a>. N\'hésite pas à suivre le dépôt et à échanger si toi aussi tu participes au défi !</p>'
+  }
+};
+
+function openBlogPost(slug){
+  var post=blogPosts[slug];if(!post)return;
+  var modal=document.getElementById('blog-modal'),content=document.getElementById('modal-content');
+  content.innerHTML='<button class="modal-close" onclick="closeModal()" aria-label="Fermer"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>'+
+    '<p class="modal-date">'+post.date+'</p>'+
+    '<h2 class="modal-title">'+post.title+'</h2>'+
+    '<div class="modal-body">'+post.body+'</div>'+
+    '<span class="modal-tag">'+post.tag+'</span>';
+  modal.classList.add('open');document.body.classList.add('modal-open')
+}
+function closeModal(){
+  document.getElementById('blog-modal').classList.remove('open');document.body.classList.remove('modal-open')
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>
