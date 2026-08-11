@@ -43,6 +43,8 @@ img{max-width:100%;height:auto}
 .tag{display:inline-block;padding:.375rem .75rem;font-size:.875rem;font-weight:500;border-radius:9999px;background:var(--soft-green);color:var(--warm-700);transition:background .3s}
 .tag:hover{background:var(--accent-muted)}
 .hero-content .mono{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.875rem;color:var(--accent)}
+.hero-avatar{width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:2rem;filter:drop-shadow(0 8px 24px rgba(61,52,46,.12));opacity:0;animation:fadeInUp .8s ease-out .1s forwards}
+@media(min-width:768px){.hero-avatar{width:120px;height:120px}}
 .section-label{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.875rem;color:var(--accent);margin-bottom:.75rem}
 .section-title{font-family:'DM Serif Display',Georgia,serif;font-size:2rem;color:var(--warm-800)}
 @media(min-width:768px){.section-title{font-size:2.5rem}}
@@ -77,46 +79,49 @@ nav .links a.active{font-weight:500}
 #back-to-top svg{width:1.25rem;height:1.25rem}
 
 /* ===== HERO ===== */
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+#hero{display:grid;grid-template-columns:1fr;align-items:center;min-height:100vh;position:relative;overflow:hidden}
+@media(min-width:768px){#hero{grid-template-columns:1.3fr 1fr}}
 #particle-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(250,247,242,0.6),transparent,rgba(250,247,242,0.95));pointer-events:none;z-index:2}
-.hero-content{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:8rem 1.5rem 0;display:flex;align-items:center;gap:4rem}
-@media(max-width:767px){.hero-content{flex-direction:column-reverse;text-align:center;gap:2rem}}
-.hero-text{flex:1}
-.hero-photo-wrap{flex-shrink:0;position:relative}
-.hero-photo-wrap .photo-glow{position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(91,140,90,.15),transparent 70%);animation:pulseSoft 4s ease-in-out infinite}
-.hero-photo-img{width:220px;height:220px;border-radius:50%;object-fit:cover;display:block;filter:drop-shadow(0 16px 48px rgba(61,52,46,.15));animation:floatPhoto 6s ease-in-out infinite}
-@keyframes floatPhoto{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@media(min-width:768px){.hero-photo-img{width:280px;height:280px}}
-@media(max-width:767px){.hero-photo-img{width:180px;height:180px}}
-.hero-content .greeting{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.875rem;color:var(--accent);margin-bottom:1.5rem}
-.hero-content .greeting .letter{display:inline-block;opacity:0;animation:letterIn .3s ease-out forwards}
-@keyframes letterIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.hero-content h1{font-family:'DM Serif Display',Georgia,serif;font-size:2.25rem;line-height:1.05;color:var(--warm-800);margin-bottom:1.5rem;opacity:0;animation:fadeInUp .8s ease-out 1.6s forwards}
-@media(min-width:640px){.hero-content h1{font-size:3rem}}
-@media(min-width:768px){.hero-content h1{font-size:4rem}}
+.hero-content{position:relative;z-index:10;max-width:100%;padding:8rem 1.5rem 0}
+@media(min-width:768px){.hero-content{padding:0 0 0 3rem}}
+.hero-content .mono{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.875rem;color:var(--accent)}
+.hero-content h1{font-family:'DM Serif Display',Georgia,serif;font-size:2.25rem;line-height:1.05;color:var(--warm-800);margin-bottom:1.5rem;opacity:0;animation:fadeInUp .8s ease-out .2s forwards}
+@media(min-width:640px){.hero-content h1{font-size:2.5rem}}
+@media(min-width:768px){.hero-content h1{font-size:3.25rem}}
 .hero-content h1 .accent{color:var(--accent)}
-.hero-content .title{font-size:1.125rem;color:var(--warm-600);font-weight:300;margin-bottom:.5rem;opacity:0;animation:fadeInUp .8s ease-out 1.8s forwards}
+.hero-content .title{font-size:1.125rem;color:var(--warm-600);font-weight:300;margin-bottom:.5rem;opacity:0;animation:fadeInUp .8s ease-out .4s forwards}
 @media(min-width:768px){.hero-content .title{font-size:1.25rem}}
-.hero-content .subtitle{font-size:1rem;color:var(--warm-400);font-weight:300;max-width:36rem;opacity:0;animation:fadeInUp .8s ease-out 2s forwards}
+.hero-content .subtitle{font-size:1rem;color:var(--warm-400);font-weight:300;max-width:36rem;opacity:0;animation:fadeInUp .8s ease-out .6s forwards}
 .hero-content .subtitle .cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent);margin-left:2px;vertical-align:text-bottom;animation:blink 1s step-end infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.hero-content .tagline{margin-top:2rem;font-size:.875rem;color:var(--warm-400);font-style:italic;border-left:2px solid var(--accent-muted);padding-left:1rem;max-width:30rem;opacity:0;animation:fadeInUp .8s ease-out 2.2s forwards}
-.hero-stats{display:flex;flex-wrap:wrap;gap:2rem;margin-top:1.5rem;opacity:0;animation:fadeInUp .8s ease-out 2.4s forwards}
+.hero-content .tagline{margin-top:2rem;font-size:.875rem;color:var(--warm-400);font-style:italic;border-left:2px solid var(--accent-muted);padding-left:1rem;max-width:28rem;opacity:0;animation:fadeInUp .8s ease-out .8s forwards}
+.hero-stats{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.5rem;opacity:0;animation:fadeInUp .8s ease-out 1s forwards}
 .hero-stat{text-align:center}
 .hero-stat .number{font-family:'DM Serif Display',Georgia,serif;font-size:1.75rem;color:var(--accent);line-height:1}
 .hero-stat .label{font-size:.75rem;color:var(--warm-400);margin-top:.25rem;text-transform:uppercase;letter-spacing:.05em}
-.hero-btns{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem;opacity:0;animation:fadeInUp .8s ease-out 2.6s forwards}
+.hero-btns{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem;opacity:0;animation:fadeInUp .8s ease-out 1.2s forwards}
 .btn{display:inline-flex;align-items:center;padding:.75rem 1.5rem;border-radius:1rem;font-weight:500;font-size:.875rem;cursor:pointer;transition:all .3s;border:none}
 .btn:active{transform:scale(.98)}
 .btn-primary{background:var(--accent);color:#fff;box-shadow:0 1px 3px rgba(61,52,46,0.1)}
 .btn-primary:hover{background:var(--accent-dark);box-shadow:0 4px 12px rgba(61,52,46,0.12)}
 .btn-outline{border:1px solid var(--warm-300);color:var(--warm-600);background:transparent}
 .btn-outline:hover{border-color:var(--warm-400);color:var(--warm-800)}
-.hero-socials{display:flex;gap:1rem;margin-top:3rem;opacity:0;animation:fadeInUp .8s ease-out 2.8s forwards}
+.hero-socials{display:flex;gap:1rem;margin-top:3rem;opacity:0;animation:fadeInUp .8s ease-out 1.4s forwards}
 .hero-socials a{color:var(--warm-400);transition:color .3s}
 .hero-socials a:hover{color:var(--warm-700)}
 .hero-socials svg{width:1.25rem;height:1.25rem}
+/* Photo column */
+.hero-photo-col{display:none;position:relative;height:100vh;overflow:hidden;z-index:3}
+@media(min-width:768px){.hero-photo-col{display:block}}
+.hero-photo-col .photo-mask{-webkit-mask-image:linear-gradient(to bottom,black 75%,transparent 100%),linear-gradient(to left,black 80%,transparent 100%),radial-gradient(circle at 50% 35%,black 60%,transparent 100%);mask-image:linear-gradient(to bottom,black 75%,transparent 100%),linear-gradient(to left,black 80%,transparent 100%),radial-gradient(circle at 50% 35%,black 60%,transparent 100%);mask-composite:intersect;-webkit-mask-composite:source-in;height:100%}
+.hero-photo-col img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:grayscale(10%) contrast(1.03) brightness(1.02)}
+.hero-arc{position:absolute;right:8%;top:50%;transform:translateY(-60%);z-index:5;pointer-events:none}
+.hero-arc svg{width:240px;height:240px;opacity:.12;stroke:var(--accent);fill:none;stroke-width:1}
+.hero-sparkle{position:absolute;right:15%;top:25%;z-index:5;pointer-events:none;animation:pulseSoft 2.5s ease-in-out infinite}
+.hero-sparkle svg{width:28px;height:28px;color:var(--accent);opacity:.5}
+.hero-badge{position:absolute;right:1.5rem;bottom:15%;z-index:5;font-size:.75rem;font-weight:600;color:var(--warm-700);background:rgba(255,255,255,.85);backdrop-filter:blur(6px);padding:.5rem 1rem;border-radius:9999px;white-space:nowrap;box-shadow:0 4px 16px rgba(61,52,46,.06)}
+.hero-badge .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:.4rem}
 .scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);animation:pulseSoft 3s ease-in-out infinite;z-index:10}
 .scroll-indicator svg{width:1.5rem;height:1.5rem;color:var(--warm-300)}
 
@@ -148,8 +153,8 @@ nav .links a.active{font-weight:500}
 .download-cv svg{width:1rem;height:1rem}
 
 /* Profile photo */
-.about-photo{width:180px;height:180px;margin:0 auto 1.5rem;border-radius:50%;overflow:hidden;background:var(--warm-100);border:4px solid #fff;box-shadow:0 8px 32px rgba(92,76,66,.12)}
-.about-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.about-photo{width:140px;height:140px;margin:0 auto 1.5rem;border-radius:50%;overflow:hidden;background:transparent;filter:drop-shadow(0 4px 20px rgba(61,52,46,.1))}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block;mix-blend-mode:normal}
 
 /* ===== SKILLS CAROUSEL ===== */
 .skills-wrapper{overflow:hidden;padding:0.5rem 0}
@@ -164,9 +169,13 @@ nav .links a.active{font-weight:500}
 
 /* ===== PROJECTS ===== */
 .projects-list{display:flex;flex-direction:column;gap:2rem}
-.project-item{padding:1.5rem;overflow:hidden;transition:transform .4s cubic-bezier(.25,.8,.25,1.2),box-shadow .4s}
+.project-item{position:relative;padding:1.5rem;overflow:hidden;transition:transform .4s cubic-bezier(.25,.8,.25,1.2),box-shadow .4s}
 @media(min-width:768px){.project-item{padding:2rem}}
 .project-item:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(92,76,66,.08)}
+.project-item .prediction-hint{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'JetBrains Mono','Fira Code',monospace;font-size:.875rem;color:var(--accent);opacity:0;transition:opacity .3s;pointer-events:none}
+.project-item:hover .prediction-hint{opacity:1;animation:predictFade .8s ease-out}
+@keyframes predictFade{0%{opacity:1;content:'[analysing...]'}50%{opacity:1}100%{opacity:0}}
+.project-item:hover .proj-header,.project-item:hover .proj-desc,.project-item:hover .highlights,.project-item:hover .stack,.project-item:hover .proj-links{transition:opacity .2s}
 .project-item .proj-header{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem}
 .project-item .proj-icon{width:3rem;height:3rem;border-radius:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .project-item .proj-icon svg{width:1.5rem;height:1.5rem}
@@ -335,10 +344,10 @@ section[id]{scroll-margin-top:5rem}
       <a href="mailto:tengacherif@gmail.com" aria-label="Email"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
     </div>
   </div>
-  <div class="hero-photo-wrap">
-    <div class="photo-glow"></div>
-    <img src="photo.png" alt="TENGA Chérif" class="hero-photo-img">
-  </div>
+  <div class="hero-photo-col">
+    <div class="hero-arc"><svg viewBox="0 0 200 200"><path d="M180 100A80 80 0 00100 20" stroke-linecap="round"/></svg></div>
+    <div class="hero-sparkle"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l.97 3.03L16 6l-3.03.97L12 10l-.97-3.03L8 6l3.03-.97L12 2z"/></svg></div>
+    <div class="photo-mask"><img src="photo.png" alt="TENGA Chérif"></div>
   </div>
   <div class="scroll-indicator"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg></div>
 </section>
@@ -357,6 +366,7 @@ section[id]{scroll-margin-top:5rem}
         </div>
       </div>
       <div class="about-side">
+        <div class="about-photo"><img src="photo.png" alt="TENGA Chérif Abdel Azize" loading="lazy"></div>
         <div class="card glass-card"><h3>Contact</h3><div class="row"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>Lomé, Togo</div><div class="row"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><a href="mailto:tengacherif@gmail.com" class="accent-link">tengacherif@gmail.com</a></div><div class="row"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>+228 71 51 80 61</div></div>
         <div class="card glass-card"><h3>Langues</h3><div class="lang-row"><span>Français</span><span class="level">Courant</span></div><div class="lang-row"><span>Anglais</span><span class="level">Intermédiaire</span></div></div>
         <a href="cv.pdf" download class="download-cv"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Télécharger mon CV</a>
@@ -472,8 +482,11 @@ section[id]{scroll-margin-top:5rem}
 <footer><div class="inner"><p>&copy; 2026 TENGA Chérif Abdel Azize. Tous droits réservés.</p><p class="made-with">Construit avec passion</p></div></footer>
 
 <script>
-// Particle Background
-(function(){var c=document.getElementById('particle-canvas');if(!c)return;var t=c.getContext('2d'),p=[],m={x:-1000,y:-1000},n=50,d=140,cl='#5B8C5A';function rz(){c.width=c.offsetWidth;c.height=c.offsetHeight}function cr(){p=[];for(var i=0;i<n;i++)p.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-0.5)*0.5,vy:(Math.random()-0.5)*0.5,r:Math.random()*2.5+1})}function dr(){t.clearRect(0,0,c.width,c.height);for(var i=0;i<p.length;i++){var a=p[i];a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>c.width)a.vx*=-1;if(a.y<0||a.y>c.height)a.vy*=-1;var dx=m.x-a.x,dy=m.y-a.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<200&&dist>0){a.vx+=(dx/dist)*0.02;a.vy+=(dy/dist)*0.02}a.vx*=0.999;a.vy*=0.999;t.beginPath();t.arc(a.x,a.y,a.r,0,Math.PI*2);t.fillStyle=cl;t.globalAlpha=0.3;t.fill();for(var j=i+1;j<p.length;j++){var b=p[j],dx2=a.x-b.x,dy2=a.y-b.y,dist2=Math.sqrt(dx2*dx2+dy2*dy2);if(dist2<d){t.beginPath();t.moveTo(a.x,a.y);t.lineTo(b.x,b.y);t.strokeStyle=cl;t.globalAlpha=0.08*(1-dist2/d);t.lineWidth=0.5;t.stroke()}}}t.globalAlpha=1;requestAnimationFrame(dr)}c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});c.addEventListener('mouseleave',function(){m.x=-1000;m.y=-1000});window.addEventListener('resize',function(){rz();cr()});rz();cr();dr()})();
+// Particle Background with neural signals
+(function(){var c=document.getElementById('particle-canvas');if(!c)return;var t=c.getContext('2d'),p=[],m={x:-1000,y:-1000},n=30,d=150,cl='#5B8C5A',signals=[];function rz(){c.width=c.offsetWidth;c.height=c.offsetHeight}function cr(){p=[];signals=[];for(var i=0;i<n;i++)p.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-0.5)*0.5,vy:(Math.random()-0.5)*0.5,r:Math.random()*2+1})}function spawnSignal(){if(p.length<2)return;var a=p[Math.floor(Math.random()*p.length)],b=p[Math.floor(Math.random()*p.length)];if(a===b)return;var dx=b.x-a.x,dy=b.y-a.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<d)signals.push({ax:a.x,ay:a.y,bx:b.x,by:b.y,progress:0,speed:0.003+Math.random()*0.005,a:a,b:b})}function dr(){t.clearRect(0,0,c.width,c.height);for(var i=0;i<p.length;i++){var a=p[i];a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>c.width)a.vx*=-1;if(a.y<0||a.y>c.height)a.vy*=-1;var dx=m.x-a.x,dy=m.y-a.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<200&&dist>0){a.vx+=(dx/dist)*0.02;a.vy+=(dy/dist)*0.02}a.vx*=0.999;a.vy*=0.999;t.beginPath();t.arc(a.x,a.y,a.r,0,Math.PI*2);t.fillStyle=cl;t.globalAlpha=0.25;t.fill();for(var j=i+1;j<p.length;j++){var b=p[j],dx2=a.x-b.x,dy2=a.y-b.y,dist2=Math.sqrt(dx2*dx2+dy2*dy2);if(dist2<d){t.beginPath();t.moveTo(a.x,a.y);t.lineTo(b.x,b.y);t.strokeStyle=cl;t.globalAlpha=0.06*(1-dist2/d);t.lineWidth=0.5;t.stroke()}}}for(var k=signals.length-1;k>=0;k--){var s=signals[k];s.progress+=s.speed;if(s.progress>=1){signals.splice(k,1);continue}var sx=s.ax+(s.bx-s.ax)*s.progress,sy=s.ay+(s.by-s.ay)*s.progress;t.beginPath();t.arc(sx,sy,3,0,Math.PI*2);t.fillStyle=cl;t.globalAlpha=0.6;t.fill();t.beginPath();t.arc(sx,sy,6,0,Math.PI*2);t.fillStyle=cl;t.globalAlpha=0.15;t.fill()}t.globalAlpha=1;requestAnimationFrame(dr)}setInterval(function(){if(signals.length<4)spawnSignal()},800);c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});c.addEventListener('mouseleave',function(){m.x=-1000;m.y=-1000});window.addEventListener('resize',function(){rz();cr()});rz();cr();dr()})();
+
+// Animated counters
+(function(){var nums=document.querySelectorAll('.hero-stat .number[data-target]');if(!nums.length)return;var animated=false;function animateCounters(){if(animated)return;animated=true;nums.forEach(function(el){var target=parseInt(el.getAttribute('data-target'));var suffix=target===15?'+':'';var duration=1500;var start=0;var step=target/(duration/16);function update(){start+=step;if(start>=target){el.textContent=target+suffix;return}el.textContent=Math.floor(start);requestAnimationFrame(update)}update()})}setTimeout(animateCounters,800);var hero=document.getElementById('hero');if(hero){new IntersectionObserver(function(e){if(e[0].isIntersecting)animateCounters()},{threshold:0.3}).observe(hero)}})();
 
 // Typewriter
 (function(){var w=['Machine Learning','Analyse statistique','Modélisation prédictive','Deep Learning','NLP & RAG','Big Data'],el=document.getElementById('typewriter');if(!el)return;var wi=0,ci=0,del=false,sp=80;function tick(){var wd=w[wi];if(!del){el.textContent=wd.substring(0,ci+1);ci++;if(ci===wd.length){del=true;sp=2000}else{sp=60+Math.random()*40}}else{el.textContent=wd.substring(0,ci-1);ci--;if(ci===0){del=false;wi=(wi+1)%w.length;sp=300}else{sp=30}}setTimeout(tick,sp)}setTimeout(tick,1500)})();
