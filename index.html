@@ -905,6 +905,11 @@ function closeModal(){
   document.getElementById('blog-modal').classList.remove('open');document.body.classList.remove('modal-open')
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
-</script>
+
+// 3D Skills Cloud
+!function(){var t=document.querySelector(".cloud-sphere");if(!t)return;var e=["Python","SQL","MongoDB","PostgreSQL","Pandas","NumPy","Scikit-learn","XGBoost","SHAP","Power BI","Data Mining","Feature Eng.","PyTorch","CNN/ResNet","OpenCV","Fine-tuning","ONNX","Augmentation","LangChain","RAG","FastAPI","LlamaIndex","Ollama","Prompt Eng.","PySpark","Docker","Git","Streamlit","Jupyter","Hadoop"],r=140;e.forEach(function(e,n){var o=Math.acos(-1+2*n/e.length),a=Math.sqrt(e.length*Math.PI)*o,s=document.createElement("span");s.className="cloud-tag",s.textContent=e;var i=r*Math.cos(a)*Math.sin(o),d=r*Math.sin(a)*Math.sin(o),c=r*Math.cos(o);s.style.transform="translate(-50%,-50%) translate3d("+i.toFixed(0)+"px,"+d.toFixed(0)+"px,"+c.toFixed(0)+"px)",s.title=e,t.appendChild(s)})}();
+
+// Terminal Animation
+!function(){var e=document.getElementById("terminal-output");if(!e)return;var t=[">>> load_profile('Cherif')",">>> print(bio)","Data Scientist & AI Engineer certifie.","Passionne par l'IA appliquee aux systemes critiques.","3+ ans d'experience en ML, NLP & Vision.",">>> print(skills)","['Python','PyTorch','LangChain','FastAPI',...]",">>> print(status)","'Ouvert aux opportunites'",">>> _"],n=0,o=0,a=null;function r(){if(n>=t.length)return;var i=t[n];a||(a=document.createElement("div"),a.className="term-line",e.appendChild(a),e.scrollTop=e.scrollHeight);var l=document.createElement("span");i.startsWith(">>>")?(l.className="term-prompt",a.appendChild(l)):i.startsWith("[")||i.startsWith("'")?(l.className="term-output",a.appendChild(l)):(l.className="term-output",a.appendChild(l));if(o<i.length){l.textContent+=i[o],o++,setTimeout(r,18+35*Math.random())}else{var d=600;0===t.indexOf(i)||i.startsWith(">>>")&&">>> _">i||(d=[800,600,400,300,400,400][n]||400);var s=document.createElement("span");s.className="term-cursor",l.appendChild(s),setTimeout(function(){s.remove(),n++,o=0,a=null,r()},d)}}setTimeout(r,500)}();</script>
 </body>
 </html>
