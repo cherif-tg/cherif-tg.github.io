@@ -572,11 +572,21 @@ section[id]{scroll-margin-top:5rem}
         <span class="blog-read">Lire l'article <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
       </div>
 
-      <div class="blog-card glass-card blog-empty" style="cursor:default">
-        <svg fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m0 0H7"/></svg>
-        <p>Bientôt plus d'articles...</p>
+            <div class="blog-card glass-card" onclick="openBlogPost('defi-aeroport-sql')">
+        <p class="blog-date">Été 2026</p>
+        <h3 class="blog-title">Défi 1 · Dans la peau d'un data analyst : SQL en immersion</h3>
+        <p class="blog-excerpt">Mission : analyser la base de données d'un aéroport. Je pensais maîtriser SQL... jusqu'à ce que les jointures et les requêtes imbriquées me rappellent à l'ordre.</p>
+        <span class="blog-tag">SQL · Data Analysis</span>
+        <span class="blog-read">Lire l'article <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
       </div>
-    </div>
+      <div class="blog-card glass-card" onclick="openBlogPost('defi-coupe-du-monde')">
+        <p class="blog-date">Été 2026</p>
+        <h3 class="blog-title">Défi 2 · Prédire le vainqueur de la Coupe du Monde</h3>
+        <p class="blog-excerpt">Dans la peau d'un data scientist : analyser des années de résultats de matchs, nettoyer les données, puis entraîner un modèle de ML pour prédire les futurs vainqueurs.</p>
+        <span class="blog-tag">Machine Learning · Data Science</span>
+        <span class="blog-read">Lire l'article <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+      </div>
+
   </div>
 </section>
 
@@ -842,6 +852,37 @@ var blogPosts={
       '<ul><li>Consolider mes acquis de licence</li><li>Explorer des outils que je n\'ai pas encore utilisés en profondeur</li><li>Constituer un portfolio d\'exercices commentés</li><li>Créer une routine d\'apprentissage quotidienne</li></ul>'+
       '<h3>🔗 Suivre ma progression</h3>'+
       '<p>Je partagerai mes solutions et mes notes sur <a href="https://github.com/cherif-tg" target="_blank" rel="noopener" style="color:var(--accent)">mon GitHub</a>. N\'hésite pas à suivre le dépôt et à échanger si toi aussi tu participes au défi !</p>'
+  },
+  'defi-aeroport-sql':{
+    date:'Été 2026',
+    title:'Défi 1 · Dans la peau d\'un data analyst : SQL en immersion',
+    tag:'SQL · Data Analysis',
+    body:'<p>Premier défi du <strong>Cahier de Vacances</strong>, et quelle entrée en matière ! Cette semaine, je me glisse dans la peau d\'un <strong>data analyst</strong> chargé d\'explorer la base de données d\'un aéroport : vols, passagers, compagnies, trajets... tout un écosystème à interroger pour en extraire des indicateurs utiles.</p>'+
+      '<h3>✈️ La mission</h3>'+
+      '<p>Analyser une base de données d\'aéroport et répondre à des questions métier : quels sont les vols les plus fréquentés ? Quelles compagnies dominent telle destination ? Quels retards reviennent le plus souvent ? Autant de questions qui obligent à <strong>croiser plusieurs tables</strong> entre elles.</p>'+
+      '<h3>💥 Le coup de réalité</h3>'+
+      '<p>J\'étais confiant : SQL, je maîtrise. <strong>Spoiler : les jointures m\'ont rappelé à l\'ordre.</strong> INNER JOIN, LEFT JOIN, requêtes imbriquées... ce que je pensais acquis s\'est transformé en session de debugging à rallonge. Doublons, NULL inattendus, cardinalités mal comprises : tout y est passé.</p>'+
+      '<h3>📚 Retour aux sources</h3>'+
+      '<p>Ce projet m\'a imposé de <strong>revoir les fondamentaux</strong> : l\'ordre d\'exécution d\'une requête (FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY), la différence subtile entre les types de jointures, et la puissance des requêtes imbriquées lorsqu\'elles sont bien structurées.</p>'+
+      '<h3>🎯 La leçon de la semaine</h3>'+
+      '<p>On ne maîtrise pas SQL, on le pratique. L\'humilité technique fait partie du métier : <strong>accepter de revenir aux bases pour mieux repartir</strong>. Prochaine étape : consolider avec des CTE et des requêtes optimisées.</p>'+
+      '<p>📂 Retrouvez ma progression sur le dépôt du défi : <a href="https://github.com/cherif-tg/Cahier_vacances_2026" target="_blank" rel="noopener" style="color:var(--accent)">github.com/cherif-tg/Cahier_vacances_2026</a></p>'
+  }
+  ,
+  'defi-coupe-du-monde':{
+    date:'Été 2026',
+    title:'Défi 2 · Prédire le vainqueur de la Coupe du Monde',
+    tag:'Machine Learning · Data Science',
+    body:'<p>Deuxième défi, et cette fois le costume change : je suis <strong>data scientist</strong>, avec une mission aussi excitante qu\'ambitieuse — <strong>prédire le vainqueur de la Coupe du Monde de football</strong>.</p>'+
+      '<h3>⚽ Le jeu de données</h3>'+
+      '<p>Pour ce projet, j\'ai travaillé sur un ensemble de données contenant des <strong>résultats de matchs</strong> — scores, équipes, dates, tournois — ainsi que les informations nécessaires pour contextualiser chaque rencontre. De quoi construire un historique solide sur lequel entraîner un modèle.</p>'+
+      '<h3>🧹 Nettoyer avant de prédire</h3>'+
+      '<p>Le vrai sujet du projet n\'était pas le modèle : c\'était le <strong>nettoyage des données</strong>. Valeurs manquantes, incohérences, encodage des équipes, normalisation des scores... Ce défi m\'a ramené à mes bases et m\'a permis de <strong>retravailler les techniques de nettoyage</strong> avant de passer quoi que ce soit au modèle. <em>Garbage in, garbage out</em> : un modèle n\'est jamais meilleur que les données qu\'on lui donne.</p>'+
+      '<h3>🤖 L\'entraînement</h3>'+
+      '<p>Une fois les données propres, place au pipeline classique : séparation train/test, entraînement d\'un modèle de machine learning sur l\'historique des matchs, puis prédiction des futurs vainqueurs. L\'occasion de revoir aussi les fondamentaux de l\'évaluation d\'un modèle.</p>'+
+      '<h3>🎯 Ce que ça m\'a rappelé</h3>'+
+      '<p>Le nettoyage représente l\'essentiel du travail d\'un data scientist — <strong>le modèle n\'est que la pointe de l\'iceberg</strong>. Maîtriser ses fondamentaux (pandas, gestion des types, imputation) fait la différence entre un projet qui tourne et un projet qui convainc.</p>'+
+      '<p>📂 Retrouvez ma progression sur le dépôt du défi : <a href="https://github.com/cherif-tg/Cahier_vacances_2026" target="_blank" rel="noopener" style="color:var(--accent)">github.com/cherif-tg/Cahier_vacances_2026</a></p>'
   }
 };
 
