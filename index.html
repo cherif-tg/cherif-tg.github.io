@@ -323,13 +323,18 @@ nav .links a.active{font-weight:500}
 .jp-term-ok{color:#9FBF9E}
 .jp-term-done{color:#C8C0B4}
 .jp-term-now{color:#F3C969}
-.journey-steps{position:relative;padding:0 0 1rem}
-.journey-steps::before{content:"";position:absolute;left:9px;top:10px;bottom:10px;width:2px;border-radius:2px;background:repeating-linear-gradient(to bottom,#D8C9B2 0 6px,transparent 6px 12px)}
-.j-step{position:relative;padding:0 0 1.5rem 2.7rem}
-.js-dot{position:absolute;left:0;top:.45rem;width:20px;height:20px;border-radius:50%;background:#FAF7F2;border:2.5px solid #D8C9B2;transition:border-color .3s,background .3s,box-shadow .3s}
+/* Étapes en zigzag */
+.journey-steps{position:relative}
+.j-wave{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.j-step{position:relative;height:190px;display:flex;align-items:center}
+.js-dot{position:absolute;top:50%;width:20px;height:20px;border-radius:50%;background:#FAF7F2;border:2.5px solid #D8C9B2;transform:translate(-50%,-50%);transition:border-color .3s,background .3s,box-shadow .3s;z-index:2}
+.j-step.r .js-dot{left:65%}
+.j-step.l .js-dot{left:35%}
 .j-step.active .js-dot{border-color:var(--accent);background:var(--accent);box-shadow:0 0 0 5px rgba(91,140,90,.15)}
-.js-card{max-width:680px;background:rgba(255,255,255,.88);border:1px solid rgba(216,201,178,.55);border-radius:1.1rem;padding:1.15rem 1.35rem;box-shadow:0 4px 18px rgba(92,76,66,.05);transition:border-color .35s,box-shadow .35s,transform .35s,opacity .35s;opacity:.5;transform:translateX(10px)}
-.j-step.active .js-card{opacity:1;transform:translateX(0);border-color:rgba(91,140,90,.7);box-shadow:0 10px 32px rgba(91,140,90,.14)}
+.js-card{width:min(65% - 2rem,600px);background:rgba(255,255,255,.88);border:1px solid rgba(216,201,178,.55);border-radius:1.1rem;padding:1.05rem 1.3rem;box-shadow:0 4px 18px rgba(92,76,66,.05);transition:border-color .35s,box-shadow .35s,transform .35s,opacity .35s;opacity:.5;transform:translateY(10px)}
+.j-step.r .js-card{margin-left:0;margin-right:auto}
+.j-step.l .js-card{margin-left:calc(35% + 2rem);margin-right:0}
+.j-step.active .js-card{opacity:1;transform:translateY(0);border-color:rgba(91,140,90,.7);box-shadow:0 10px 32px rgba(91,140,90,.14)}
 .jc-year{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
 .js-card h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.12rem;color:var(--warm-800);margin-bottom:.35rem}
 .js-card p{font-size:.83rem;color:var(--warm-500);line-height:1.55}
@@ -345,6 +350,13 @@ nav .links a.active{font-weight:500}
 @media(max-width:920px){
   .journey-layout{grid-template-columns:1fr;gap:1.5rem}
   .journey-panel{position:static}
+  .j-wave{display:none}
+  .journey-steps{padding-left:1.4rem}
+  .journey-steps::before{content:"";position:absolute;left:9px;top:10px;bottom:10px;width:2px;border-radius:2px;background:repeating-linear-gradient(to bottom,#D8C9B2 0 6px,transparent 6px 12px)}
+  .j-step{height:auto;padding:0 0 1.5rem;display:block}
+  .js-dot{left:0;top:.45rem;transform:none}
+  .j-step.r .js-dot,.j-step.l .js-dot{left:0}
+  .js-card,.j-step.r .js-card,.j-step.l .js-card{width:100%;max-width:none;margin-left:0;margin-right:0}
 }
 
 /* ===== FOOTER ===== */
@@ -531,7 +543,7 @@ section[id]{scroll-margin-top:5rem}
 <section id="certifications" class="py-section bg-warm">
   <div class="section fade-in"><p class="section-label">&gt; certifications</p><h2 class="section-title">Certifications &amp; Diplômes</h2>
     <div class="certs-list" style="margin-top:3rem">
-      <div class="cert-item glass-card"><div><h3>AI Engineer for Data Scientists Associate</h3><p class="cert-meta">DataCamp - Mai 2026</p><p class="cert-id">ID : AEDS0013884572128</p></div><a href="certif-ai-engineer.pdf" target="_blank" rel="noopener" class="cert-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Voir le certificat</a></div>
+      <div class="cert-item glass-card"><div><h3>AI Engineer for Data Scientists Associate</h3><div class="cert-item glass-card"><div><h3>Python Data Associate</h3><p class="cert-meta">DataCamp - 4 mai 2026</p><p class="cert-id">ID : PDA0015495069196</p></div><a href="certif-python-data-associate.pdf" target="_blank" rel="noopener" class="cert-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Voir le certificat</a></div><p class="cert-meta">DataCamp - Mai 2026</p><p class="cert-id">ID : AEDS0013884572128</p></div><a href="certif-ai-engineer.pdf" target="_blank" rel="noopener" class="cert-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Voir le certificat</a></div>
       <div class="cert-item glass-card"><div><h3>Data Scientist Career Track</h3><p class="cert-meta">DataCamp - 2025 - 2026</p></div></div>
     </div>
   </div>
@@ -567,7 +579,8 @@ section[id]{scroll-margin-top:5rem}
         </div>
       </aside>
       <div class="journey-steps">
-        <article class="j-step" data-title="Chef scout" data-log="✓ scoutisme — Sotouboua">
+      <svg class="j-wave" viewBox="0 0 100 2470" preserveAspectRatio="none" aria-hidden="true"><path d="M65 95 C 78 150, 22 190, 35 285 C 78 340, 22 380, 65 475 C 78 530, 22 570, 35 665 C 78 720, 22 760, 65 855 C 78 910, 22 950, 35 1045 C 78 1100, 22 1140, 65 1235 C 78 1290, 22 1330, 35 1425 C 78 1480, 22 1520, 65 1615 C 78 1670, 22 1710, 35 1805 C 78 1860, 22 1900, 65 1995 C 78 2050, 22 2090, 35 2185 C 78 2240, 22 2280, 65 2375" fill="none" stroke="#D8C9B2" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+        <article class="j-step r" data-title="Chef scout" data-log="✓ scoutisme — Sotouboua">
           <div class="js-dot"></div>
           <div class="js-card">
             <div class="jc-year">2021 – 2023 · Sotouboua</div>
@@ -576,7 +589,7 @@ section[id]{scroll-margin-top:5rem}
             <span class="jc-tag t-social">Expérience sociale</span>
           </div>
         </article>
-        <article class="j-step" data-title="Baccalauréat C" data-log="✓ Bac C — Mention Très Bien">
+        <article class="j-step l" data-title="Baccalauréat C" data-log="✓ Bac C — Mention Très Bien">
           <div class="js-dot"></div>
           <div class="js-card">
             <div class="jc-year">2023 · Sotouboua</div>
@@ -585,7 +598,7 @@ section[id]{scroll-margin-top:5rem}
             <span class="jc-tag t-prix">Réussite</span>
           </div>
         </article>
-        <article class="j-step" data-title="Licence IA &amp; Big Data" data-log="✓ Licence IA &amp; Big Data — EPL">
+        <article class="j-step r" data-title="Licence IA &amp; Big Data" data-log="✓ Licence IA &amp; Big Data — EPL">
           <div class="js-dot"></div>
           <div class="js-card">
             <div class="jc-year">2023 – 2026 · Lomé</div>
@@ -594,7 +607,7 @@ section[id]{scroll-margin-top:5rem}
             <span class="jc-tag t-form">Formation</span>
           </div>
         </article>
-        <article class="j-step" data-title="Club d'anglais" data-log="✓ club d'anglais — Lomé">
+        <article class="j-step l" data-title="Club d'anglais" data-log="✓ club d'anglais — Lomé">
           <div class="js-dot"></div>
           <div class="js-card">
             <div class="jc-year">2024 · Lomé</div>
@@ -603,7 +616,7 @@ section[id]{scroll-margin-top:5rem}
             <span class="jc-tag t-social">Expérience sociale</span>
           </div>
         </article>
-        <article class="j-step" data-title="Bourses d'apprentissage" data-log="✓ bourses DataCamp &amp; Coursera">
+        <article class="j-step r" data-title="Bourses d'apprentissage" data-log="✓ bourses DataCamp &amp; Coursera">
           <div class="js-dot"></div>
           <div class="js-card">
             <div class="jc-year">Avril 2026</div>
@@ -612,7 +625,7 @@ section[id]{scroll-margin-top:5rem}
             <span class="jc-tag t-opp">Opportunité</span>
           </div>
         </article>
-        <article class="j-step" data-title="Tuteur Kira Learning" data-log="✓ tuteur Kira Learning — IA &amp; Anglais">
+        <article class="j-step l" data-title="Tuteur Kira Learning" data-log="✓ tuteur Kira Learning — IA &amp; Anglais">
           <div class="js-dot"></div>
           <div class="js-card">
             <div class="jc-year">Avril 2026 · en cours</div>
@@ -621,7 +634,7 @@ section[id]{scroll-margin-top:5rem}
             <span class="jc-tag t-social">Expérience sociale</span>
           </div>
         </article>
-        <article class="j-step" data-title="Sélection CV Lab" data-log="✓ sélection CV Lab — Computer Vision">
+        <article class="j-step r" data-title="Sélection CV Lab" data-log="✓ sélection CV Lab — Computer Vision">
           <div class="js-dot"></div>
           <div class="js-card">
             <div class="jc-year">Avril 2026</div>
@@ -630,7 +643,7 @@ section[id]{scroll-margin-top:5rem}
             <span class="jc-tag t-prix">Réussite</span>
           </div>
         </article>
-        <article class="j-step" data-title="Python Data Associate" data-log="✓ Python Data Associate — DataCamp">
+        <article class="j-step l" data-title="Python Data Associate" data-log="✓ Python Data Associate — DataCamp">
           <div class="js-dot"></div>
           <div class="js-card">
             <div class="jc-year">4 mai 2026</div>
@@ -639,7 +652,7 @@ section[id]{scroll-margin-top:5rem}
             <span class="jc-tag t-prix">Réussite</span>
           </div>
         </article>
-        <article class="j-step" data-title="AI Engineer Associate" data-log="✓ AI Engineer Associate — DataCamp">
+        <article class="j-step r" data-title="AI Engineer Associate" data-log="✓ AI Engineer Associate — DataCamp">
           <div class="js-dot"></div>
           <div class="js-card">
             <div class="jc-year">Mai 2026</div>
@@ -648,7 +661,7 @@ section[id]{scroll-margin-top:5rem}
             <span class="jc-tag t-prix">Réussite</span>
           </div>
         </article>
-        <article class="j-step" data-title="Formation IA FORCE-N" data-log="✓ formation IA — FORCE-N × UCAD">
+        <article class="j-step l" data-title="Formation IA FORCE-N" data-log="✓ formation IA — FORCE-N × UCAD">
           <div class="js-dot"></div>
           <div class="js-card">
             <div class="jc-year">Juin 2026</div>
@@ -657,7 +670,7 @@ section[id]{scroll-margin-top:5rem}
             <span class="jc-tag t-form">Formation</span>
           </div>
         </article>
-        <article class="j-step" data-title="DATATOUR 2026" data-log="✓ DATATOUR 2026 — phase nationale">
+        <article class="j-step r" data-title="DATATOUR 2026" data-log="✓ DATATOUR 2026 — phase nationale">
           <div class="js-dot"></div>
           <div class="js-card">
             <div class="jc-year">2026</div>
@@ -666,7 +679,7 @@ section[id]{scroll-margin-top:5rem}
             <span class="jc-tag t-projet">Compétition</span>
           </div>
         </article>
-        <article class="j-step" data-title="Club de basketball" data-log="✓ basketball — Lomé">
+        <article class="j-step l" data-title="Club de basketball" data-log="✓ basketball — Lomé">
           <div class="js-dot"></div>
           <div class="js-card">
             <div class="jc-year">Actuel · Lomé</div>
@@ -675,7 +688,7 @@ section[id]{scroll-margin-top:5rem}
             <span class="jc-tag t-loisir">Loisir</span>
           </div>
         </article>
-        <article class="j-step" data-title="À la recherche d'un stage" data-log="★ recherche de stage — Data Science &amp; IA">
+        <article class="j-step r" data-title="À la recherche d'un stage" data-log="★ recherche de stage — Data Science &amp; IA">
           <div class="js-dot"></div>
           <div class="js-card">
             <div class="jc-year">Août – Oct 2026</div>
