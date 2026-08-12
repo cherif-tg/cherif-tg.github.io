@@ -318,6 +318,8 @@ nav .links a.active{font-weight:500}
 .jc-tag.t-projet{background:#E2EBDD;color:#4A7A46}
 .jc-tag.t-loisir{background:#EAEAE6;color:#77786F}
 .jc-tag.t-actuel{background:#5B8C5A;color:#FAF7F2}
+.jc-btn{display:inline-block;margin-top:.7rem;font-size:.78rem;font-weight:600;padding:.5rem 1.05rem;border-radius:999px;background:var(--accent);color:#FAF7F2;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.jc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(91,140,90,.32)}
 @media(max-width:760px){
   .journey-svg{display:none}
   .journey{display:flex;flex-direction:column;gap:1.1rem;padding-left:1.4rem;border-left:2px dashed #D8C9B2;margin-top:2rem}
@@ -600,11 +602,11 @@ section[id]{scroll-margin-top:5rem}
         <p>Esprit d'équipe, discipline et cohésion — membre d'un club de basketball à Lomé.</p>
         <span class="jc-tag t-loisir">Loisir</span>
       </article>
-      <article class="journey-card j-left" data-p="0.93">
+      <article class="journey-card j-left j-cta" data-p="0.93">
         <div class="jc-year">Août – Oct 2026</div>
         <h3>À la recherche d'un stage</h3>
         <p>Stage en Data Science, Machine Learning et Intelligence Artificielle appliquée.</p>
-        <span class="jc-tag t-actuel">Actuel</span>
+        <a class="jc-btn" href="#contact" onclick="scrollToSection('contact');return false">Discutons-en</a>
       </article>
     </div>
   </div>
