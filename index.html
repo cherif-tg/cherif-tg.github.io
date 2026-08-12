@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TENGA Chérif Abdel Azize | Data Scientist & AI Engineer</title>
-<meta name="description" content="Portfolio de TENGA Chérif Abdel Azize — Data Scientist & AI Engineer spécialisé en Machine Learning, Analyse statistique et Modélisation prédictive.">
+<meta name="description" content="Portfolio de TENGA Chérif Abdel Azize - Data Scientist & AI Engineer spécialisé en Machine Learning, Analyse statistique et Modélisation prédictive.">
 <meta name="keywords" content="Data Scientist, AI Engineer, Machine Learning, Deep Learning, Portfolio, TENGA Chérif, Togo">
 <meta property="og:title" content="TENGA Chérif | Data Scientist & AI Engineer">
 <meta property="og:description" content="Machine Learning · Analyse statistique · Modélisation prédictive">
@@ -282,6 +282,20 @@ nav .links a.active{font-weight:500}
 .intern-card .icon-big{width:3.5rem;height:3.5rem;background:rgba(168,200,167,.3);border-radius:1rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
 .intern-card .icon-big svg{width:1.75rem;height:1.75rem;color:var(--accent)}
 .intern-card h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;color:var(--warm-800);margin-bottom:.75rem}
+.form-card{margin-top:2rem;padding:2rem}
+.form-row{display:grid;gap:1.25rem}
+@media(min-width:768px){.form-row{grid-template-columns:1fr 1fr}}
+.form-field{margin-bottom:1.1rem}
+.form-field label{display:block;font-size:.8rem;font-weight:600;color:var(--warm-600);margin-bottom:.4rem}
+.form-field input,.form-field textarea{width:100%;padding:.8rem 1rem;border-radius:10px;border:1px solid var(--warm-300);background:rgba(255,255,255,.75);color:var(--warm-800);font-size:.9rem;font-family:'Inter',system-ui,sans-serif;transition:border-color .2s,box-shadow .2s}
+.form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(91,140,90,.12)}
+.form-field textarea{resize:vertical;min-height:110px}
+.form-field input.error,.form-field textarea.error{border-color:#C2554E}
+.form-error{display:block;min-height:1em;font-size:.72rem;color:#C2554E;margin-top:.25rem}
+.form-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.form-status{font-size:.85rem;font-weight:500}
+.form-status.ok{color:var(--accent)}
+.form-status.bad{color:#C2554E}
 
 /* ===== FOOTER ===== */
 footer{border-top:1px solid rgba(232,217,192,.5);padding:2rem 1.5rem}
@@ -347,7 +361,7 @@ section[id]{scroll-margin-top:5rem}
     <h1>TENGA Chérif<br><span class="accent">Abdel Azize</span></h1>
     <p class="title">Data Scientist &amp; AI Engineer</p>
     <p class="subtitle"><span id="typewriter"></span><span class="cursor"></span></p>
-    <p class="tagline">&ldquo;Des données brutes aux systèmes intelligents — je construis des solutions IA qui passent du notebook à la production.&rdquo;</p>
+    <p class="tagline">&ldquo;Des données brutes aux systèmes intelligents - je construis des solutions IA qui passent du notebook à la production.&rdquo;</p>
     <div class="hero-stats">
       <div class="hero-stat"><div class="number" data-target="4">0</div><div class="label">Projets</div></div>
       <div class="hero-stat"><div class="number" data-target="2">0</div><div class="label">Certifications</div></div>
@@ -375,8 +389,8 @@ section[id]{scroll-margin-top:5rem}
         <div class="terminal"><div class="term-header"><span class="t-red"></span><span class="t-yellow"></span><span class="t-green"></span></div><div id="terminal-output"></div></div>
         <div style="margin-top:2rem">
           <h3 style="font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;color:var(--warm-800);margin-bottom:1rem">Formation</h3>
-          <div class="edu-item"><div class="edu-line"></div><div><h4>Licence Fondamentale — IA &amp; Big Data</h4><p>Université de Lomé / École Polytechnique de Lomé — Lomé, Togo</p><p style="margin-top:0">2023 – 2026</p></div></div>
-          <div class="edu-item"><div class="edu-line"></div><div><h4>Baccalauréat — Série C</h4><p>Lycée Scientifique Catholique Robert Mattle — Sotouboua, Togo</p><p style="margin-top:0">2020 – 2023</p><span class="edu-badge">Mention Très Bien</span></div></div>
+          <div class="edu-item"><div class="edu-line"></div><div><h4>Licence Fondamentale - IA &amp; Big Data</h4><p>Université de Lomé / École Polytechnique de Lomé - Lomé, Togo</p><p style="margin-top:0">2023 - 2026</p></div></div>
+          <div class="edu-item"><div class="edu-line"></div><div><h4>Baccalauréat - Série C</h4><p>Lycée Scientifique Catholique Robert Mattle - Sotouboua, Togo</p><p style="margin-top:0">2020 - 2023</p><span class="edu-badge">Mention Très Bien</span></div></div>
         </div>
       </div>
       <div class="about-side">
@@ -421,7 +435,7 @@ section[id]{scroll-margin-top:5rem}
       </div>
 
       <div class="project-item glass-card">
-        <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="8" height="8" rx="1"/><rect x="14" y="3" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="7" rx="1"/><rect x="14" y="14" width="8" height="7" rx="1"/></svg></div><div><span class="num">03</span><h3 class="proj-title">Système RAG — Gestion de Documents</h3><p class="proj-subtitle">Moteur de recherche documentaire IA</p></div></div>
+        <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="8" height="8" rx="1"/><rect x="14" y="3" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="7" rx="1"/><rect x="14" y="14" width="8" height="7" rx="1"/></svg></div><div><span class="num">03</span><h3 class="proj-title">Système RAG - Gestion de Documents</h3><p class="proj-subtitle">Moteur de recherche documentaire IA</p></div></div>
         <p class="proj-desc">Moteur de recherche documentaire IA. Déploiement local sécurisé sans transmission de données à l'extérieur.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Ingestion et indexation en base vectorielle</li><li><span class="arrow">▸</span> Orchestration LangChain : retrieval sémantique → réponses sourcées</li><li><span class="arrow">▸</span> Déploiement local sécurisé (Ollama)</li></ul>
         <div class="stack"><span>Python</span><span>LangChain</span><span>LlamaIndex</span><span>OpenAI API</span><span>Ollama</span><span>FAISS</span><span>ChromaDB</span></div>
@@ -447,7 +461,7 @@ section[id]{scroll-margin-top:5rem}
 
       <div class="blog-card glass-card" onclick="openBlogPost('cahier-vacances')">
         <p class="blog-date">Été 2026</p>
-        <h3 class="blog-title">Cahier de Vacances — Défi Data Science</h3>
+        <h3 class="blog-title">Cahier de Vacances - Défi Data Science</h3>
         <p class="blog-excerpt">Je relève le défi « Cahier de Vacances » lancé par Guillaume Saint-Cirgue, un programme intensif d'exercices et de projets pour monter en compétences sur tout le spectre de la Data Science et du Machine Learning pendant l'été.</p>
         <span class="blog-tag">Défi • Formation</span>
         <span class="blog-read">Lire l'article <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
@@ -455,7 +469,7 @@ section[id]{scroll-margin-top:5rem}
 
       <div class="blog-card glass-card blog-empty" style="cursor:default">
         <svg fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m0 0H7"/></svg>
-        <p>Bientôt plus d'articles…</p>
+        <p>Bientôt plus d'articles...</p>
       </div>
     </div>
   </div>
@@ -465,8 +479,8 @@ section[id]{scroll-margin-top:5rem}
 <section id="certifications" class="py-section bg-warm">
   <div class="section fade-in"><p class="section-label">&gt; certifications</p><h2 class="section-title">Certifications &amp; Diplômes</h2>
     <div class="certs-list" style="margin-top:3rem">
-      <div class="cert-item glass-card"><div><h3>AI Engineer for Data Scientists Associate</h3><p class="cert-meta">DataCamp — Mai 2026</p><p class="cert-id">ID : AEDS0013884572128</p></div><a href="certif-ai-engineer.pdf" target="_blank" rel="noopener" class="cert-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Voir le certificat</a></div>
-      <div class="cert-item glass-card"><div><h3>Data Scientist Career Track</h3><p class="cert-meta">DataCamp — 2025 – 2026</p></div></div>
+      <div class="cert-item glass-card"><div><h3>AI Engineer for Data Scientists Associate</h3><p class="cert-meta">DataCamp - Mai 2026</p><p class="cert-id">ID : AEDS0013884572128</p></div><a href="certif-ai-engineer.pdf" target="_blank" rel="noopener" class="cert-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Voir le certificat</a></div>
+      <div class="cert-item glass-card"><div><h3>Data Scientist Career Track</h3><p class="cert-meta">DataCamp - 2025 - 2026</p></div></div>
     </div>
   </div>
 </section>
@@ -474,7 +488,7 @@ section[id]{scroll-margin-top:5rem}
 <!-- ===== CONTACT ===== -->
 <section id="contact" class="py-section bg-warm">
   <div class="section fade-in"><p class="section-label">&gt; contact</p><h2 class="section-title">Travaillons ensemble</h2>
-    <p style="color:var(--warm-500);margin-top:1rem;max-width:36rem">Actuellement à la recherche d'un stage (Août – Octobre 2026).</p>
+    <p style="color:var(--warm-500);margin-top:1rem;max-width:36rem">Actuellement à la recherche d'un stage (Août - Octobre 2026).</p>
     <div class="contact-grid" style="margin-top:3rem">
       <div class="contact-card glass-card">
         <a href="mailto:tengacherif@gmail.com" class="link-item"><div class="icon icon-email"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div class="info"><div class="label">Email</div><div class="val">tengacherif@gmail.com</div></div></a>
@@ -484,9 +498,41 @@ section[id]{scroll-margin-top:5rem}
       <div class="intern-card glass-card">
         <div class="icon-big"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
         <h3>Recherche de stage</h3>
-        <p style="color:var(--warm-500);margin-bottom:.5rem"><strong style="color:var(--warm-700)">Période :</strong> 1<sup>er</sup> Août – 31 Octobre 2026</p>
+        <p style="color:var(--warm-500);margin-bottom:.5rem"><strong style="color:var(--warm-700)">Période :</strong> 1<sup>er</sup> Août - 31 Octobre 2026</p>
         <p style="color:var(--warm-500)"><strong style="color:var(--warm-700)">Disponible pour :</strong> Data Science, Machine Learning, IA appliquée.</p>
       </div>
+    </div>
+    <div class="form-card glass-card" id="contact-form-card">
+      <h3 style="font-family:'DM Serif Display',Georgia,serif;font-size:1.4rem;color:var(--warm-800);margin-bottom:.5rem">Envoyez-moi un message</h3>
+      <p style="color:var(--warm-500);font-size:.9rem;margin-bottom:1.5rem">Une question, une opportunité, un projet — je réponds sous 24h.</p>
+      <form id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-name">Nom</label>
+            <input type="text" id="cf-name" name="name" placeholder="Votre nom" required autocomplete="name">
+            <small class="form-error" id="err-name"></small>
+          </div>
+          <div class="form-field">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" placeholder="vous@exemple.com" required autocomplete="email">
+            <small class="form-error" id="err-email"></small>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="cf-subject">Sujet</label>
+          <input type="text" id="cf-subject" name="subject" placeholder="Objet de votre message" required>
+          <small class="form-error" id="err-subject"></small>
+        </div>
+        <div class="form-field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+          <small class="form-error" id="err-message"></small>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="cf-submit">Envoyer le message</button>
+          <span class="form-status" id="cf-status"></span>
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -524,14 +570,14 @@ window.addEventListener('scroll',function(){var c='';for(var i=sects.length-1;i>
 var blogPosts={
   'cahier-vacances':{
     date:'Été 2026',
-    title:'Cahier de Vacances — Défi Data Science',
+    title:'Cahier de Vacances - Défi Data Science',
     tag:'Défi • Formation',
-    body:'<p>Cet été, j\'ai décidé de relever le <strong>« Cahier de Vacances »</strong>, un défi lancé par <strong>Guillaume Saint-Cirgue</strong> — connu pour sa chaîne YouTube et ses formations en Data Science.</p>'+
+    body:'<p>Cet été, j\'ai décidé de relever le <strong>« Cahier de Vacances »</strong>, un défi lancé par <strong>Guillaume Saint-Cirgue</strong> - connu pour sa chaîne YouTube et ses formations en Data Science.</p>'+
       '<h3>🎯 Le concept</h3>'+
       '<p>Le Cahier de Vacances est un programme intensif d\'exercices et de mini-projets conçu pour les aspirants data scientists. L\'objectif : <strong>monter en compétences de façon structurée</strong> pendant la période estivale, en couvrant l\'ensemble du spectre Data Science.</p>'+
       '<h3>📅 Organisation</h3>'+
       '<p>Chaque semaine est dédiée à une thématique différente :</p>'+
-      '<ul><li><strong>Semaine 1 :</strong> Python avancé & structures de données</li><li><strong>Semaine 2 :</strong> Analyse exploratoire & visualisation (Matplotlib, Seaborn, Plotly)</li><li><strong>Semaine 3 :</strong> Machine Learning supervisé — régression & classification</li><li><strong>Semaine 4 :</strong> Machine Learning non supervisé — clustering & réduction de dimension</li><li><strong>Semaine 5 :</strong> Deep Learning — CNN, transfer learning</li><li><strong>Semaine 6 :</strong> NLP & modèles de langage</li><li><strong>Semaine 7 :</strong> MLOps — déploiement, API, Docker</li><li><strong>Semaine 8 :</strong> Projet final — pipeline complet de A à Z</li></ul>'+
+      '<ul><li><strong>Semaine 1 :</strong> Python avancé & structures de données</li><li><strong>Semaine 2 :</strong> Analyse exploratoire & visualisation (Matplotlib, Seaborn, Plotly)</li><li><strong>Semaine 3 :</strong> Machine Learning supervisé - régression & classification</li><li><strong>Semaine 4 :</strong> Machine Learning non supervisé - clustering & réduction de dimension</li><li><strong>Semaine 5 :</strong> Deep Learning - CNN, transfer learning</li><li><strong>Semaine 6 :</strong> NLP & modèles de langage</li><li><strong>Semaine 7 :</strong> MLOps - déploiement, API, Docker</li><li><strong>Semaine 8 :</strong> Projet final - pipeline complet de A à Z</li></ul>'+
       '<h3>💡 Pourquoi ce défi ?</h3>'+
       '<p>En tant que futur AI Engineer, je considère que la <strong>pratique régulière et variée</strong> est la clé pour maîtriser les outils du métier. Ce défi me permet de :</p>'+
       '<ul><li>Consolider mes acquis de licence</li><li>Explorer des outils que je n\'ai pas encore utilisés en profondeur</li><li>Constituer un portfolio d\'exercices commentés</li><li>Créer une routine d\'apprentissage quotidienne</li></ul>'+
@@ -568,6 +614,8 @@ kb.addEventListener("click",function(e){var b=e.target.closest?e.target.closest(
 kb.addEventListener("mouseover",function(e){var b=e.target.closest?e.target.closest(".kb-key"):null;if(b&&parseInt(b.getAttribute("data-i"),10)>=0){var idx=parseInt(b.getAttribute("data-i"),10);showKey(idx)}});
 renderFilters();renderKeys();applyFilter();lcdDefault();
 }();// Terminal Animation
-!function(){var e=document.getElementById("terminal-output");if(!e)return;var t=[{p:1,t:">>> import cherif as profile"},{p:1,t:">>> profile.load()"},{p:0,t:"Chargement du profil..."},{p:0,t:"[██████████] 100%"},{p:0,t:""},{p:1,t:">>> profile.role"},{p:0,t:'"AI Engineer & Data Scientist"'},{p:0,t:""},{p:1,t:">>> profile.skills"},{p:0,t:'["Deep Learning", "NLP", "Computer Vision", "RAG Pipelines",'},{p:0,t:' "Fraud Detection", "Python", "TensorFlow"]'},{p:0,t:""},{p:1,t:">>> profile.focus"},{p:0,t:'"Solutions IA ancr\u00e9es localement \u2014 impact r\u00e9el en sant\u00e9'},{p:0,t:"et agriculture en Afrique de l'Ouest\""},{p:0,t:""},{p:1,t:">>> profile.status"},{p:0,t:'"Disponible pour de nouveaux projets"'}],n=0,o=0,a=null;function r(){if(n>=t.length)return;var i=t[n];a||(a=document.createElement("div"),a.className="term-line",e.appendChild(a),e.scrollTop=e.scrollHeight);var l=document.createElement("span");l.className=i.p?"term-prompt":"term-output",a.appendChild(l);if(o<i.t.length){l.textContent+=i.t[o],o++,setTimeout(r,12+28*Math.random())}else{var d=i.p?400:700;if(!i.t)d=200;var s=document.createElement("span");s.className="term-cursor",l.appendChild(s),setTimeout(function(){s.remove(),n++,o=0,a=null,r()},d)}}setTimeout(r,600)}();</script>
+!function(){var e=document.getElementById("terminal-output");if(!e)return;var t=[{p:1,t:">>> import cherif as profile"},{p:1,t:">>> profile.load()"},{p:0,t:"Chargement du profil..."},{p:0,t:"[██████████] 100%"},{p:0,t:""},{p:1,t:">>> profile.role"},{p:0,t:'"AI Engineer & Data Scientist"'},{p:0,t:""},{p:1,t:">>> profile.skills"},{p:0,t:'["Deep Learning", "NLP", "Computer Vision", "RAG Pipelines",'},{p:0,t:' "Fraud Detection", "Python", "TensorFlow"]'},{p:0,t:""},{p:1,t:">>> profile.focus"},{p:0,t:'"Solutions IA ancr\u00e9es localement \u2014 impact r\u00e9el en sant\u00e9'},{p:0,t:"et agriculture en Afrique de l'Ouest\""},{p:0,t:""},{p:1,t:">>> profile.status"},{p:0,t:'"Disponible pour de nouveaux projets"'}],n=0,o=0,a=null;function r(){if(n>=t.length)return;var i=t[n];a||(a=document.createElement("div"),a.className="term-line",e.appendChild(a),e.scrollTop=e.scrollHeight);var l=document.createElement("span");l.className=i.p?"term-prompt":"term-output",a.appendChild(l);if(o<i.t.length){l.textContent+=i.t[o],o++,setTimeout(r,12+28*Math.random())}else{var d=i.p?400:700;if(!i.t)d=200;var s=document.createElement("span");s.className="term-cursor",l.appendChild(s),setTimeout(function(){s.remove(),n++,o=0,a=null,r()},d)}}setTimeout(r,600)}();
+// Contact Form
+!function(){var form=document.getElementById("contact-form");if(!form)return;var FORMSPREE_ID="";var status=document.getElementById("cf-status"),btn=document.getElementById("cf-submit");function setErr(id,msg){var el=document.getElementById(id);var input=el.previousElementSibling;if(msg){el.textContent=msg;if(input)input.classList.add("error")}else{el.textContent="";if(input)input.classList.remove("error")}}function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)}form.addEventListener("submit",function(e){e.preventDefault();var name=document.getElementById("cf-name"),email=document.getElementById("cf-email"),subject=document.getElementById("cf-subject"),message=document.getElementById("cf-message");var ok=true;if(name.value.trim().length<2){setErr("err-name","Veuillez indiquer votre nom.");ok=false}else setErr("err-name","");if(!validEmail(email.value.trim())){setErr("err-email","Adresse email invalide.");ok=false}else setErr("err-email","");if(subject.value.trim().length<2){setErr("err-subject","Veuillez indiquer un sujet.");ok=false}else setErr("err-subject","");if(message.value.trim().length<10){setErr("err-message","Votre message est trop court (10 caractères min).");ok=false}else setErr("err-message","");if(!ok){status.className="form-status bad";status.textContent="Veuillez corriger les champs signalés.";return}status.className="form-status";status.textContent="Envoi en cours...";btn.disabled=true;var payload={name:name.value.trim(),email:email.value.trim(),subject:subject.value.trim(),message:message.value.trim()};if(FORMSPREE_ID){var fd=new FormData();fd.append("name",payload.name);fd.append("email",payload.email);fd.append("message",payload.subject+"\n\n"+payload.message);fetch("https://formspree.io/f/"+FORMSPREE_ID,{method:"POST",body:fd,headers:{Accept:"application/json"}}).then(function(r){if(r.ok){status.className="form-status ok";status.textContent="Message envoyé ! Je vous réponds sous 24h.";form.reset()}else{status.className="form-status bad";status.textContent="Erreur d'envoi. Utilisez l'email : tengacherif@gmail.com";btn.disabled=false}}).catch(function(){status.className="form-status bad";status.textContent="Erreur d'envoi. Utilisez l'email : tengacherif@gmail.com";btn.disabled=false})}else{var subjectLine=encodeURIComponent(payload.subject);var body=encodeURIComponent("De : "+payload.name+" ("+payload.email+")\n\n"+payload.message);window.location.href="mailto:tengacherif@gmail.com?subject="+subjectLine+"&body="+body;status.className="form-status ok";status.textContent="Votre messagerie s'ouvre — il ne reste qu'à envoyer !";btn.disabled=false;form.reset()}})}();</script>
 </body>
 </html>
