@@ -297,6 +297,33 @@ nav .links a.active{font-weight:500}
 .form-status.ok{color:var(--accent)}
 .form-status.bad{color:#C2554E}
 
+/* ===== PARCOURS ===== */
+.parcours-intro{color:var(--warm-500);margin-top:1rem;max-width:38rem}
+.journey{position:relative;margin-top:3rem}
+.journey-svg{width:100%;height:auto;display:block}
+.j-halo{transform-box:fill-box;transform-origin:center;animation:jPulse 2.6s ease-out infinite}
+@keyframes jPulse{0%{transform:scale(.55);opacity:.9}70%{opacity:.25}100%{transform:scale(1.8);opacity:0}}
+.journey-card{position:absolute;width:37%;padding:1.15rem 1.35rem;border-radius:1.1rem;background:rgba(255,255,255,.88);border:1px solid rgba(216,201,178,.55);box-shadow:0 4px 18px rgba(92,76,66,.05);opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease,border-color .35s,box-shadow .35s}
+.journey-card.visible{opacity:1;transform:translateY(0)}
+.journey-card.active{border-color:rgba(91,140,90,.7);box-shadow:0 10px 32px rgba(91,140,90,.14)}
+.journey-card.j-left{left:0}
+.journey-card.j-right{right:0}
+.jc-year{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+.journey-card h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.12rem;color:var(--warm-800);margin-bottom:.35rem}
+.journey-card p{font-size:.8rem;color:var(--warm-500);line-height:1.55}
+.jc-tag{display:inline-block;margin-top:.55rem;font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.22rem .55rem;border-radius:999px;background:var(--soft-green);color:#4A7349}
+.jc-tag.t-social{background:#EFE7DB;color:#8B6E5C}
+.jc-tag.t-prix{background:#F3E9D8;color:#A6844B}
+.jc-tag.t-opp{background:#E7EDE4;color:#5B7A58}
+.jc-tag.t-projet{background:#E2EBDD;color:#4A7A46}
+.jc-tag.t-loisir{background:#EAEAE6;color:#77786F}
+.jc-tag.t-actuel{background:#5B8C5A;color:#FAF7F2}
+@media(max-width:760px){
+  .journey-svg{display:none}
+  .journey{display:flex;flex-direction:column;gap:1.1rem;padding-left:1.4rem;border-left:2px dashed #D8C9B2;margin-top:2rem}
+  .journey-card{position:static;width:100%;opacity:1;transform:none}
+}
+
 /* ===== FOOTER ===== */
 footer{border-top:1px solid rgba(232,217,192,.5);padding:2rem 1.5rem}
 @media(min-width:768px){footer{padding:2rem 3rem}}
@@ -324,6 +351,7 @@ section[id]{scroll-margin-top:5rem}
       <a href="#projects" onclick="scrollToSection('projects');return false">Projets</a>
       <a href="#blog" onclick="scrollToSection('blog');return false">Blog</a>
       <a href="#certifications" onclick="scrollToSection('certifications');return false">Certifications</a>
+      <a href="#parcours" onclick="scrollToSection('parcours');return false">Parcours</a>
       <a href="#contact" onclick="scrollToSection('contact');return false">Contact</a>
     </div>
     <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
@@ -338,6 +366,7 @@ section[id]{scroll-margin-top:5rem}
     <a href="#projects" onclick="mobileNav('projects')">Projets</a>
     <a href="#blog" onclick="mobileNav('blog')">Blog</a>
     <a href="#certifications" onclick="mobileNav('certifications')">Certifications</a>
+    <a href="#parcours" onclick="mobileNav('parcours')">Parcours</a>
     <a href="#contact" onclick="mobileNav('contact')">Contact</a>
   </div>
 </nav>
@@ -485,6 +514,102 @@ section[id]{scroll-margin-top:5rem}
   </div>
 </section>
 
+<!-- ===== PARCOURS ===== -->
+<section id="parcours" class="py-section">
+  <div class="section fade-in">
+    <p class="section-label">&gt; parcours</p>
+    <h2 class="section-title">Mon chemin</h2>
+    <p class="parcours-intro">Du scoutisme à l'ingénierie IA — chaque étape m'a construit. Le marqueur suit votre lecture le long du parcours.</p>
+    <div class="journey" id="journey">
+      <svg class="journey-svg" viewBox="0 0 1000 1900" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <path id="j-path" d="M500 90 C 660 160, 780 220, 640 330 C 500 440, 200 470, 330 600 C 460 730, 800 750, 670 880 C 540 1010, 210 1030, 340 1160 C 470 1290, 780 1310, 660 1440 C 540 1570, 320 1590, 500 1750" fill="none" stroke="#D8C9B2" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="0.5 12"/>
+        <g id="j-marker">
+          <circle class="j-halo" r="20" fill="rgba(91,140,90,0.16)"/>
+          <circle r="8.5" fill="#5B8C5A" stroke="#FAF7F2" stroke-width="2.5"/>
+        </g>
+      </svg>
+      <article class="journey-card j-left" data-p="0.05">
+        <div class="jc-year">2021 – 2023 · Sotouboua</div>
+        <h3>Chef scout</h3>
+        <p>Encadrement de jeunes, organisation d'activités et sens des responsabilités au sein du mouvement scout de mon école.</p>
+        <span class="jc-tag t-social">Expérience sociale</span>
+      </article>
+      <article class="journey-card j-right" data-p="0.12">
+        <div class="jc-year">2023 · Sotouboua</div>
+        <h3>Baccalauréat C</h3>
+        <p>Baccalauréat série C — Mention Très Bien.</p>
+        <span class="jc-tag t-prix">Réussite</span>
+      </article>
+      <article class="journey-card j-left" data-p="0.20">
+        <div class="jc-year">2023 – 2026 · Lomé</div>
+        <h3>Licence IA &amp; Big Data</h3>
+        <p>Université de Lomé — École Polytechnique de Lomé. Spécialisation en Intelligence Artificielle et Big Data.</p>
+        <span class="jc-tag t-form">Formation</span>
+      </article>
+      <article class="journey-card j-right" data-p="0.27">
+        <div class="jc-year">2024 · Lomé</div>
+        <h3>Club d'anglais</h3>
+        <p>Membre actif d'un club d'anglais : pratique orale, culture anglophone et travail en équipe.</p>
+        <span class="jc-tag t-social">Expérience sociale</span>
+      </article>
+      <article class="journey-card j-left" data-p="0.35">
+        <div class="jc-year">Avril 2026</div>
+        <h3>Bourses d'apprentissage</h3>
+        <p>Accès aux plateformes DataCamp (Fondation Kumassi Hive) et Coursera (Programme FORCE-N) pour accélérer ma formation.</p>
+        <span class="jc-tag t-opp">Opportunité</span>
+      </article>
+      <article class="journey-card j-right" data-p="0.42">
+        <div class="jc-year">Avril 2026 · en cours</div>
+        <h3>Tuteur Kira Learning</h3>
+        <p>Tuteur du programme national de formation en Intelligence Artificielle et en Anglais, propulsé par Kira Learning.</p>
+        <span class="jc-tag t-social">Expérience sociale</span>
+      </article>
+      <article class="journey-card j-left" data-p="0.50">
+        <div class="jc-year">Avril 2026</div>
+        <h3>Sélection CV Lab</h3>
+        <p>Sélectionné pour la certification CV Lab — Computer Vision, organisée par WorldQuant University.</p>
+        <span class="jc-tag t-prix">Réussite</span>
+      </article>
+      <article class="journey-card j-right" data-p="0.57">
+        <div class="jc-year">4 mai 2026</div>
+        <h3>Python Data Associate</h3>
+        <p>Certification Python Data Associate — DataCamp.</p>
+        <span class="jc-tag t-prix">Réussite</span>
+      </article>
+      <article class="journey-card j-left" data-p="0.64">
+        <div class="jc-year">Mai 2026</div>
+        <h3>AI Engineer Associate</h3>
+        <p>Certification AI Engineer for Data Scientists Associate — DataCamp.</p>
+        <span class="jc-tag t-prix">Réussite</span>
+      </article>
+      <article class="journey-card j-right" data-p="0.71">
+        <div class="jc-year">Juin 2026</div>
+        <h3>Formation IA FORCE-N</h3>
+        <p>Programme de formation en Intelligence Artificielle — FORCE-N en partenariat avec l'Université Numérique Cheikh Amidou Kane.</p>
+        <span class="jc-tag t-form">Formation</span>
+      </article>
+      <article class="journey-card j-left" data-p="0.79">
+        <div class="jc-year">2026</div>
+        <h3>DATATOUR 2026</h3>
+        <p>Phase nationale du DATATOUR avec mon équipe — organisé par DataAfrika Hub.</p>
+        <span class="jc-tag t-projet">Compétition</span>
+      </article>
+      <article class="journey-card j-right" data-p="0.86">
+        <div class="jc-year">Actuel · Lomé</div>
+        <h3>Club de basketball</h3>
+        <p>Esprit d'équipe, discipline et cohésion — membre d'un club de basketball à Lomé.</p>
+        <span class="jc-tag t-loisir">Loisir</span>
+      </article>
+      <article class="journey-card j-left" data-p="0.93">
+        <div class="jc-year">Août – Oct 2026</div>
+        <h3>À la recherche d'un stage</h3>
+        <p>Stage en Data Science, Machine Learning et Intelligence Artificielle appliquée.</p>
+        <span class="jc-tag t-actuel">Actuel</span>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CONTACT ===== -->
 <section id="contact" class="py-section bg-warm">
   <div class="section fade-in"><p class="section-label">&gt; contact</p><h2 class="section-title">Travaillons ensemble</h2>
@@ -616,6 +741,9 @@ renderFilters();renderKeys();applyFilter();lcdDefault();
 }();// Terminal Animation
 !function(){var e=document.getElementById("terminal-output");if(!e)return;var t=[{p:1,t:">>> import cherif as profile"},{p:1,t:">>> profile.load()"},{p:0,t:"Chargement du profil..."},{p:0,t:"[██████████] 100%"},{p:0,t:""},{p:1,t:">>> profile.role"},{p:0,t:'"AI Engineer & Data Scientist"'},{p:0,t:""},{p:1,t:">>> profile.skills"},{p:0,t:'["Deep Learning", "NLP", "Computer Vision", "RAG Pipelines",'},{p:0,t:' "Fraud Detection", "Python", "TensorFlow"]'},{p:0,t:""},{p:1,t:">>> profile.focus"},{p:0,t:'"Solutions IA ancr\u00e9es localement \u2014 impact r\u00e9el en sant\u00e9'},{p:0,t:"et agriculture en Afrique de l'Ouest\""},{p:0,t:""},{p:1,t:">>> profile.status"},{p:0,t:'"Disponible pour de nouveaux projets"'}],n=0,o=0,a=null;function r(){if(n>=t.length)return;var i=t[n];a||(a=document.createElement("div"),a.className="term-line",e.appendChild(a),e.scrollTop=e.scrollHeight);var l=document.createElement("span");l.className=i.p?"term-prompt":"term-output",a.appendChild(l);if(o<i.t.length){l.textContent+=i.t[o],o++,setTimeout(r,12+28*Math.random())}else{var d=i.p?400:700;if(!i.t)d=200;var s=document.createElement("span");s.className="term-cursor",l.appendChild(s),setTimeout(function(){s.remove(),n++,o=0,a=null,r()},d)}}setTimeout(r,600)}();
 // Contact Form
-!function(){var form=document.getElementById("contact-form");if(!form)return;var FORMSPREE_ID="";var status=document.getElementById("cf-status"),btn=document.getElementById("cf-submit");function setErr(id,msg){var el=document.getElementById(id);var input=el.previousElementSibling;if(msg){el.textContent=msg;if(input)input.classList.add("error")}else{el.textContent="";if(input)input.classList.remove("error")}}function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)}form.addEventListener("submit",function(e){e.preventDefault();var name=document.getElementById("cf-name"),email=document.getElementById("cf-email"),subject=document.getElementById("cf-subject"),message=document.getElementById("cf-message");var ok=true;if(name.value.trim().length<2){setErr("err-name","Veuillez indiquer votre nom.");ok=false}else setErr("err-name","");if(!validEmail(email.value.trim())){setErr("err-email","Adresse email invalide.");ok=false}else setErr("err-email","");if(subject.value.trim().length<2){setErr("err-subject","Veuillez indiquer un sujet.");ok=false}else setErr("err-subject","");if(message.value.trim().length<10){setErr("err-message","Votre message est trop court (10 caractères min).");ok=false}else setErr("err-message","");if(!ok){status.className="form-status bad";status.textContent="Veuillez corriger les champs signalés.";return}status.className="form-status";status.textContent="Envoi en cours...";btn.disabled=true;var payload={name:name.value.trim(),email:email.value.trim(),subject:subject.value.trim(),message:message.value.trim()};if(FORMSPREE_ID){var fd=new FormData();fd.append("name",payload.name);fd.append("email",payload.email);fd.append("message",payload.subject+"\n\n"+payload.message);fetch("https://formspree.io/f/"+FORMSPREE_ID,{method:"POST",body:fd,headers:{Accept:"application/json"}}).then(function(r){if(r.ok){status.className="form-status ok";status.textContent="Message envoyé ! Je vous réponds sous 24h.";form.reset()}else{status.className="form-status bad";status.textContent="Erreur d'envoi. Utilisez l'email : tengacherif@gmail.com";btn.disabled=false}}).catch(function(){status.className="form-status bad";status.textContent="Erreur d'envoi. Utilisez l'email : tengacherif@gmail.com";btn.disabled=false})}else{var subjectLine=encodeURIComponent(payload.subject);var body=encodeURIComponent("De : "+payload.name+" ("+payload.email+")\n\n"+payload.message);window.location.href="mailto:tengacherif@gmail.com?subject="+subjectLine+"&body="+body;status.className="form-status ok";status.textContent="Votre messagerie s'ouvre — il ne reste qu'à envoyer !";btn.disabled=false;form.reset()}})}();</script>
+!function(){var form=document.getElementById("contact-form");if(!form)return;var FORMSPREE_ID="";var status=document.getElementById("cf-status"),btn=document.getElementById("cf-submit");function setErr(id,msg){var el=document.getElementById(id);var input=el.previousElementSibling;if(msg){el.textContent=msg;if(input)input.classList.add("error")}else{el.textContent="";if(input)input.classList.remove("error")}}function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)}form.addEventListener("submit",function(e){e.preventDefault();var name=document.getElementById("cf-name"),email=document.getElementById("cf-email"),subject=document.getElementById("cf-subject"),message=document.getElementById("cf-message");var ok=true;if(name.value.trim().length<2){setErr("err-name","Veuillez indiquer votre nom.");ok=false}else setErr("err-name","");if(!validEmail(email.value.trim())){setErr("err-email","Adresse email invalide.");ok=false}else setErr("err-email","");if(subject.value.trim().length<2){setErr("err-subject","Veuillez indiquer un sujet.");ok=false}else setErr("err-subject","");if(message.value.trim().length<10){setErr("err-message","Votre message est trop court (10 caractères min).");ok=false}else setErr("err-message","");if(!ok){status.className="form-status bad";status.textContent="Veuillez corriger les champs signalés.";return}status.className="form-status";status.textContent="Envoi en cours...";btn.disabled=true;var payload={name:name.value.trim(),email:email.value.trim(),subject:subject.value.trim(),message:message.value.trim()};if(FORMSPREE_ID){var fd=new FormData();fd.append("name",payload.name);fd.append("email",payload.email);fd.append("message",payload.subject+"\n\n"+payload.message);fetch("https://formspree.io/f/"+FORMSPREE_ID,{method:"POST",body:fd,headers:{Accept:"application/json"}}).then(function(r){if(r.ok){status.className="form-status ok";status.textContent="Message envoyé ! Je vous réponds sous 24h.";form.reset()}else{status.className="form-status bad";status.textContent="Erreur d'envoi. Utilisez l'email : tengacherif@gmail.com";btn.disabled=false}}).catch(function(){status.className="form-status bad";status.textContent="Erreur d'envoi. Utilisez l'email : tengacherif@gmail.com";btn.disabled=false})}else{var subjectLine=encodeURIComponent(payload.subject);var body=encodeURIComponent("De : "+payload.name+" ("+payload.email+")\n\n"+payload.message);window.location.href="mailto:tengacherif@gmail.com?subject="+subjectLine+"&body="+body;status.className="form-status ok";status.textContent="Votre messagerie s'ouvre — il ne reste qu'à envoyer !";btn.disabled=false;form.reset()}})}();
+// Parcours — marqueur serpentin
+!function(){var sec=document.getElementById("journey");if(!sec)return;var path=document.getElementById("j-path"),marker=document.getElementById("j-marker"),total=path.getTotalLength(),cards=sec.querySelectorAll(".journey-card"),n=cards.length,centers=[];for(var i=0;i<n;i++)centers.push(parseFloat(cards[i].getAttribute("data-p")));function upd(){var r=sec.getBoundingClientRect(),vh=window.innerHeight,pr=(vh*0.5-r.top)/r.height;pr=Math.max(0,Math.min(1,pr));var pt=path.getPointAtLength(pr*total);marker.setAttribute("cx",pt.x);marker.setAttribute("cy",pt.y);var best=0,bd=1e9;for(var i=0;i<n;i++){var dd=Math.abs(centers[i]-pr);if(dd<bd){bd=dd;best=i}}for(var i=0;i<n;i++)cards[i].classList.toggle("active",i===best)}var tick=false;function onSc(){if(!tick){tick=true;requestAnimationFrame(function(){upd();tick=false})}}window.addEventListener("scroll",onSc,{passive:true});window.addEventListener("resize",onSc);upd();if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("visible");io.unobserve(en.target)}})},{threshold:.12});cards.forEach(function(c){io.observe(c)})}else{cards.forEach(function(c){c.classList.add("visible")})}}();
+</script>
 </body>
 </html>
