@@ -294,6 +294,26 @@ nav .links a.active{font-weight:500}
 #blog-modal .modal-body li{margin-bottom:.35rem}
 #blog-modal .modal-tag{display:inline-block;margin-top:1.5rem;font-size:.75rem;font-weight:500;padding:.25rem .625rem;border-radius:9999px;background:var(--soft-green);color:var(--accent)}
 
+/* ===== PROJECT MODAL ===== */
+.project-item{cursor:pointer}
+#project-modal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+#project-modal.open{opacity:1;visibility:visible}
+#project-modal .modal-backdrop{position:absolute;inset:0;background:rgba(31,26,23,0.6);backdrop-filter:blur(4px)}
+#project-modal .modal-content{position:relative;background:var(--cream);border-radius:2rem;max-width:760px;width:calc(100% - 2rem);max-height:85vh;overflow-y:auto;padding:2.5rem;margin:1rem;box-shadow:0 24px 64px rgba(31,26,23,0.2);animation:modalIn .4s ease-out}
+#project-modal .modal-close{position:absolute;top:1.25rem;right:1.25rem;width:2.5rem;height:2.5rem;border-radius:.75rem;border:none;background:var(--warm-100);color:var(--warm-600);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+#project-modal .modal-close:hover{background:var(--warm-200);color:var(--warm-800)}
+#project-modal .pm-meta{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.06em}
+#project-modal .modal-title{font-family:'DM Serif Display',Georgia,serif;font-size:1.75rem;color:var(--warm-800);margin-bottom:.5rem;line-height:1.2}
+#project-modal .pm-subtitle{font-size:.9rem;color:var(--warm-500);margin-bottom:1.25rem}
+#project-modal .modal-body{font-size:.938rem;color:var(--warm-600);line-height:1.8}
+#project-modal .modal-body p{margin-bottom:1rem}
+#project-modal .modal-body h3{font-family:'Inter',system-ui,sans-serif;font-size:1.05rem;font-weight:600;color:var(--warm-800);margin:1.5rem 0 .5rem}
+#project-modal .modal-body ul{margin:.5rem 0 1rem 1.25rem}
+#project-modal .modal-body li{margin-bottom:.4rem}
+#project-modal .pm-stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem}
+#project-modal .pm-stack span{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--warm-500);background:var(--warm-50);padding:.25rem .6rem;border-radius:.5rem}
+#project-modal .pm-links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(232,217,192,.6)}
+
 /* ===== CERTS ===== */
 .certs-list{display:grid;grid-template-columns:1fr;gap:1.25rem;align-items:stretch}@media(min-width:768px){.certs-list{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}}
 .cert-item{padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
@@ -457,6 +477,11 @@ section[id]{scroll-margin-top:5rem}
   <div class="modal-content" id="modal-content"></div>
 </div>
 
+<div id="project-modal">
+  <div class="modal-backdrop" onclick="closeProjectModal()"></div>
+  <div class="modal-content" id="project-modal-content"></div>
+</div>
+
 <!-- ===== HERO ===== -->
 <section id="hero">
   <canvas id="particle-canvas" aria-hidden="true"></canvas>
@@ -523,32 +548,40 @@ section[id]{scroll-margin-top:5rem}
   <div class="section fade-in"><p class="section-label">&gt; projets</p><h2 class="section-title">Ce que j'ai construit</h2>
     <div class="projects-list" style="margin-top:3rem">
 
-      <div class="project-item glass-card">
-        <div class="proj-header"><div class="proj-icon proj-icon-vision"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l5 5" stroke-linecap="round"/><circle cx="8.5" cy="11" r="1.5" fill="currentColor" stroke="none"/><circle cx="13.5" cy="11" r="1.5" fill="currentColor" stroke="none"/></svg></div><div><span class="num">01</span><h3 class="proj-title">Analyse et Détection du Paludisme</h3><p class="proj-subtitle">Projet de Fin de Licence &bull; 2026</p></div></div>
+      <div class="project-item glass-card" onclick="openProject('tg-nlp-toolkit')">
+        <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 6h10M4 10h7M4 14h10M4 18h7" stroke-linecap="round"/><path d="M18 6l3 3-3 3M18 14l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><span class="num">01</span><h3 class="proj-title">Kabiyè–Èʋɛ NLP Toolkit</h3><p class="proj-subtitle">Traduction automatique FR ↔ Éwé · NLP pour les langues togolaises</p></div></div>
+        <p class="proj-desc">Toolkit open-source de traitement automatique des langues togolaises : traduction automatique français-éwé via un modèle NLLB-200 fine-tuné par LoRA, corpus parallèle de 65 640 paires, API REST, CLI et démo interactive.</p>
+        <ul class="highlights"><li><span class="arrow">→</span> Modèle NLLB-200 (600M) fine-tuné par LoRA, publié sur HuggingFace</li><li><span class="arrow">→</span> Corpus parallèle FR ↔ Éwé : 65 640 paires (Bible 1913 + OPUS NLLB)</li><li><span class="arrow">→</span> FR → Éwé : BLEU 18,71 et chrF++ 41,83 (+7,3 pts vs zero-shot)</li><li><span class="arrow">→</span> Déploiement : API FastAPI, CLI batch, démo Gradio sur HuggingFace Spaces</li></ul>
+        <div class="stack"><span>Python</span><span>HuggingFace</span><span>NLLB-200</span><span>LoRA</span><span>FastAPI</span><span>Gradio</span><span>Transformers</span><span>SentencePiece</span></div>
+        <div class="proj-links"><a href="https://github.com/cherif-tg/tg_nlp_toolkit" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a><a href="https://huggingface.co/spaces/cheriftenga/nllb-ewe-demo" target="_blank" rel="noopener" class="proj-link proj-link-demo">Démo en ligne</a></div>
+      </div>
+
+      <div class="project-item glass-card" onclick="openProject('paludisme')">
+        <div class="proj-header"><div class="proj-icon proj-icon-vision"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l5 5" stroke-linecap="round"/><circle cx="8.5" cy="11" r="1.5" fill="currentColor" stroke="none"/><circle cx="13.5" cy="11" r="1.5" fill="currentColor" stroke="none"/></svg></div><div><span class="num">02</span><h3 class="proj-title">Analyse et Détection du Paludisme</h3><p class="proj-subtitle">Projet de Fin de Licence &bull; 2026</p></div></div>
         <p class="proj-desc">Analyse approfondie de sources de données hétérogènes (frottis sanguins, symptômes, données hématologiques) avec une architecture de traitement de données critiques en temps réel.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Architecture SI multicouche : collecte (NLP + Vision + tabulaire), traitement ML, API de diffusion</li><li><span class="arrow">▸</span> Pipeline de données robuste sur 100 000+ dossiers simulés via Apache PySpark</li><li><span class="arrow">▸</span> Modèles ML/DL : XGBoost + ResNet-50 fine-tuné pour 8 pathologies (SHAP + Grad-CAM)</li><li><span class="arrow">▸</span> Déploiement : API FastAPI + Streamlit + mode hors-ligne ONNX</li></ul>
         <div class="stack"><span>Python</span><span>PyTorch</span><span>Scikit-learn</span><span>XGBoost</span><span>spaCy</span><span>PySpark</span><span>FastAPI</span><span>Streamlit</span><span>ONNX</span><span>MongoDB</span></div>
         <div class="proj-links"><span class="proj-link proj-link-demo" style="opacity:0.5;cursor:default">Dépôt à venir</span></div>
       </div>
 
-      <div class="project-item glass-card">
-        <div class="proj-header"><div class="proj-icon proj-icon-data"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l2.5 7.5H22l-6 4.5 2.5 7.5L12 17l-6.5 4.5L8 14l-6-4.5h7.5z"/></svg></div><div><span class="num">02</span><h3 class="proj-title">Système de Détection de Fraude</h3><p class="proj-subtitle">Machine Learning appliqué à la détection d'anomalies</p></div></div>
+      <div class="project-item glass-card" onclick="openProject('fraude')">
+        <div class="proj-header"><div class="proj-icon proj-icon-data"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l2.5 7.5H22l-6 4.5 2.5 7.5L12 17l-6.5 4.5L8 14l-6-4.5h7.5z"/></svg></div><div><span class="num">03</span><h3 class="proj-title">Système de Détection de Fraude</h3><p class="proj-subtitle">Machine Learning appliqué à la détection d'anomalies</p></div></div>
         <p class="proj-desc">Système intelligent de détection de transactions frauduleuses en temps réel, combinant modèles supervisés et non supervisés.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Analyse exploratoire sur données transactionnelles réelles</li><li><span class="arrow">▸</span> Modèles : Isolation Forest, Auto-encodeurs, XGBoost</li><li><span class="arrow">▸</span> Pipeline de feature engineering avancé</li><li><span class="arrow">▸</span> Dashboard monitoring avec Power BI</li></ul>
         <div class="stack"><span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>Pandas</span><span>NumPy</span><span>Power BI</span></div>
         <div class="proj-links"><a href="https://github.com/cherif-tg/fraudDetection" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a></div>
       </div>
 
-      <div class="project-item glass-card">
-        <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="8" height="8" rx="1"/><rect x="14" y="3" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="7" rx="1"/><rect x="14" y="14" width="8" height="7" rx="1"/></svg></div><div><span class="num">03</span><h3 class="proj-title">Système RAG - Gestion de Documents</h3><p class="proj-subtitle">Moteur de recherche documentaire IA</p></div></div>
+      <div class="project-item glass-card" onclick="openProject('rag')">
+        <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="8" height="8" rx="1"/><rect x="14" y="3" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="7" rx="1"/><rect x="14" y="14" width="8" height="7" rx="1"/></svg></div><div><span class="num">04</span><h3 class="proj-title">Système RAG - Gestion de Documents</h3><p class="proj-subtitle">Moteur de recherche documentaire IA</p></div></div>
         <p class="proj-desc">Moteur de recherche documentaire IA. Déploiement local sécurisé sans transmission de données à l'extérieur.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Ingestion et indexation en base vectorielle</li><li><span class="arrow">▸</span> Orchestration LangChain : retrieval sémantique → réponses sourcées</li><li><span class="arrow">▸</span> Déploiement local sécurisé (Ollama)</li></ul>
         <div class="stack"><span>Python</span><span>LangChain</span><span>LlamaIndex</span><span>OpenAI API</span><span>Ollama</span><span>FAISS</span><span>ChromaDB</span></div>
         <div class="proj-links"><a href="https://github.com/cherif-tg/RAG_Systeme" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a></div>
       </div>
 
-      <div class="project-item glass-card">
-        <div class="proj-header"><div class="proj-icon proj-icon-ml"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M17 18H7a2 2 0 01-2-2v-1h14v1a2 2 0 01-2 2z" stroke-linejoin="round"/><path d="M21 15a2 2 0 01-2 2m-14 0a2 2 0 01-2-2"/></svg></div><div><span class="num">04</span><h3 class="proj-title">Traitement du Lexique Sara</h3><p class="proj-subtitle">NLP appliqué aux langues africaines</p></div></div>
+      <div class="project-item glass-card" onclick="openProject('sara')">
+        <div class="proj-header"><div class="proj-icon proj-icon-ml"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M17 18H7a2 2 0 01-2-2v-1h14v1a2 2 0 01-2 2z" stroke-linejoin="round"/><path d="M21 15a2 2 0 01-2 2m-14 0a2 2 0 01-2-2"/></svg></div><div><span class="num">05</span><h3 class="proj-title">Traitement du Lexique Sara</h3><p class="proj-subtitle">NLP appliqué aux langues africaines</p></div></div>
         <p class="proj-desc">Traitement automatique du langage naturel appliqué au lexique Sara. Analyse lexicale et modélisation linguistique.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Constitution d'un corpus lexical en langue Sara</li><li><span class="arrow">▸</span> Analyse morphologique et extraction de racines</li><li><span class="arrow">▸</span> Modélisation statistique des patterns linguistiques</li></ul>
         <div class="stack"><span>Python</span><span>NLP</span><span>NLTK</span><span>Pandas</span><span>Regex</span></div>
@@ -920,6 +953,98 @@ renderFilters();renderKeys();applyFilter();lcdDefault();
 
 // Parcours — carte de progression + étapes
 !function(){var layout=document.getElementById("journey");if(!layout)return;var steps=layout.querySelectorAll(".j-step"),n=steps.length;var fill=document.getElementById("jpFill"),pct=document.getElementById("jpPct"),count=document.getElementById("jpCount"),cur=document.getElementById("jpCurrent"),term=document.getElementById("jpTerm");var logs=[];for(var i=0;i<n;i++)logs.push(steps[i].getAttribute("data-log")||"");var printed=0;function upd(){var r=layout.getBoundingClientRect(),vh=window.innerHeight,pr=(vh*0.45-r.top)/r.height;pr=Math.max(0,Math.min(1,pr));var idx=Math.min(n-1,Math.max(0,Math.round(pr*(n-1))));var pctv=Math.round(pr*100);fill.style.width=pctv+"%";pct.textContent=pctv+"%";count.textContent="Étape "+(idx+1)+" / "+n;cur.textContent=steps[idx].getAttribute("data-title");for(var i=0;i<n;i++)steps[i].classList.toggle("active",i===idx);var want=Math.floor(pr*n);if(want>printed){for(var k=printed;k<want&&k<n;k++){var d=document.createElement("div");d.className="jp-line jp-term-done";d.textContent=logs[k];term.appendChild(d)}printed=want}if(pr>0.985&&printed<n){for(var k=printed;k<n;k++){var d=document.createElement("div");d.className="jp-line "+(k===n-1?"jp-term-now":"jp-term-done");d.textContent=logs[k];term.appendChild(d)}printed=n}term.scrollTop=term.scrollHeight}var tick=false;function onSc(){if(!tick){tick=true;requestAnimationFrame(function(){upd();tick=false})}}window.addEventListener("scroll",onSc,{passive:true});window.addEventListener("resize",onSc);upd()}();
+
+
+// ===== PROJECT DETAILS MODAL =====
+var projectDetails={
+  'tg-nlp-toolkit':{
+    meta:'NLP · Langues togolaises · 2026',
+    title:'Kabiyè–Èʋɛ NLP Toolkit',
+    subtitle:'Traduction automatique français-éwé pour les langues togolaises — modèle NLLB-200 fine-tuné par LoRA.',
+    stack:['Python','HuggingFace Transformers','PEFT / LoRA','NLLB-200','FastAPI','Gradio','SentencePiece','Test automatisés'],
+    links:[{t:'GitHub',u:'https://github.com/cherif-tg/tg_nlp_toolkit'},{t:'Démo en ligne',u:'https://huggingface.co/spaces/cheriftenga/nllb-ewe-demo'}],
+    body:'<h3>Contexte</h3><p>Projet open-source de traitement automatique des langues togolaises, dont l\'objectif est de rendre l\'information accessible dans les langues locales grâce à la traduction automatique. La langue cible principale est l\'éwé ; une extension vers le kabiyè est prévue, et une piste de reconnaissance vocale est en cours d\'évaluation.</p>'+
+      '<h3>Réalisations</h3><ul>'+
+      '<li>Constitution d\'un corpus parallèle français-éwé de 65 640 paires (train 52 512 / dev 6 564 / test 6 564), assemblé à partir de la Bible Éwé 1913 alignée verset par verset avec la Bible Segond 1910 et du corpus OPUS NLLB filtré par un pipeline de qualité documenté.</li>'+
+      '<li>Fine-tuning du modèle NLLB-200 distilled 600M par LoRA (PEFT) sur le corpus du projet.</li>'+
+      '<li>Publication du modèle sur HuggingFace et d\'une démo interactive Gradio sur HuggingFace Spaces.</li>'+
+      '<li>Développement d\'une API REST FastAPI (endpoint de traduction), d\'une CLI de traitement batch et de tests automatisés.</li></ul>'+
+      '<h3>Résultats</h3><p>Sur le jeu de test (6 564 paires jamais vues en entraînement), le fine-tuning apporte une amélioration significative en direction français-éwé : chrF++ de 34,96 à 41,83 et BLEU de 11,38 à 18,71 par rapport au modèle zero-shot. La qualité du corpus est documentée de façon transparente (datasheet), et un test de référence vérifié par des locuteurs natifs est en cours.</p>'+
+      '<h3>Compétences mobilisées</h3><p>Traduction automatique neuronale, fine-tuning par LoRA, évaluation de modèles (BLEU, chrF++), construction et filtrage de corpus multilingues, développement d\'API et de démos interactives.</p>'
+  },
+  'paludisme':{
+    meta:'Projet de fin de licence · 2026',
+    title:'Analyse et Détection du Paludisme',
+    subtitle:'Architecture de traitement de données critiques pour la détection de pathologies liées au paludisme.',
+    stack:['Python','PyTorch','Scikit-learn','XGBoost','spaCy','PySpark','FastAPI','Streamlit','ONNX','MongoDB'],
+    links:[{t:'Dépôt à venir',u:''}],
+    body:'<h3>Contexte</h3><p>Projet de fin de licence portant sur l\'analyse de sources de données hétérogènes — frottis sanguins, symptômes cliniques et données hématologiques — pour la détection et le suivi de pathologies liées au paludisme.</p>'+
+      '<h3>Réalisations</h3><ul>'+
+      '<li>Conception d\'une architecture d\'information multicouche : collecte multi-modale (NLP, vision par ordinateur, données tabulaires), traitement par machine learning et diffusion via API.</li>'+
+      '<li>Construction d\'un pipeline de données robuste sur plus de 100 000 dossiers simulés avec Apache PySpark.</li>'+
+      '<li>Entraînement de modèles XGBoost et ResNet-50 fine-tuné pour la classification de huit pathologies, avec interprétabilité par SHAP et Grad-CAM.</li>'+
+      '<li>Déploiement d\'une API FastAPI et d\'une interface Streamlit, avec un mode hors-ligne optimisé via ONNX.</li></ul>'+
+      '<h3>Perspectives</h3><p>Le dépôt du projet sera publié prochainement. Le travail se poursuit sur la validation des modèles et l\'industrialisation du pipeline.</p>'
+  },
+  'fraude':{
+    meta:'Machine Learning appliqué · 2025',
+    title:'Système de Détection de Fraude',
+    subtitle:'Détection de transactions frauduleuses en temps réel, approches supervisées et non supervisées.',
+    stack:['Python','Scikit-learn','XGBoost','Pandas','NumPy','Power BI'],
+    links:[{t:'GitHub',u:'https://github.com/cherif-tg/fraudDetection'}],
+    body:'<h3>Contexte</h3><p>Système intelligent de détection de transactions frauduleuses en temps réel, combinant des approches supervisées et non supervisées pour identifier les comportements anormaux.</p>'+
+      '<h3>Réalisations</h3><ul>'+
+      '<li>Analyse exploratoire approfondie de données transactionnelles réelles.</li>'+
+      '<li>Mise en place et comparaison de plusieurs modèles : Isolation Forest, auto-encodeurs et XGBoost.</li>'+
+      '<li>Développement d\'un pipeline de feature engineering avancé (agrégats temporels, ratios, encodages).</li>'+
+      '<li>Création d\'un tableau de bord de monitoring avec Power BI.</li></ul>'+
+      '<h3>Résultats</h3><p>Le comparatif des approches a permis d\'identifier la meilleure combinaison précision-rappel selon le contexte métier, en privilégiant la détection des fraudes réelles tout en maîtrisant le taux de faux positifs.</p>'
+  },
+  'rag':{
+    meta:'Recherche documentaire · 2025',
+    title:'Système RAG — Gestion de Documents',
+    subtitle:'Moteur de recherche documentaire basé sur la génération augmentée par récupération.',
+    stack:['Python','LangChain','LlamaIndex','OpenAI API','Ollama','FAISS','ChromaDB'],
+    links:[{t:'GitHub',u:'https://github.com/cherif-tg/RAG_Systeme'}],
+    body:'<h3>Contexte</h3><p>Moteur de recherche documentaire fondé sur l\'architecture RAG (Retrieval-Augmented Generation), conçu pour un déploiement local sécurisé, sans transmission de données à l\'extérieur.</p>'+
+      '<h3>Réalisations</h3><ul>'+
+      '<li>Ingestion et indexation des documents en base vectorielle.</li>'+
+      '<li>Orchestration avec LangChain : recherche sémantique et génération de réponses sourcées.</li>'+
+      '<li>Déploiement local avec Ollama garantissant la confidentialité des données traitées.</li></ul>'+
+      '<h3>Compétences mobilisées</h3><p>Ingénierie des prompts, embeddings, bases vectorielles, orchestration d\'agents de récupération et déploiement sur infrastructure locale.</p>'
+  },
+  'sara':{
+    meta:'NLP pour les langues africaines · 2025',
+    title:'Traitement du Lexique Sara',
+    subtitle:'Traitement automatique du langage naturel appliqué à un lexique en langue Sara.',
+    stack:['Python','NLP','NLTK','Pandas','Regex'],
+    links:[{t:'GitHub',u:'https://github.com/cherif-tg/NLP_Lexique_Sara'}],
+    body:'<h3>Contexte</h3><p>Traitement automatique du langage naturel appliqué au lexique Sara, avec l\'objectif de contribuer à la valorisation numérique des langues africaines.</p>'+
+      '<h3>Réalisations</h3><ul>'+
+      '<li>Constitution d\'un corpus lexical en langue Sara.</li>'+
+      '<li>Analyse morphologique et extraction de racines lexicales.</li>'+
+      '<li>Modélisation statistique des motifs linguistiques.</li></ul>'+
+      '<h3>Objectifs</h3><p>Ce travail explore l\'adaptation des méthodes de NLP aux langues à faibles ressources, un enjeu central pour l\'inclusion numérique.</p>'
+  }
+};
+function openProject(slug){
+  var p=projectDetails[slug];if(!p)return;
+  var modal=document.getElementById('project-modal'),content=document.getElementById('project-modal-content');
+  var stack=p.stack.map(function(s){return '<span>'+s+'</span>'}).join('');
+  var links=p.links.map(function(l){return l.u?'<a href="'+l.u+'" target="_blank" rel="noopener" class="proj-link proj-link-github">'+l.t+'</a>':'<span class="proj-link proj-link-demo" style="opacity:0.6;cursor:default">'+l.t+'</span>'}).join('');
+  content.innerHTML='<button class="modal-close" onclick="closeProjectModal()" aria-label="Fermer"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>'+
+    '<p class="pm-meta">'+p.meta+'</p>'+
+    '<h2 class="modal-title">'+p.title+'</h2>'+
+    '<p class="pm-subtitle">'+p.subtitle+'</p>'+
+    '<div class="modal-body">'+p.body+'</div>'+
+    '<div class="pm-stack">'+stack+'</div>'+
+    '<div class="pm-links">'+links+'</div>';
+  modal.classList.add('open');document.body.classList.add('modal-open');
+}
+function closeProjectModal(){
+  document.getElementById('project-modal').classList.remove('open');document.body.classList.remove('modal-open');
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeProjectModal()});
 
 </script>
 </body>
