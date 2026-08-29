@@ -273,6 +273,14 @@ nav .links a.active{font-weight:500}
 .blog-card .blog-tag{display:inline-block;margin-top:.75rem;font-size:.75rem;font-weight:500;padding:.25rem .625rem;border-radius:9999px;background:var(--soft-green);color:var(--accent)}
 .blog-card .blog-read{display:inline-flex;align-items:center;gap:.25rem;margin-top:.75rem;font-size:.813rem;color:var(--accent);font-weight:500}
 .blog-card .blog-read svg{width:.875rem;height:.875rem;transition:transform .3s}
+.taiss-gallery{margin:1.25rem 0 0}
+.taiss-gallery figure{margin:0}
+.taiss-gallery img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid rgba(92,76,66,.12)}
+.taiss-gallery figcaption{font-size:.75rem;color:var(--warm-500);margin-top:.4rem;text-align:center}
+.taiss-gallery>figure:first-child img{max-height:420px;object-fit:cover}
+.tg-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.75rem}
+.tg-row img{height:230px;object-fit:cover}
+@media(max-width:640px){.tg-row{grid-template-columns:1fr}.tg-row img{height:auto}}
 .blog-card:hover .blog-read svg{transform:translateX(3px)}
 .blog-empty{text-align:center;padding:3rem 1rem;color:var(--warm-400)}
 .blog-empty svg{width:3rem;height:3rem;margin-bottom:1rem;opacity:.4}
@@ -620,7 +628,14 @@ section[id]{scroll-margin-top:5rem}
   <div class="section fade-in"><p class="section-label">&gt; blog &amp; publications</p><h2 class="section-title">Actualités &amp; Articles</h2>
     <div class="blog-grid" style="margin-top:3rem">
 
-      <div class="blog-card glass-card" onclick="openBlogPost('cahier-vacances')">
+      <div class="blog-card glass-card" onclick="openBlogPost('taiss-2026')">
+        <p class="blog-date">Août 2026</p>
+        <h3 class="blog-title">TAISS 2026 · Ma semaine au Togo AI Summer School</h3>
+        <p class="blog-excerpt">Première édition du Togo AI Summer School : les mathématiques derrière les LLM, une filière Data Science (ML, Deep Learning, MLOps) et un projet de segmentation client - retour sur une semaine intense à l'UniPod.</p>
+        <span class="blog-tag">IA • Big Data • Formation</span>
+        <span class="blog-read">Lire l'article <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+      </div>
+            <div class="blog-card glass-card" onclick="openBlogPost('cahier-vacances')">
         <p class="blog-date">Été 2026</p>
         <h3 class="blog-title">Cahier de Vacances - Défi Data Science</h3>
         <p class="blog-excerpt">Je relève le défi « Cahier de Vacances » lancé par Guillaume Saint-Cirgue, un programme intensif d'exercices et de projets pour monter en compétences sur tout le spectre de la Data Science et du Machine Learning pendant l'été.</p>
@@ -922,6 +937,7 @@ var I18N_STATIC={
 "Cahier de Vacances - Défi Data Science":"Summer Workbook - Data Science Challenge",
 "Je relève le défi « Cahier de Vacances » lancé par Guillaume Saint-Cirgue, un programme intensif d'exercices et de projets pour monter en compétences sur tout le spectre de la Data Science et du Machine Learning pendant l'été.":"I am taking on the « Summer Workbook » challenge launched by Guillaume Saint-Cirgue, an intensive program of exercises and projects to level up across the whole Data Science and Machine Learning spectrum during the summer.",
 "Défi • Formation":"Challenge • Training","Lire l'article":"Read the article",
+"TAISS 2026 · Ma semaine au Togo AI Summer School":"TAISS 2026 · My week at the Togo AI Summer School","Première édition du Togo AI Summer School : les mathématiques derrière les LLM, une filière Data Science (ML, Deep Learning, MLOps) et un projet de segmentation client - retour sur une semaine intense à l'UniPod.":"First edition of the Togo AI Summer School: the mathematics behind LLMs, a Data Science track (ML, Deep Learning, MLOps) and a customer segmentation project - a look back at an intense week at UniPod.","IA • Big Data • Formation":"AI • Big Data • Training","Août 2026":"August 2026",
 "Défi 1 · Dans la peau d'un data analyst : SQL en immersion":"Challenge 1 · In the shoes of a data analyst: SQL immersion",
 "Mission : analyser la base de données d'un aéroport. Je pensais maîtriser SQL... jusqu'à ce que les jointures et les requêtes imbriquées me rappellent à l'ordre.":"Mission: analyze an airport database. I thought I mastered SQL... until joins and nested queries brought me back to reality.",
 "Défi 2 · Prédire le vainqueur de la Coupe du Monde":"Challenge 2 · Predicting the World Cup winner",
@@ -1014,6 +1030,20 @@ window.addEventListener('scroll',function(){var c='';for(var i=sects.length-1;i>
 
 // ===== BLOG MODAL SYSTEM =====
 var blogPosts={
+  'taiss-2026':{
+    date:'Août 2026',
+    title:'TAISS 2026 · Ma semaine au Togo AI Summer School',
+    tag:'IA • Big Data • Formation',
+    body:'<p>Du <strong>24 au 29 août 2026</strong>, j\'ai participé à la <strong>première édition du Togo AI Summer School (TAISS)</strong>, organisée par le <strong>Togo AI Lab</strong> à l\'UniPod de Lomé. Une semaine intensive dédiée à l\'<strong>Intelligence Artificielle</strong> et au <strong>Big Data</strong> : cours, ateliers pratiques et projets d\'équipe.</p>'+
+      '<h3>🧮 Les mathématiques derrière l\'IA</h3><p>Le programme général est revenu sur les fondements : <strong>les mathématiques derrière l\'IA</strong> et l\'<strong>impact concret des projets IA</strong>. Ma session préférée ? Celle sur <strong>les maths derrière les LLM</strong> - comprendre ce qui se passe vraiment sous le capot des modèles de langage, des embeddings à l\'entraînement, change complètement la façon de les utiliser. On ne les subit plus : on les comprend.</p>'+
+      '<h3>📊 La filière Data Science</h3><p>Pour la partie pratique, j\'étais en <strong>filière Data Science</strong> avec un programme complet : <strong>Machine Learning</strong>, <strong>Deep Learning</strong>, <strong>MLOps</strong> et <strong>automatisation</strong>. De quoi relier la théorie au pipeline réel - de l\'entraînement d\'un modèle jusqu\'à sa mise en production et son suivi.</p>'+
+      '<h3>🚀 Le projet de groupe : Client Scope</h3><p>Avec mon équipe, nous avons construit <strong>Client Scope</strong>, un projet de <strong>segmentation client par K-means</strong> sur le jeu de données <em>Online Retail II</em> (UCI, ~1 million de transactions) : nettoyage des données, construction des features <strong>RFM</strong> (Récence, Fréquence, Montant), choix du nombre de clusters, caractérisation des segments (Champions, Fidèles, À risque, Endormis, Nouveaux, Perdus) et recommandations marketing par segment.</p>'+
+      '<p>Un moment fort de la semaine - et une phrase d\'un organisateur qui m\'a particulièrement marqué : <em>« On ne vous volera pas votre projet IA. »</em> Une leçon d\'appropriation : comprendre, construire, et défendre son travail.</p>'+
+      '<h3>🌱 Ce que j\'en retiens</h3><p>Des <strong>compétences solides</strong> acquises, des bases consolidées, et des rencontres avec des personnes passionnées par l\'IA au Togo. Je n\'ai pas (encore !) rejoint le Togo AI Lab - mais je sais désormais précisément ce qu\'il faut faire pour y entrer et bâtir une carrière professionnelle. La suite s\'écrit maintenant.</p>'+
+      '<p>🔗 Le projet pratique de ma filière est open source : <a href="https://github.com/cherif-tg/client-scope-rfm-project" target="_blank" rel="noopener" style="color:var(--accent)">github.com/cherif-tg/client-scope-rfm-project</a></p>'+
+      '<h3>🖼️ La semaine en images</h3><div class="taiss-gallery"><figure><img src="taiss-2026-groupe.jpg" alt="La promotion TAISS 2026 devant l\'UniPod de Lomé" loading="lazy"><figcaption>La promotion TAISS 2026 devant l\'UniPod de Lomé</figcaption></figure><div class="tg-row"><figure><img src="taiss-2026-projet.jpg" alt="Notebooks du projet Client Scope, segmentation RFM par K-means" loading="lazy"><figcaption>Client Scope : notebooks de la segmentation RFM par K-means</figcaption></figure><figure><img src="taiss-2026-unipod.jpg" alt="Devant la plaque commémorative de l\'UniPod Togo" loading="lazy"><figcaption>Devant la plaque commémorative de l\'UniPod Togo</figcaption></figure></div></div>'
+  }
+  ,
   'cahier-vacances':{
     date:'Été 2026',
     title:'Cahier de Vacances - Défi Data Science',
@@ -1065,6 +1095,20 @@ var blogPosts={
 
 
 var blogPostsEn={
+  'taiss-2026':{
+    date:'August 2026',
+    title:'TAISS 2026 · My week at the Togo AI Summer School',
+    tag:'AI • Big Data • Training',
+    body:'<p>From <strong>August 24 to 29, 2026</strong>, I took part in the <strong>first edition of the Togo AI Summer School (TAISS)</strong>, organized by the <strong>Togo AI Lab</strong> at the UniPod in Lomé. One intensive week dedicated to <strong>Artificial Intelligence</strong> and <strong>Big Data</strong>: lectures, hands-on labs and team projects.</p>'+
+      '<h3>🧮 The mathematics behind AI</h3><p>The general program covered the <strong>mathematics behind AI</strong> and the <strong>real impact of AI projects</strong>. My favorite sessions? The ones on <strong>the math behind LLMs</strong> - understanding what really happens under the hood of language models, from embeddings to training, changes the way you use these tools. You no longer endure them: you understand them.</p>'+
+      '<h3>📊 The Data Science track</h3><p>For the hands-on part, I joined the <strong>Data Science track</strong> with a full program: <strong>Machine Learning</strong>, <strong>Deep Learning</strong>, <strong>MLOps</strong> and <strong>automation</strong> - connecting theory to the real pipeline, from training a model to deploying and monitoring it.</p>'+
+      '<h3>🚀 The team project: Client Scope</h3><p>With my team, we built <strong>Client Scope</strong>, a <strong>customer segmentation project using K-means</strong> on the <em>Online Retail II</em> dataset (UCI, about 1 million transactions): data cleaning, <strong>RFM features</strong> (Recency, Frequency, Monetary), choosing the number of clusters, characterizing segments (Champions, Loyal, At risk, Hibernating, New, Lost) and marketing recommendations per segment.</p>'+
+      '<p>A highlight of the week - and a sentence from one of the organizers that stuck with me: <em>« On ne vous volera pas votre projet IA. »</em> ("They will not steal your AI project.") A lesson about ownership: understand, build, and defend your work.</p>'+
+      '<h3>🌱 What I take away</h3><p><strong>Solid skills</strong> gained, foundations consolidated, and great encounters with people passionate about AI in Togo. I have not (yet!) joined the Togo AI Lab - but I now know exactly what it takes to get in and build a professional career. The next chapter starts now.</p>'+
+      '<p>🔗 The hands-on project of my track is open source: <a href="https://github.com/cherif-tg/client-scope-rfm-project" target="_blank" rel="noopener" style="color:var(--accent)">github.com/cherif-tg/client-scope-rfm-project</a></p>'+
+      '<h3>🖼️ The week in pictures</h3><div class="taiss-gallery"><figure><img src="taiss-2026-groupe.jpg" alt="The TAISS 2026 cohort in front of the UniPod in Lomé" loading="lazy"><figcaption>The TAISS 2026 cohort in front of the UniPod in Lomé</figcaption></figure><div class="tg-row"><figure><img src="taiss-2026-projet.jpg" alt="Client Scope project notebooks, RFM K-means segmentation" loading="lazy"><figcaption>Client Scope: RFM K-means segmentation notebooks</figcaption></figure><figure><img src="taiss-2026-unipod.jpg" alt="In front of the UniPod Togo commemorative plaque" loading="lazy"><figcaption>In front of the UniPod Togo commemorative plaque</figcaption></figure></div></div>'
+  }
+  ,
   'cahier-vacances':{
     date:'Summer 2026',
     title:'Summer Workbook - Data Science Challenge',
