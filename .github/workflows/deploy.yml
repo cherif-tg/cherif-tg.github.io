@@ -20,8 +20,9 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/
-          cp certif-ai-engineer.pdf certif-python-data-associate.pdf certif-google-ai.pdf cv.pdf _site/
-          cp photo.png og-image.png robots.txt sitemap.xml _site/
+          cp *.pdf _site/
+          cp *.jpg *.png _site/
+          cp robots.txt sitemap.xml _site/
 
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
