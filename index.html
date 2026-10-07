@@ -121,14 +121,21 @@ nav .links a.active{font-weight:500}
 
 /* ===== HERO ===== */
 #hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-media{position:absolute;z-index:4;right:max(3rem,calc((100vw - 1200px)/2));top:12%;width:min(30vw,350px);height:min(68vh,510px);border:1px solid rgba(91,140,90,.45);border-radius:1.5rem;overflow:hidden;background:#1F1A17;box-shadow:0 22px 60px rgba(31,26,23,.2);opacity:0;animation:fadeInUp .9s ease-out .55s forwards}
+.hero-media::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(160deg,rgba(91,140,90,.12),transparent 35%,rgba(31,26,23,.55));pointer-events:none}
+.hero-media::after{content:"portrait_node / active";position:absolute;z-index:3;left:1rem;bottom:1rem;color:#C9B79F;font:600 .62rem 'JetBrains Mono',monospace;letter-spacing:.06em;background:rgba(31,26,23,.7);padding:.4rem .55rem;border-radius:.45rem}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(1) contrast(1.04)}
+.hero-media-scan{position:absolute;z-index:3;top:18%;left:0;right:0;height:1px;background:rgba(168,200,167,.65);box-shadow:0 0 16px rgba(168,200,167,.8);animation:portraitScan 5s ease-in-out infinite;pointer-events:none}
+@keyframes portraitScan{0%,100%{transform:translateY(0);opacity:.2}45%{transform:translateY(300px);opacity:.75}55%{transform:translateY(300px);opacity:.75}}
 #particle-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(250,247,242,0.6),transparent,rgba(250,247,242,0.95));pointer-events:none;z-index:2}
 .hero-content{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:8rem 1.5rem 0}
-@media(min-width:768px){.hero-content{padding:8.5rem 3rem 0}#hero{align-items:flex-start}}
+@media(min-width:768px){.hero-content{padding:8.5rem 3rem 0;width:min(62%,760px);margin-left:max(0px,calc((100vw - 1200px)/2));margin-right:auto}#hero{align-items:flex-start}.hero-media{display:block}}
 .hero-content .mono{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.875rem;color:var(--accent)}
 .hero-content h1{font-family:'DM Serif Display',Georgia,serif;font-size:2.25rem;line-height:1.05;color:var(--warm-800);margin-bottom:1.5rem;opacity:0;animation:fadeInUp .8s ease-out .2s forwards}
 @media(min-width:640px){.hero-content h1{font-size:2.5rem}}
 @media(min-width:768px){.hero-content h1{font-size:3.25rem}}
+@media(max-width:767px){.hero-media{position:relative;right:auto;top:auto;width:min(78vw,310px);height:390px;margin:2.5rem auto 6rem;order:2}.hero-content{order:1}.scroll-indicator{display:none}}
 .hero-content h1 .accent{color:var(--accent)}
 .hero-content .title{font-size:1.125rem;color:var(--warm-600);font-weight:300;margin-bottom:.5rem;opacity:0;animation:fadeInUp .8s ease-out .4s forwards}
 @media(min-width:768px){.hero-content .title{font-size:1.25rem}}
@@ -373,6 +380,9 @@ nav .links a.active{font-weight:500}
 .cert-link svg{width:1rem;height:1rem}
 
 /* ===== CONTACT ===== */
+.contact-runtime{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--warm-500);letter-spacing:.04em;margin-bottom:1rem}.contact-runtime strong{color:var(--accent);font-weight:600}.contact-card,.intern-card,.form-card{position:relative}.contact-card::before,.form-card::before{content:"";position:absolute;top:1rem;right:1.25rem;width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(91,140,90,.12)}
+.contact-card .link-item{border:1px solid transparent}.contact-card .link-item:hover{border-color:rgba(91,140,90,.22);background:rgba(231,237,228,.55)}
+.form-card{border-top:2px solid var(--accent)}.form-kicker{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--accent);letter-spacing:.08em;margin-bottom:.55rem}.form-hint{font-family:'JetBrains Mono',monospace;font-size:.66rem;color:var(--warm-400);margin-bottom:1.5rem}.form-field label{font-family:'JetBrains Mono',monospace;font-size:.7rem}.form-field label::before{content:"> ";color:var(--accent)}.contact-card .info,.contact-card .info .label,.contact-card .info .val,.intern-card p,.intern-card strong{font-family:'Inter',system-ui,sans-serif}
 .contact-grid{display:grid;gap:2rem}
 @media(min-width:768px){.contact-grid{grid-template-columns:1fr 1fr}}
 .contact-card{padding:2rem}
@@ -595,6 +605,7 @@ section[id]{scroll-margin-top:5rem}
       <a href="mailto:tengacherif@gmail.com" aria-label="Email"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
     </div>
   </div>
+  <div class="hero-media" aria-label="Portrait de TENGA Chérif Abdel Azize"><img src="portrait.jpg" alt="Portrait noir et blanc de TENGA Chérif Abdel Azize" fetchpriority="high"><span class="hero-media-scan" aria-hidden="true"></span></div>
   <div class="scroll-indicator"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg></div>
 </section>
 
@@ -973,7 +984,7 @@ section[id]{scroll-margin-top:5rem}
 <!-- ===== CONTACT ===== -->
 <section id="contact" class="py-section bg-warm">
   <div class="section fade-in"><p class="section-label">&gt; contact</p><h2 class="section-title">Travaillons ensemble</h2>
-    <p style="color:var(--warm-500);margin-top:1rem;max-width:36rem">Actuellement à la recherche d'un stage (Août - Octobre 2026).</p>
+    <p style="color:var(--warm-500);margin-top:1rem;max-width:36rem">Actuellement à la recherche d'un stage.</p><p class="contact-runtime">contact_runtime :: <strong>ONLINE</strong> · réponse habituelle sous 24h</p>
     <div class="contact-grid" style="margin-top:3rem">
       <div class="contact-card glass-card">
         <a href="mailto:tengacherif@gmail.com" class="link-item"><div class="icon icon-email"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div class="info"><div class="label">Email</div><div class="val">tengacherif@gmail.com</div></div></a>
@@ -983,13 +994,12 @@ section[id]{scroll-margin-top:5rem}
       <div class="intern-card glass-card">
         <div class="icon-big"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
         <h3>Recherche de stage</h3>
-        <p style="color:var(--warm-500);margin-bottom:.5rem"><strong style="color:var(--warm-700)">Période :</strong> 1<sup>er</sup> Août - 31 Octobre 2026</p>
         <p style="color:var(--warm-500)"><strong style="color:var(--warm-700)">Disponible pour :</strong> Data Science, Machine Learning, IA appliquée.</p>
       </div>
     </div>
     <div class="form-card glass-card" id="contact-form-card">
-      <h3 style="font-family:'DM Serif Display',Georgia,serif;font-size:1.4rem;color:var(--warm-800);margin-bottom:.5rem">Envoyez-moi un message</h3>
-      <p style="color:var(--warm-500);font-size:.9rem;margin-bottom:1.5rem">Une question, une opportunité, un projet — je réponds sous 24h.</p>
+      <div class="form-kicker">message_payload</div><h3 style="font-family:'DM Serif Display',Georgia,serif;font-size:1.4rem;color:var(--warm-800);margin-bottom:.5rem">Envoyez-moi un message</h3>
+      <p class="form-hint">Une question, une opportunité ou un projet — remplissez simplement le formulaire ci-dessous.</p>
       <form id="contact-form" novalidate>
         <div class="form-row">
           <div class="form-field">
@@ -1097,7 +1107,7 @@ var I18N_STATIC={
 "Club de basketball":"Basketball club","Esprit d'équipe, discipline et cohésion — membre d'un club de basketball à Lomé.":"Team spirit, discipline and cohesion - member of a basketball club in Lomé.","Loisir":"Leisure",
 "À la recherche d'un stage":"Looking for an internship","Stage en Data Science, Machine Learning et Intelligence Artificielle appliquée.":"Internship in Data Science, Machine Learning and Applied Artificial Intelligence.",
 "Discutons-en":"Let's talk",
-"Travaillons ensemble":"Let's work together","Actuellement à la recherche d'un stage (Août - Octobre 2026).":"Currently looking for an internship (August - October 2026).",
+"Travaillons ensemble":"Let's work together","Actuellement à la recherche d'un stage.":"Currently looking for an internship (August - October 2026).",
 "Recherche de stage":"Internship search","Période :":"Period:","er":"st","Août - 31 Octobre 2026":"August - October 31, 2026","Disponible pour :":"Open to:","Data Science, Machine Learning, IA appliquée.":"Data Science, Machine Learning, Applied AI.",
 "Envoyez-moi un message":"Send me a message","Une question, une opportunité, un projet — je réponds sous 24h.":"A question, an opportunity, a project - I reply within 24h.",
 "Nom":"Name","Sujet":"Subject","Message":"Message","Envoyer le message":"Send message",
