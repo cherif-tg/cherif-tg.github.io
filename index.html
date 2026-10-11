@@ -214,11 +214,55 @@ nav .links a.active{font-weight:500}
 .skill-detail{position:relative;min-height:340px;padding:1.25rem;border-radius:1rem;background:#2B2A28;color:#EDE4D8;overflow:hidden;font-family:'JetBrains Mono',monospace}.skill-detail::before{content:"";position:absolute;right:-30px;bottom:-55px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(124,184,124,.2),transparent 68%)}.skill-detail-head{display:flex;justify-content:space-between;gap:.75rem;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:1rem;margin-bottom:1rem}.skill-detail-kicker{color:#7CB87C;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase}.skill-detail-name{font-family:'Inter',sans-serif;font-size:1.3rem;font-weight:700;margin-top:.3rem}.skill-detail-cat{color:#C9B79F;font-size:.65rem;margin-top:.28rem}.skill-detail-score{text-align:right;color:#7CB87C;font-size:1.15rem;font-weight:600}.skill-detail-score small{display:block;color:#8A7A6A;font-size:.55rem;font-weight:400}.skill-detail-desc{color:#C9B79F;font-family:'Inter',sans-serif;font-size:.78rem;line-height:1.6;margin-bottom:1.15rem}.skill-meter{height:7px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden}.skill-meter span{display:block;height:100%;width:var(--skill-level);background:linear-gradient(90deg,#5B8C5A,#A8C8A7);border-radius:inherit;transition:width .6s}.skill-detail-meta{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-top:1.1rem}.skill-meta-box{padding:.65rem;border:1px solid rgba(255,255,255,.1);border-radius:.65rem;background:rgba(255,255,255,.035)}.skill-meta-box small{display:block;color:#8A7A6A;font-size:.56rem;margin-bottom:.25rem}.skill-meta-box strong{color:#EDE4D8;font-size:.7rem;font-weight:500}.skill-related{margin-top:1rem;color:#8A7A6A;font-size:.6rem;line-height:1.7}.skill-related strong{color:#C9B79F;font-weight:500}
 .skill-architecture{display:none;padding:1.25rem;background:rgba(253,248,240,.34)}.skill-architecture.active{display:block}.skill-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;align-items:center}.skill-flow-node{position:relative;padding:1rem .7rem;text-align:center;border:1px solid rgba(216,201,178,.7);border-radius:1rem;background:rgba(255,255,255,.7);font-family:'JetBrains Mono',monospace}.skill-flow-node::after{content:"→";position:absolute;right:-.7rem;top:50%;transform:translateY(-50%);color:var(--accent);font-size:1.1rem}.skill-flow-node:last-child::after{display:none}.skill-flow-node b{display:block;color:var(--warm-800);font-size:.72rem}.skill-flow-node span{display:block;margin-top:.35rem;color:var(--warm-500);font-size:.58rem;line-height:1.4}
 @keyframes skillPulse{0%,100%{opacity:.65}50%{opacity:1}}@media(max-width:800px){.skill-layout{grid-template-columns:1fr}.skill-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:560px){.skill-room-head{align-items:flex-start;flex-direction:column}.skill-room-status{width:100%;justify-content:space-between}.skill-layout{padding:.85rem}.skill-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skill-flow{grid-template-columns:1fr 1fr}.skill-flow-node:nth-child(2)::after,.skill-flow-node:nth-child(4)::after{display:none}.skill-flow-node:nth-child(3)::after{content:"↓";right:auto;top:auto;bottom:-1.1rem;left:50%;transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.skill-room-brand .status-dot{animation:none}.skill-module,.skill-meter span{transition:none}}
+
+/* ===== SERVICES ===== */
+#services{position:relative;overflow:hidden}
+#services .services-intro{max-width:620px;margin-top:1rem;color:var(--warm-500);line-height:1.7}
+.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:3rem}
+.service-card{position:relative;padding:1.5rem;border:1px solid rgba(216,201,178,.62);border-radius:1.25rem;background:rgba(255,255,255,.56);box-shadow:0 8px 24px rgba(61,52,46,.045);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;overflow:hidden}
+.service-card::before{content:attr(data-module);position:absolute;top:1rem;right:1.25rem;font:500 .62rem 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--warm-300)}
+.service-card::after{content:"";position:absolute;left:0;bottom:0;width:34%;height:2px;background:var(--accent);transition:width .3s ease}
+.service-card:hover{transform:translateY(-5px);border-color:rgba(91,140,90,.52);box-shadow:0 16px 34px rgba(61,107,60,.1)}
+.service-card:hover::after{width:100%}
+.service-icon{width:2.65rem;height:2.65rem;display:flex;align-items:center;justify-content:center;border-radius:.8rem;background:var(--soft-green);color:var(--accent-dark);margin-bottom:1.1rem}
+.service-icon svg{width:1.35rem;height:1.35rem}
+.service-card h3{font-size:1.35rem;color:var(--warm-800);margin-bottom:.6rem}
+.service-card p{font-size:.9rem;line-height:1.65;color:var(--warm-500);max-width:42ch}
+.service-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.1rem}
+.service-tags span{font:500 .62rem 'JetBrains Mono',monospace;color:var(--accent-dark);background:var(--soft-green);padding:.3rem .5rem;border-radius:999px}
+.services-process{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid rgba(216,201,178,.62)}
+.service-step{position:relative;padding-right:1rem}
+.service-step:not(:last-child)::after{content:"→";position:absolute;right:.25rem;top:.05rem;color:var(--accent);font:1rem 'JetBrains Mono',monospace}
+.service-step-number{font:500 .68rem 'JetBrains Mono',monospace;color:var(--accent);letter-spacing:.08em;margin-bottom:.5rem}
+.service-step h4{font-size:1rem;color:var(--warm-800);margin-bottom:.35rem}
+.service-step p{font-size:.82rem;line-height:1.55;color:var(--warm-500)}
+.services-cta{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-top:3rem;padding:1.25rem 1.5rem;border-left:3px solid var(--accent);background:rgba(220,229,218,.42);border-radius:0 1rem 1rem 0}
+.services-cta p{color:var(--warm-600);font-size:.9rem;line-height:1.55}
+.services-cta strong{display:block;color:var(--warm-800);font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;margin-bottom:.2rem}
+.services-cta .btn{flex-shrink:0;white-space:nowrap}
+@media(max-width:700px){.services-grid{grid-template-columns:1fr}.services-process{grid-template-columns:1fr;gap:1rem}.service-step{padding-right:0;padding-bottom:1rem;border-bottom:1px solid rgba(216,201,178,.5)}.service-step:not(:last-child)::after{content:"↓";right:auto;top:auto;bottom:-.7rem;left:0}.services-cta{align-items:flex-start;flex-direction:column}.services-cta .btn{width:100%;justify-content:center}}
+
+
+.services-training{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid rgba(216,201,178,.62)}
+.services-training-head{max-width:620px;margin-bottom:1.25rem}
+.services-training-head h3{font-size:1.5rem;color:var(--warm-800);margin-bottom:.45rem}
+.services-training-head p{font-size:.9rem;line-height:1.65;color:var(--warm-500)}
+.training-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.training-offer{padding:1.25rem;border:1px solid rgba(216,201,178,.62);border-radius:1rem;background:rgba(253,248,240,.58);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.training-offer:hover{transform:translateY(-4px);border-color:rgba(91,140,90,.55);box-shadow:0 14px 28px rgba(61,107,60,.09)}
+.training-kicker{font:500 .62rem 'JetBrains Mono',monospace;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.7rem}
+.training-offer h4{font-size:1.05rem;color:var(--warm-800);margin-bottom:.45rem}
+.training-offer p{font-size:.82rem;line-height:1.6;color:var(--warm-500)}
+.training-audience{display:block;margin-top:.85rem;padding-top:.75rem;border-top:1px solid rgba(216,201,178,.5);font-size:.7rem;color:var(--warm-600)}
+.training-audience strong{color:var(--warm-700)}
+@media(max-width:800px){.training-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.training-grid{grid-template-columns:1fr}}
+
 /* ===== PROJECTS ===== */
 /* Bande projets : défilement horizontal plat et fluide */
-.proj-track{display:flex;align-items:stretch;gap:1.25rem;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-behavior:smooth;scroll-snap-type:x proximity;padding:1.5rem max(1rem,calc(50% - min(43vw,215px))) 2.5rem;scrollbar-width:none;-ms-overflow-style:none;position:relative;cursor:grab;user-select:none;-webkit-user-select:none}
+.proj-track{display:flex;align-items:stretch;gap:1.25rem;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-behavior:smooth;scroll-snap-type:x proximity;padding:1.5rem max(1rem,calc(50% - min(43vw,215px))) 2.5rem;scrollbar-width:none;-ms-overflow-style:none;position:relative;cursor:default}
 .proj-track::-webkit-scrollbar{display:none}
-.proj-track.dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.proj-track.dragging{scroll-snap-type:none;scroll-behavior:auto}
 .proj-track .project-item{flex:0 0 min(86vw,430px);scroll-snap-align:center;display:flex;flex-direction:column;transform:none!important;transition:box-shadow .3s ease,border-color .3s ease}
 .proj-track .project-item .proj-links{margin-top:auto}
 .proj-wrap{position:relative}
@@ -268,7 +312,7 @@ nav .links a.active{font-weight:500}
 .project-item .highlights li .arrow{color:var(--accent);flex-shrink:0;margin-top:.15rem}
 .project-item .stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
 .project-item .stack span{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.75rem;color:var(--warm-500);background:var(--warm-50);padding:.25rem .5rem;border-radius:.5rem}
-.proj-links{display:flex;flex-wrap:wrap;gap:.75rem}
+.proj-links{display:flex;flex-wrap:wrap;gap:.75rem;position:relative;z-index:5}.proj-link{position:relative;z-index:6;pointer-events:auto}
 .proj-link{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;font-size:.813rem;font-weight:500;border-radius:.75rem;transition:all .3s}
 .proj-link-github{background:var(--warm-800);color:#fff}
 .proj-link-github:hover{background:var(--warm-900);transform:translateY(-1px)}
@@ -537,6 +581,7 @@ section[id]{scroll-margin-top:5rem}
       <a href="#hero" onclick="scrollToSection('hero');return false">Accueil</a>
       <a href="#about" onclick="scrollToSection('about');return false">À propos</a>
       <a href="#skills" onclick="scrollToSection('skills');return false">Compétences</a>
+      <a href="#services" onclick="scrollToSection('services');return false">Services</a>
       <a href="#projects" onclick="scrollToSection('projects');return false">Projets</a>
       <a href="#blog" onclick="scrollToSection('blog');return false">Blog</a>
       <a href="#certifications" onclick="scrollToSection('certifications');return false">Certifications</a>
@@ -556,6 +601,7 @@ section[id]{scroll-margin-top:5rem}
     <a href="#hero" onclick="mobileNav('hero')">Accueil</a>
     <a href="#about" onclick="mobileNav('about')">À propos</a>
     <a href="#skills" onclick="mobileNav('skills')">Compétences</a>
+    <a href="#services" onclick="mobileNav('services')">Services</a>
     <a href="#projects" onclick="mobileNav('projects')">Projets</a>
     <a href="#blog" onclick="mobileNav('blog')">Blog</a>
     <a href="#certifications" onclick="mobileNav('certifications')">Certifications</a>
@@ -635,12 +681,84 @@ section[id]{scroll-margin-top:5rem}
 <!-- ===== SKILLS ===== -->
 <section id="skills" class="py-section"><div class="section fade-in"><p class="section-label">&gt; compétences</p><h2 class="section-title">AI Skill Control Room</h2><p class="parcours-intro">Une vue opérationnelle de ma stack — des fondations data jusqu'au déploiement de systèmes IA.</p><div class="skill-room" id="skillRoom"><div class="skill-room-head"><div class="skill-room-brand"><span class="status-dot"></span><span>skill_runtime / online</span></div><div class="skill-room-status"><span><strong>24</strong> modules</span><span>·</span><span><strong>11</strong> projets connectés</span></div></div><div class="skill-view-toggle"><button class="skill-view-btn active" type="button" data-view="modules">Modules</button><button class="skill-view-btn" type="button" data-view="architecture">Architecture IA</button></div><div class="skill-layout" id="skillModulesView"><div class="skill-matrix"><div class="skill-matrix-head"><span class="skill-matrix-label">// matrice de compétences</span><span class="skill-matrix-count" id="skillMatrixCount">24 actifs</span></div><div class="skill-filters" id="skillFilters"></div><div class="skill-grid" id="skillGrid"></div></div><article class="skill-detail" id="skillDetail" aria-live="polite"></article></div><div class="skill-architecture" id="skillArchitecture"><div class="skill-matrix-label" style="margin-bottom:1rem">// pipeline de construction IA</div><div class="skill-flow"><div class="skill-flow-node"><b>DATA</b><span>collecte · SQL · fichiers</span></div><div class="skill-flow-node"><b>FOUNDATIONS</b><span>Python · Pandas · NumPy</span></div><div class="skill-flow-node"><b>INTELLIGENCE</b><span>ML · NLP · Vision · RAG</span></div><div class="skill-flow-node"><b>PRODUCTION</b><span>API · Docker · Streamlit</span></div></div></div></div></div></section>
 
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="py-section">
+  <div class="section fade-in">
+    <p class="section-label">&gt; services</p>
+    <h2 class="section-title">Ce que je peux construire</h2>
+    <p class="services-intro">Des solutions data et IA pensées pour répondre à un besoin concret : automatiser, comprendre vos données et transformer une idée en outil utilisable.</p>
+
+    <div class="services-grid">
+      <article class="service-card" data-module="service.module_01">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5A2.5 2.5 0 0 0 17.5 16H4V5.5Z"/><path d="M4 16v3a2 2 0 0 0 2 2h11.5A2.5 2.5 0 0 0 20 18.5V18M8 7h8M8 10h5"/></svg></div>
+        <h3>Solutions IA &amp; LLM</h3>
+        <p>Des assistants capables de rechercher, raisonner et répondre à partir de vos documents, avec des réponses sourcées et une expérience simple à utiliser.</p>
+        <div class="service-tags"><span>RAG</span><span>Agents IA</span><span>Recherche sémantique</span></div>
+      </article>
+      <article class="service-card" data-module="service.module_02">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 19V5M4 19h16"/><path d="m7 15 3-4 3 2 5-7"/><circle cx="7" cy="15" r="1"/><circle cx="10" cy="11" r="1"/><circle cx="13" cy="13" r="1"/><circle cx="18" cy="6" r="1"/></svg></div>
+        <h3>Data Science &amp; Machine Learning</h3>
+        <p>De l’exploration au modèle : nettoyage, segmentation, prédiction et détection d’anomalies pour faire émerger des décisions utiles de vos données.</p>
+        <div class="service-tags"><span>Analyse</span><span>Clustering</span><span>Modélisation</span></div>
+      </article>
+      <article class="service-card" data-module="service.module_03">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5h-5l-3.5 3v-3H6.5A2.5 2.5 0 0 1 4 13.5v-7Z"/><path d="M8 9h.01M12 9h.01M16 9h.01" stroke-linecap="round" stroke-width="2"/></svg></div>
+        <h3>NLP &amp; Computer Vision</h3>
+        <p>Des modèles adaptés à vos contenus : traitement du langage, traduction, classification d’images et détection pour des cas d’usage ciblés.</p>
+        <div class="service-tags"><span>NLP</span><span>Vision</span><span>Langues africaines</span></div>
+      </article>
+      <article class="service-card" data-module="service.module_04">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h4M7 12h2M7 16h6M15 8h3M13 12h5M15 16h3"/></svg></div>
+        <h3>Dashboards &amp; déploiement</h3>
+        <p>Des prototypes qui deviennent des outils accessibles : interfaces data, APIs et déploiements propres pour partager les résultats avec une équipe.</p>
+        <div class="service-tags"><span>Streamlit</span><span>FastAPI</span><span>Docker</span></div>
+      </article>
+    </div>
+
+    <div class="services-training">
+      <div class="services-training-head">
+        <h3>Formations en IA &amp; data</h3>
+        <p>Des formats pratiques pour apprendre à utiliser l’IA sur des cas concrets, avec une progression adaptée au niveau et au contexte du groupe.</p>
+      </div>
+      <div class="training-grid">
+        <article class="training-offer">
+          <div class="training-kicker">format_01 · atelier</div>
+          <h4>IA générative &amp; RAG</h4>
+          <p>Découvrir comment construire un assistant qui répond à partir de ses propres documents et comprend les bases de la recherche sémantique.</p>
+          <span class="training-audience"><strong>Pour :</strong> étudiants, associations et jeunes professionnels</span>
+        </article>
+        <article class="training-offer">
+          <div class="training-kicker">format_02 · parcours</div>
+          <h4>Python &amp; data pour l’IA</h4>
+          <p>Acquérir les bases de Python, manipuler des données réelles et aller jusqu’à un premier projet de data science présentable.</p>
+          <span class="training-audience"><strong>Pour :</strong> débutants et étudiants de licence</span>
+        </article>
+        <article class="training-offer">
+          <div class="training-kicker">format_03 · sur mesure</div>
+          <h4>Formation adaptée à votre structure</h4>
+          <p>Un contenu construit autour de vos objectifs, de vos données et des usages IA pertinents pour votre équipe ou votre organisation.</p>
+          <span class="training-audience"><strong>Pour :</strong> écoles, entreprises et ONG</span>
+        </article>
+      </div>
+    </div>
+
+    <div class="services-process">
+      <div class="service-step"><div class="service-step-number">01 · COMPRENDRE</div><h4>Clarifier le besoin</h4><p>Un échange court pour définir le problème, les données disponibles et le résultat attendu.</p></div>
+      <div class="service-step"><div class="service-step-number">02 · CONSTRUIRE</div><h4>Prototyper une solution</h4><p>Une approche pragmatique, testée sur un cas réel et expliquée sans jargon inutile.</p></div>
+      <div class="service-step"><div class="service-step-number">03 · TRANSMETTRE</div><h4>Livrer un outil utilisable</h4><p>Une solution documentée, présentée clairement et pensée pour évoluer avec votre projet.</p></div>
+    </div>
+
+    <div class="services-cta"><p><strong>Un besoin data ou IA en tête ?</strong>Parlons du contexte et voyons ce qui peut être construit.</p><a class="btn btn-primary" href="#contact" onclick="scrollToSection('contact');return false">Discutons-en</a></div>
+  </div>
+</section>
+
 <!-- ===== PROJECTS ===== -->
 <section id="projects" class="py-section bg-warm">
   <div class="section fade-in"><div class="proj-head"><div><p class="section-label">&gt; projets</p><h2 class="section-title">Ce que j'ai construit</h2></div><div class="proj-nav"><button id="projPrev" class="proj-nav-btn" type="button" aria-label="Faire défiler vers la gauche"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button><button id="projNext" class="proj-nav-btn" type="button" aria-label="Faire défiler vers la droite"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button></div></div>
     <div class="proj-wrap" style="margin-top:1.5rem"><div class="proj-track" id="projTrack">
 
-      <div class="project-item glass-card" onclick="openProject('client-scope')">
+      <div class="project-item glass-card" data-project="client-scope" role="button" tabindex="0">
         <div class="proj-header"><div class="proj-icon proj-icon-data"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke-linecap="round"/><circle cx="17" cy="9" r="2.5"/><path d="M16 15.1c2.5.4 4 2.4 4 4.9" stroke-linecap="round"/></svg></div><div><span class="num">01</span><h3 class="proj-title">Client Scope — Segmentation RFM</h3><p class="proj-subtitle">Projet d'équipe TAISS 2026 · Data Science</p></div></div>
         <p class="proj-desc">Segmentation de près de 5 900 clients d'un e-commerce britannique (1M+ transactions, 2009-2011) par la méthode RFM et clustering K-Means, jusqu'à des recommandations marketing actionnables par segment — avec interrogation en langage naturel des résultats.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> RFM + K-Means : k=4 retenu par lecture croisée du coude et du score de silhouette</li><li><span class="arrow">▸</span> 4 segments actionnables : Champions (74 % du CA), Fidèles en retrait, Occasionnels récents, Endormis</li><li><span class="arrow">▸</span> Couche RAG (LangChain + ChromaDB) pour interroger les segments en langage naturel</li><li><span class="arrow">▸</span> Projet d'équipe TAISS 2026 — rôle : nettoyage, clustering, LLM-RAG, reporting</li></ul>
@@ -648,7 +766,7 @@ section[id]{scroll-margin-top:5rem}
         <div class="proj-links"><a href="https://github.com/cherif-tg/client-scope-rfm-project" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a></div>
       </div>
 
-      <div class="project-item glass-card" onclick="openProject('cahier-agent')">
+      <div class="project-item glass-card" data-project="cahier-agent" role="button" tabindex="0">
         <div class="proj-header"><div class="proj-icon proj-icon-ml"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v2m4-2v2M10 19v2m4-2v2M3 10h2m-2 4h2m14-4h2m-2 4h2" stroke-linecap="round"/></svg></div><div><span class="num">02</span><h3 class="proj-title">Agent IA — Planificateur de voyages</h3><p class="proj-subtitle">IA agentique · Projet final du cahier de vacances</p></div></div>
         <p class="proj-desc">Un agent qui compose des voyages complets sous contrainte de budget : vols et activités en SQL, sélection d'hôtels par recherche sémantique sur 135 brochures PDF, boucle de décision avec ajustements intelligents et réservation sécurisée — le tout dans une application Streamlit.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> 3 outils : vols et activités (SQL), hôtels (recherche sémantique sur 135 PDF)</li><li><span class="arrow">▸</span> Boucle d'agent : plan → évaluation du budget → ajustement → nouvelle tentative</li><li><span class="arrow">▸</span> Explore les dates voisines quand le budget ne passe pas — sans qu'on le lui demande</li><li><span class="arrow">▸</span> Réservation avec garde-fou : aucune écriture sans validation explicite</li></ul>
@@ -656,7 +774,7 @@ section[id]{scroll-margin-top:5rem}
         <div class="proj-links"><a href="https://github.com/cherif-tg/Cahier_vacances_2026/tree/main/Projet_07" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a></div>
       </div>
 
-      <div class="project-item glass-card" onclick="openProject('cahier-cdm')">
+      <div class="project-item glass-card" data-project="cahier-cdm" role="button" tabindex="0">
         <div class="proj-header"><div class="proj-icon proj-icon-togo"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0z" stroke-linejoin="round"/><path d="M7 6H4a3 3 0 003 3M17 6h3a3 3 0 01-3 3" stroke-linecap="round"/></svg></div><div><span class="num">03</span><span class="proj-badge">Bonus Togo</span><h3 class="proj-title">Togo 2030 — Cap sur la Coupe du Monde</h3><p class="proj-subtitle">Machine Learning · Simulation de tournoi</p></div></div>
         <p class="proj-desc">Et si le Togo jouait la Coupe du Monde 2030 ? Un Random Forest entraîné sur l'ère moderne du football international, puis le Togo intégré au tableau final : chaque match prédit, les vainqueurs avancent, jusqu'à son parcours complet. Le modèle ne fait aucun cadeau — et c'est tout l'intérêt.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Random Forest (200 arbres) sur la forme récente des équipes — ~2 prédictions sur 3</li><li><span class="arrow">▸</span> Les écarts de forme dominent : la dynamique récente pèse plus que l'avantage du terrain</li><li><span class="arrow">▸</span> Simulation complète du tableau 2030, avec le Togo à la place du Nigéria</li><li><span class="arrow">▸</span> Lecture rigoureuse d'une probabilité — sans la confondre avec un vœu</li></ul>
@@ -664,7 +782,7 @@ section[id]{scroll-margin-top:5rem}
         <div class="proj-links"><a href="https://github.com/cherif-tg/Cahier_vacances_2026/tree/main/Projet_02" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a></div>
       </div>
 
-      <div class="project-item glass-card" onclick="openProject('cahier-tour')">
+      <div class="project-item glass-card" data-project="cahier-tour" role="button" tabindex="0">
         <div class="proj-header"><div class="proj-icon proj-icon-togo"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4z" stroke-linejoin="round"/><path d="M8 2v16M16 6v16" stroke-linecap="round"/></svg></div><div><span class="num">04</span><span class="proj-badge">Bonus Togo</span><h3 class="proj-title">Tour du Togo 2027 — Étapes & optimisation</h3><p class="proj-subtitle">Clustering & algorithmes · Adaptation au contexte togolais</p></div></div>
         <p class="proj-desc">Et si on appliquait les algorithmes du Tour de France à mon pays ? Découpage des localités du Togo en étapes par K-Means et CAH, puis tracé du parcours optimal par plus proche voisin et 2-opt — le Tour du Togo tient en 7 étapes.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> K-Means vs CAH : découpage comparé par silhouette et contraintes métier</li><li><span class="arrow">▸</span> Distances GPS par haversine (correction de longitude) et matrice des distances</li><li><span class="arrow">▸</span> Optimisation glouton + 2-opt, testée sur tous les départs possibles</li><li><span class="arrow">▸</span> Données géographiques du Togo construites pour l'occasion (GeoJSON + carte)</li></ul>
@@ -672,7 +790,7 @@ section[id]{scroll-margin-top:5rem}
         <div class="proj-links"><a href="https://github.com/cherif-tg/Cahier_vacances_2026/tree/main/Projet_03" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a></div>
       </div>
 
-      <div class="project-item glass-card" onclick="openProject('cahier-vision')">
+      <div class="project-item glass-card" data-project="cahier-vision" role="button" tabindex="0">
         <div class="proj-header"><div class="proj-icon proj-icon-vision"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 012-2h2M16 4h2a2 2 0 012 2v2M20 16v2a2 2 0 01-2 2h-2M8 20H6a2 2 0 01-2-2v-2" stroke-linecap="round"/><circle cx="12" cy="12" r="3"/></svg></div><div><span class="num">05</span><h3 class="proj-title">Détection de poissons par vision</h3><p class="proj-subtitle">Deep Learning · Faster R-CNN fine-tuné</p></div></div>
         <p class="proj-desc">Détection et identification de 13 espèces de poissons d'aquarium (8 200+ photos) : fine-tuning d'un détecteur Faster R-CNN, évaluation rigoureuse, puis amélioration par augmentation de données et rééquilibrage des classes.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Fine-tuning d'un détecteur Faster R-CNN pré-entraîné (COCO) sur 13 espèces</li><li><span class="arrow">▸</span> Évaluation au mAP@50 et mAP@[50:95], avec précision top-1 par espèce</li><li><span class="arrow">▸</span> Augmentation (miroir, photométrie) et rééquilibrage des classes rares</li><li><span class="arrow">▸</span> Testé sur photos personnelles, y compris prises au téléphone</li></ul>
@@ -680,7 +798,7 @@ section[id]{scroll-margin-top:5rem}
         <div class="proj-links"><a href="https://github.com/cherif-tg/Cahier_vacances_2026/tree/main/Projet_05" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a></div>
       </div>
 
-      <div class="project-item glass-card" onclick="openProject('cahier-rag')">
+      <div class="project-item glass-card" data-project="cahier-rag" role="button" tabindex="0">
         <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14 3v5h5" stroke-linejoin="round"/><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z" stroke-linejoin="round"/><circle cx="11.5" cy="14.5" r="2.5"/><path d="M13.4 16.4L16 19" stroke-linecap="round"/></svg></div><div><span class="num">06</span><h3 class="proj-title">Assistant RAG — Hôtel Le Belvédère</h3><p class="proj-subtitle">RAG & LLM · Réponses sourcées</p></div></div>
         <p class="proj-desc">Un assistant virtuel qui répond aux questions des clients d'un hôtel à partir de sa documentation réelle : 5 PDF transformés en rubriques vectorisées et recherche sémantique — avec l'honnêteté de dire « je ne sais pas » quand l'information n'existe pas.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Démonstration des limites du LLM seul : réponses inventées et hors sujet</li><li><span class="arrow">▸</span> Pipeline RAG complet : extraction PDF → rubriques → embeddings → recherche par similarité</li><li><span class="arrow">▸</span> Questions pièges gérées : l'assistant refuse d'inventer quand l'information est absente</li><li><span class="arrow">▸</span> Comparaison des 3 approches : LLM seul, tout dans le prompt, RAG</li></ul>
@@ -689,7 +807,7 @@ section[id]{scroll-margin-top:5rem}
       </div>
 
 
-      <div class="project-item glass-card" onclick="openProject('tg-nlp-toolkit')">
+      <div class="project-item glass-card" data-project="tg-nlp-toolkit" role="button" tabindex="0">
         <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 6h10M4 10h7M4 14h10M4 18h7" stroke-linecap="round"/><path d="M18 6l3 3-3 3M18 14l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><span class="num">07</span><h3 class="proj-title">Kabiyè–Èʋɛ NLP Toolkit</h3><p class="proj-subtitle">Traduction automatique FR ↔ Éwé · NLP pour les langues togolaises</p></div></div>
         <p class="proj-desc">Toolkit open-source de traitement automatique des langues togolaises : traduction automatique français-éwé via un modèle NLLB-200 fine-tuné par LoRA, corpus parallèle de 65 640 paires, API REST, CLI et démo interactive.</p>
         <ul class="highlights"><li><span class="arrow">→</span> Modèle NLLB-200 (600M) fine-tuné par LoRA, publié sur HuggingFace</li><li><span class="arrow">→</span> Corpus parallèle FR ↔ Éwé : 65 640 paires (Bible 1913 + OPUS NLLB)</li><li><span class="arrow">→</span> FR → Éwé : BLEU 18,71 et chrF++ 41,83 (+7,3 pts vs zero-shot)</li><li><span class="arrow">→</span> Déploiement : API FastAPI, CLI batch, démo Gradio sur HuggingFace Spaces</li></ul>
@@ -697,7 +815,7 @@ section[id]{scroll-margin-top:5rem}
         <div class="proj-links"><a href="https://github.com/cherif-tg/tg_nlp_toolkit" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a><a href="https://huggingface.co/spaces/cheriftenga/nllb-ewe-demo" target="_blank" rel="noopener" class="proj-link proj-link-demo">Démo en ligne</a></div>
       </div>
 
-      <div class="project-item glass-card" onclick="openProject('paludisme')">
+      <div class="project-item glass-card" data-project="paludisme" role="button" tabindex="0">
         <div class="proj-header"><div class="proj-icon proj-icon-vision"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l5 5" stroke-linecap="round"/><circle cx="8.5" cy="11" r="1.5" fill="currentColor" stroke="none"/><circle cx="13.5" cy="11" r="1.5" fill="currentColor" stroke="none"/></svg></div><div><span class="num">08</span><h3 class="proj-title">Analyse et Détection du Paludisme</h3><p class="proj-subtitle">Projet de Fin de Licence &bull; 2026</p></div></div>
         <p class="proj-desc">Analyse approfondie de sources de données hétérogènes (frottis sanguins, symptômes, données hématologiques) avec une architecture de traitement de données critiques en temps réel.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Architecture SI multicouche : collecte (NLP + Vision + tabulaire), traitement ML, API de diffusion</li><li><span class="arrow">▸</span> Pipeline de données robuste sur 100 000+ dossiers simulés via Apache PySpark</li><li><span class="arrow">▸</span> Modèles ML/DL : XGBoost + ResNet-50 fine-tuné pour 8 pathologies (SHAP + Grad-CAM)</li><li><span class="arrow">▸</span> Déploiement : API FastAPI + Streamlit + mode hors-ligne ONNX</li></ul>
@@ -705,7 +823,7 @@ section[id]{scroll-margin-top:5rem}
         <div class="proj-links"><span class="proj-link proj-link-demo" style="opacity:0.5;cursor:default">Dépôt à venir</span></div>
       </div>
 
-      <div class="project-item glass-card" onclick="openProject('fraude')">
+      <div class="project-item glass-card" data-project="fraude" role="button" tabindex="0">
         <div class="proj-header"><div class="proj-icon proj-icon-data"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l2.5 7.5H22l-6 4.5 2.5 7.5L12 17l-6.5 4.5L8 14l-6-4.5h7.5z"/></svg></div><div><span class="num">09</span><h3 class="proj-title">Système de Détection de Fraude</h3><p class="proj-subtitle">Machine Learning appliqué à la détection d'anomalies</p></div></div>
         <p class="proj-desc">Système intelligent de détection de transactions frauduleuses en temps réel, combinant modèles supervisés et non supervisés.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Analyse exploratoire sur données transactionnelles réelles</li><li><span class="arrow">▸</span> Modèles : Isolation Forest, Auto-encodeurs, XGBoost</li><li><span class="arrow">▸</span> Pipeline de feature engineering avancé</li><li><span class="arrow">▸</span> Dashboard monitoring avec Power BI</li></ul>
@@ -713,7 +831,7 @@ section[id]{scroll-margin-top:5rem}
         <div class="proj-links"><a href="https://github.com/cherif-tg/fraudDetection" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a></div>
       </div>
 
-      <div class="project-item glass-card" onclick="openProject('rag')">
+      <div class="project-item glass-card" data-project="rag" role="button" tabindex="0">
         <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="8" height="8" rx="1"/><rect x="14" y="3" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="7" rx="1"/><rect x="14" y="14" width="8" height="7" rx="1"/></svg></div><div><span class="num">10</span><h3 class="proj-title">OpenMind RAG</h3><p class="proj-subtitle">Génération augmentée par récupération (RAG)</p></div></div>
         <p class="proj-desc">Système RAG complet : ingestion multi-format, vectorisation, recherche sémantique, re-ranking et réponses avec citations des sources.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Ingestion multi-format (PDF, CSV, DOCX, Markdown, Web)</li><li><span class="arrow">▸</span> Re-ranking + génération avec citations des sources</li><li><span class="arrow">▸</span> LLM hybride (Groq / Ollama) + API FastAPI & Streamlit</li></ul>
@@ -721,7 +839,7 @@ section[id]{scroll-margin-top:5rem}
         <div class="proj-links"><a href="https://github.com/cherif-tg/openmind" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a> <a href="https://huggingface.co/spaces/cheriftenga/rag" target="_blank" rel="noopener" class="proj-link proj-link-demo">Démo en ligne</a></div>
       </div>
 
-      <div class="project-item glass-card" onclick="openProject('sara')">
+      <div class="project-item glass-card" data-project="sara" role="button" tabindex="0">
         <div class="proj-header"><div class="proj-icon proj-icon-ml"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M17 18H7a2 2 0 01-2-2v-1h14v1a2 2 0 01-2 2z" stroke-linejoin="round"/><path d="M21 15a2 2 0 01-2 2m-14 0a2 2 0 01-2-2"/></svg></div><div><span class="num">11</span><h3 class="proj-title">Traitement du Lexique Sara</h3><p class="proj-subtitle">NLP appliqué aux langues africaines</p></div></div>
         <p class="proj-desc">Traitement automatique du langage naturel appliqué au lexique Sara. Analyse lexicale et modélisation linguistique.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Constitution d'un corpus lexical en langue Sara</li><li><span class="arrow">▸</span> Analyse morphologique et extraction de racines</li><li><span class="arrow">▸</span> Modélisation statistique des patterns linguistiques</li></ul>
@@ -984,7 +1102,7 @@ section[id]{scroll-margin-top:5rem}
 <!-- ===== CONTACT ===== -->
 <section id="contact" class="py-section bg-warm">
   <div class="section fade-in"><p class="section-label">&gt; contact</p><h2 class="section-title">Travaillons ensemble</h2>
-    <p style="color:var(--warm-500);margin-top:1rem;max-width:36rem">Actuellement à la recherche d'un stage.</p><p class="contact-runtime">contact_runtime :: <strong>ONLINE</strong> · réponse habituelle sous 24h</p>
+    <p style="color:var(--warm-500);margin-top:1rem;max-width:36rem">Actuellement disponible pour des missions.</p><p class="contact-runtime">contact_runtime :: <strong>ONLINE</strong> · réponse habituelle sous 24h</p>
     <div class="contact-grid" style="margin-top:3rem">
       <div class="contact-card glass-card">
         <a href="mailto:tengacherif@gmail.com" class="link-item"><div class="icon icon-email"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div class="info"><div class="label">Email</div><div class="val">tengacherif@gmail.com</div></div></a>
@@ -993,7 +1111,7 @@ section[id]{scroll-margin-top:5rem}
       </div>
       <div class="intern-card glass-card">
         <div class="icon-big"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
-        <h3>Recherche de stage</h3>
+        <h3>Disponible pour des missions</h3>
         <p style="color:var(--warm-500)"><strong style="color:var(--warm-700)">Disponible pour :</strong> Data Science, Machine Learning, IA appliquée.</p>
       </div>
     </div>
@@ -1107,8 +1225,8 @@ var I18N_STATIC={
 "Club de basketball":"Basketball club","Esprit d'équipe, discipline et cohésion — membre d'un club de basketball à Lomé.":"Team spirit, discipline and cohesion - member of a basketball club in Lomé.","Loisir":"Leisure",
 "À la recherche d'un stage":"Looking for an internship","Stage en Data Science, Machine Learning et Intelligence Artificielle appliquée.":"Internship in Data Science, Machine Learning and Applied Artificial Intelligence.",
 "Discutons-en":"Let's talk",
-"Travaillons ensemble":"Let's work together","Actuellement à la recherche d'un stage.":"Currently looking for an internship (August - October 2026).",
-"Recherche de stage":"Internship search","Période :":"Period:","er":"st","Août - 31 Octobre 2026":"August - October 31, 2026","Disponible pour :":"Open to:","Data Science, Machine Learning, IA appliquée.":"Data Science, Machine Learning, Applied AI.",
+"Travaillons ensemble":"Let's work together","Actuellement disponible pour des missions.":"Currently available for missions.",
+"Disponible pour des missions":"Available for missions","Période :":"Period:","er":"st","Août - 31 Octobre 2026":"August - October 31, 2026","Disponible pour :":"Open to:","Data Science, Machine Learning, IA appliquée.":"Data Science, Machine Learning, Applied AI.",
 "Envoyez-moi un message":"Send me a message","Une question, une opportunité, un projet — je réponds sous 24h.":"A question, an opportunity, a project - I reply within 24h.",
 "Nom":"Name","Sujet":"Subject","Message":"Message","Envoyer le message":"Send message",
 "© 2026 TENGA Chérif Abdel Azize. Tous droits réservés.":"© 2026 TENGA Chérif Abdel Azize. All rights reserved.","Construit avec passion":"Built with passion",
@@ -1323,12 +1441,15 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()
 function updBar(){if(!fill)return;var max=track.scrollWidth-track.clientWidth;if(max<=4){fill.style.width="100%";return}var p=track.scrollLeft/max;fill.style.width=Math.max(6,p*100)+"%"}
 var t=false;function onScroll(){if(!t){t=true;requestAnimationFrame(function(){updBar();t=false})}}
 track.addEventListener("scroll",onScroll,{passive:true});window.addEventListener("resize",onScroll);document.addEventListener("i18n:change",function(){setTimeout(onScroll,60)});
-var down=false,moved=false,sx=0,sl=0,suppress=false;
-track.addEventListener("pointerdown",function(e){if(e.pointerType!=="mouse"||e.button!==0)return;down=true;moved=false;suppress=false;sx=e.clientX;sl=track.scrollLeft;try{track.setPointerCapture(e.pointerId)}catch(_){} });
-track.addEventListener("pointermove",function(e){if(!down)return;var dx=e.clientX-sx;if(!moved&&Math.abs(dx)>6){moved=true;track.classList.add("dragging")}if(moved)track.scrollLeft=sl-dx});
-function endDrag(){if(!down)return;down=false;track.classList.remove("dragging");if(moved)suppress=true}
-track.addEventListener("pointerup",endDrag);track.addEventListener("pointercancel",endDrag);
-track.addEventListener("click",function(e){if(suppress){e.stopPropagation();e.preventDefault();suppress=false}},true);
+track.querySelectorAll(".project-item").forEach(function(card){
+  card.addEventListener("click",function(e){
+    if(e.target.closest("a,button"))return;
+    openProject(card.getAttribute("data-project"));
+  });
+  card.addEventListener("keydown",function(e){
+    if(e.key==="Enter"||e.key===" "){e.preventDefault();openProject(card.getAttribute("data-project"));}
+  });
+});
 function step(dir){var c=track.querySelector(".project-item");var gap=parseFloat(getComputedStyle(track).columnGap)||20;var w=c?c.getBoundingClientRect().width+gap:450;track.scrollBy({left:dir*w,behavior:"smooth"})}
 var p1=document.getElementById("projPrev"),p2=document.getElementById("projNext");if(p1)p1.addEventListener("click",function(){step(-1)});if(p2)p2.addEventListener("click",function(){step(1)});
 updBar();setTimeout(updBar,350)}();
@@ -1508,7 +1629,14 @@ var projectDetailsEn={
 };
 
 function openProject(slug){
-  var p=(__lang==="en"&&projectDetailsEn[slug])?projectDetailsEn[slug]:projectDetails[slug];if(!p)return;
+  var p=(__lang==="en"&&projectDetailsEn[slug])?projectDetailsEn[slug]:projectDetails[slug];
+  /* Les cartes peuvent être consultées même lorsqu'un projet n'a pas encore de fiche détaillée. */
+  if(!p){
+    var card=document.querySelector('.project-item[data-project="'+slug+'"]');
+    if(!card)return;
+    var title=card.querySelector('.proj-title'),subtitle=card.querySelector('.proj-subtitle'),desc=card.querySelector('.proj-desc');
+    p={meta:'Projet · Portfolio',title:title?title.textContent:'Projet',subtitle:subtitle?subtitle.textContent:'',stack:Array.from(card.querySelectorAll('.stack span')).map(function(x){return x.textContent}),links:Array.from(card.querySelectorAll('.proj-links a')).map(function(a){return {t:a.textContent.trim(),u:a.href}}),body:'<p>'+((desc&&desc.textContent)||'Découvrez les détails de ce projet dans la carte ci-dessus.')+'</p>'};
+  }
   var modal=document.getElementById('project-modal'),content=document.getElementById('project-modal-content');
   var stack=p.stack.map(function(s){return '<span>'+s+'</span>'}).join('');
   var links=p.links.map(function(l){return l.u?'<a href="'+l.u+'" target="_blank" rel="noopener" class="proj-link proj-link-github">'+l.t+'</a>':'<span class="proj-link proj-link-demo" style="opacity:0.6;cursor:default">'+l.t+'</span>'}).join('');
@@ -1522,11 +1650,22 @@ function openProject(slug){
     '<div class="pm-links">'+links+'</div>'+demo;
   modal.classList.add('open');document.body.classList.add('modal-open');
 }
+/* Un lien GitHub ou une démo doit rester un lien : il ne doit pas déclencher la fiche de la carte. */
+document.querySelectorAll('.project-item a').forEach(function(link){
+  link.addEventListener('click',function(e){e.stopPropagation()});
+});
 function loadProjectDemo(btn){var frame=btn.parentNode.querySelector('.pm-demo-frame');frame.src=frame.dataset.src;btn.style.display='none';frame.style.display='block'}
 function closeProjectModal(){
   document.getElementById('project-modal').classList.remove('open');document.body.classList.remove('modal-open');
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeProjectModal()});
+/* Branchement final après la déclaration de openProject : fiable sur tous les breakpoints. */
+document.querySelectorAll('.project-item').forEach(function(card){
+  card.addEventListener('click',function(e){
+    if(e.target.closest('a,button'))return;
+    openProject(card.getAttribute('data-project'));
+  });
+});
 
 </script>
 </body>
