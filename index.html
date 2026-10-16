@@ -123,6 +123,35 @@ nav .links a.active{font-weight:500}
 #scroll-progress::after{content:"";position:absolute;right:-2px;top:-1px;width:4px;height:4px;border-radius:50%;background:var(--accent-light);box-shadow:0 0 0 2px rgba(168,200,167,.18),0 0 10px rgba(91,140,90,.7)}
 @media (prefers-reduced-motion:reduce){#scroll-progress{transition:none;box-shadow:none}#scroll-progress::after{box-shadow:none}}
 
+/* ===== INTERFACE BOOT ===== */
+body.booting{overflow:hidden}
+#site-loader{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;background:#FAF7F2;color:var(--warm-800);opacity:1;visibility:visible;transition:opacity .65s ease,visibility .65s ease}
+#site-loader.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.boot-shell{width:min(280px,72vw);text-align:center;font-family:'JetBrains Mono',monospace}
+.boot-portrait{position:relative;width:132px;height:166px;margin:0 auto 1.4rem;border:1px solid rgba(91,140,90,.52);border-radius:1.25rem;overflow:hidden;background:#1F1A17;box-shadow:0 16px 36px rgba(61,52,46,.12);animation:bootPortrait .9s cubic-bezier(.2,.8,.2,1) both}
+.boot-portrait::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(160deg,rgba(168,200,167,.15),transparent 42%,rgba(31,26,23,.5));pointer-events:none}
+.boot-portrait::after{content:"";position:absolute;z-index:3;left:0;right:0;top:18%;height:1px;background:rgba(168,200,167,.8);box-shadow:0 0 14px rgba(168,200,167,.8);animation:bootScan 1.8s ease-in-out infinite}
+.boot-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(1) contrast(1.04)}
+.boot-kicker{font-size:.62rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;animation:fadeIn .5s ease .25s both}
+.boot-name{margin-top:.45rem;font-family:'DM Serif Display',Georgia,serif;font-size:1.45rem;color:var(--warm-800);animation:fadeInUp .55s ease .35s both}
+.boot-status{margin-top:.7rem;font-size:.63rem;color:var(--warm-500);animation:fadeIn .5s ease .55s both}
+.boot-status::before{content:"●";margin-right:.45rem;color:var(--accent);animation:pulseSoft 1.2s ease-in-out infinite}
+.boot-progress{height:2px;margin:1rem auto 0;overflow:hidden;background:rgba(216,201,178,.55);border-radius:99px;animation:fadeIn .5s ease .65s both}
+.boot-progress span{display:block;width:100%;height:100%;transform-origin:left;background:var(--accent);animation:bootProgress 1.05s cubic-bezier(.2,.8,.2,1) both}
+.boot-action{margin-top:1.15rem;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-width:196px;padding:.7rem 1rem;border:1px solid var(--accent);border-radius:.75rem;background:var(--accent);color:#FAF7F2;font:600 .68rem 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 20px rgba(91,140,90,.18);transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.boot-action span{font-size:1rem;line-height:1;transition:transform .25s ease}
+.boot-action:hover,.boot-action:focus-visible{background:var(--accent-dark);box-shadow:0 10px 24px rgba(91,140,90,.28);transform:translateY(-2px);outline:none}
+.boot-action:hover span,.boot-action:focus-visible span{transform:translateX(3px)}
+.boot-action:active{transform:translateY(0) scale(.98)}
+.boot-countdown{margin-top:.7rem;color:var(--warm-400);font:500 .58rem 'JetBrains Mono',monospace;letter-spacing:.03em}
+#site-loader.is-starting .boot-action{pointer-events:none;opacity:.72}
+@media (prefers-reduced-motion:reduce){.boot-action,.boot-action span{transition:none}}
+
+@keyframes bootPortrait{from{opacity:0;transform:translateY(12px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes bootScan{0%,100%{transform:translateY(0);opacity:.2}48%,60%{transform:translateY(112px);opacity:.85}}
+@keyframes bootProgress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){#site-loader{transition:none}.boot-portrait,.boot-kicker,.boot-name,.boot-status,.boot-progress{animation:none}.boot-portrait::after,.boot-progress span{animation:none}.boot-progress span{transform:scaleX(1)}}
+
 /* ===== HERO ===== */
 #hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
 .hero-media{position:absolute;z-index:4;right:max(3rem,calc((100vw - 1200px)/2));top:12%;width:min(30vw,350px);height:min(68vh,510px);border:1px solid rgba(91,140,90,.45);border-radius:1.5rem;overflow:hidden;background:#1F1A17;box-shadow:0 22px 60px rgba(31,26,23,.2);opacity:0;animation:fadeInUp .9s ease-out .55s forwards}
@@ -299,6 +328,20 @@ nav .links a.active{font-weight:500}
 .project-item:hover .prediction-hint{opacity:1;animation:predictFade .8s ease-out}
 @keyframes predictFade{0%{opacity:1;content:'[analysing...]'}50%{opacity:1}100%{opacity:0}}
 .project-item:hover .proj-header,.project-item:hover .proj-desc,.project-item:hover .highlights,.project-item:hover .stack,.project-item:hover .proj-links{transition:opacity .2s}
+.project-media{position:relative;height:150px;margin:-.35rem -.35rem 1.25rem;border-radius:1rem;overflow:hidden;background:var(--warm-100);border:1px solid rgba(216,201,178,.55)}
+.project-media img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(.78) contrast(.98);transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .35s ease}
+.project-media::after{content:"visual.signal";position:absolute;right:.7rem;bottom:.55rem;padding:.28rem .45rem;border-radius:.4rem;background:rgba(31,26,23,.68);color:#DCE5DA;font:500 .55rem 'JetBrains Mono',monospace;letter-spacing:.05em;opacity:.86}
+.project-item:hover .project-media img{transform:scale(1.045);filter:saturate(.95) contrast(1.02)}
+@media(min-width:768px){.project-media{height:168px;margin:-.5rem -.5rem 1.5rem}}
+.pm-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;margin:1.25rem 0 1.35rem}
+.pm-gallery figure{position:relative;margin:0;overflow:hidden;border:1px solid rgba(216,201,178,.62);border-radius:.9rem;background:var(--warm-50)}
+.pm-gallery figure:first-child{grid-column:1/-1}
+.pm-gallery img{display:block;width:100%;height:115px;object-fit:cover;transition:transform .35s ease}
+.pm-gallery figure:first-child img{height:210px}
+.pm-gallery figure:hover img{transform:scale(1.03)}
+.pm-gallery figcaption{padding:.45rem .6rem;color:var(--warm-500);font:500 .58rem 'JetBrains Mono',monospace}
+@media(max-width:560px){.pm-gallery{grid-template-columns:1fr}.pm-gallery figure:first-child{grid-column:auto}.pm-gallery img,.pm-gallery figure:first-child img{height:170px}}
+
 .project-item .proj-header{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem}
 .project-item .proj-icon{width:3rem;height:3rem;border-radius:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .project-item .proj-icon svg{width:1.5rem;height:1.5rem}
@@ -323,6 +366,14 @@ nav .links a.active{font-weight:500}
 .proj-link-demo{border:1px solid var(--warm-300);color:var(--warm-600)}
 .proj-link-demo:hover{border-color:var(--accent);color:var(--accent)}
 .proj-link svg{width:.875rem;height:.875rem}
+
+.services-visual{position:relative;display:flex;align-items:center;gap:1rem;margin-top:2.5rem;min-height:126px;padding:.6rem;overflow:hidden;border-radius:1.25rem;background:rgba(255,255,255,.52)}
+.services-visual img{width:100%;height:150px;object-fit:cover;object-position:center;border-radius:.85rem;filter:sepia(.1) saturate(.65) contrast(.96)}
+.services-visual span{position:absolute;right:1.1rem;bottom:1rem;padding:.35rem .55rem;border-radius:.45rem;background:rgba(31,26,23,.72);color:#DCE5DA;font:500 .58rem 'JetBrains Mono',monospace}
+.blog-cover{height:132px;margin:-.35rem -.35rem 1rem;overflow:hidden;border-radius:1rem;background:var(--warm-100)}
+.blog-cover img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 18%;filter:saturate(.72) contrast(.98);transition:transform .5s ease,filter .35s ease}
+.blog-card:hover .blog-cover img{transform:scale(1.035);filter:saturate(.9) contrast(1.02)}
+@media(max-width:640px){.services-visual img{height:125px}.blog-cover{height:145px}}
 
 /* ===== BLOG ===== */
 .blog-grid{display:flex;gap:1.5rem;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding:.25rem .25rem 1.25rem;scrollbar-width:none;-ms-overflow-style:none}
@@ -576,7 +627,19 @@ section[id]{scroll-margin-top:5rem}
 ::-webkit-scrollbar-thumb:hover{background:var(--warm-400)}
 </style>
 </head>
-<body>
+<body class="booting">
+
+<div id="site-loader" role="status" aria-live="polite" aria-label="Chargement de l’interface">
+  <div class="boot-shell">
+    <div class="boot-portrait"><img src="portrait.jpg" alt="" fetchpriority="high"></div>
+    <div class="boot-kicker">interface.boot</div>
+    <div class="boot-name">TENGA Chérif</div>
+    <div class="boot-status">chargement de l’interface...</div>
+    <div class="boot-progress" aria-hidden="true"><span></span></div>
+    <button class="boot-action" id="bootStart" type="button">Start exploration <span aria-hidden="true">→</span></button>
+    <div class="boot-countdown" id="bootCountdown">auto-start in 05s</div>
+  </div>
+</div>
 
 <div id="scroll-progress" role="progressbar" aria-label="Progression de lecture" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
 
@@ -675,7 +738,7 @@ section[id]{scroll-margin-top:5rem}
         </div>
       </div>
       <div class="about-side">
-        <div class="about-photo"><img src="photo.png" alt="TENGA Chérif Abdel Azize" loading="lazy"></div>
+        <div class="about-photo"><img src="portrait.jpg" alt="TENGA Chérif Abdel Azize" loading="lazy"></div>
         <div class="card glass-card"><h3>Contact</h3><div class="row"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>Lomé, Togo</div><div class="row"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><a href="mailto:tengacherif@gmail.com" class="accent-link">tengacherif@gmail.com</a></div><div class="row"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>+228 71 51 80 61</div></div>
         <div class="card glass-card"><h3>Langues</h3><div class="lang-row"><span>Français</span><span class="level">Courant</span></div><div class="lang-row"><span>Anglais</span><span class="level">Intermédiaire</span></div></div>
         <a href="cv.pdf" download class="download-cv"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Télécharger mon CV</a>
@@ -749,6 +812,8 @@ section[id]{scroll-margin-top:5rem}
       </div>
     </div>
 
+    <div class="services-visual glass-card"><img src="assets/services-data-visual.webp" alt="Illustration d’un environnement de travail data et analytique" loading="lazy"><span>visual.context / data → impact</span></div>
+
     <div class="services-process">
       <div class="service-step"><div class="service-step-number">01 · COMPRENDRE</div><h4>Clarifier le besoin</h4><p>Un échange court pour définir le problème, les données disponibles et le résultat attendu.</p></div>
       <div class="service-step"><div class="service-step-number">02 · CONSTRUIRE</div><h4>Prototyper une solution</h4><p>Une approche pragmatique, testée sur un cas réel et expliquée sans jargon inutile.</p></div>
@@ -765,6 +830,7 @@ section[id]{scroll-margin-top:5rem}
     <div class="proj-wrap" style="margin-top:1.5rem"><div class="proj-track" id="projTrack">
 
       <div class="project-item glass-card" data-project="client-scope" role="button" tabindex="0">
+        <div class="project-media"><img src="assets/data-analysis.webp" alt="Visualisation de données temporelles" loading="lazy"></div>
         <div class="proj-header"><div class="proj-icon proj-icon-data"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke-linecap="round"/><circle cx="17" cy="9" r="2.5"/><path d="M16 15.1c2.5.4 4 2.4 4 4.9" stroke-linecap="round"/></svg></div><div><span class="num">01</span><h3 class="proj-title">Client Scope — Segmentation RFM</h3><p class="proj-subtitle">Projet d'équipe TAISS 2026 · Data Science</p></div></div>
         <p class="proj-desc">Segmentation de près de 5 900 clients d'un e-commerce britannique (1M+ transactions, 2009-2011) par la méthode RFM et clustering K-Means, jusqu'à des recommandations marketing actionnables par segment — avec interrogation en langage naturel des résultats.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> RFM + K-Means : k=4 retenu par lecture croisée du coude et du score de silhouette</li><li><span class="arrow">▸</span> 4 segments actionnables : Champions (74 % du CA), Fidèles en retrait, Occasionnels récents, Endormis</li><li><span class="arrow">▸</span> Couche RAG (LangChain + ChromaDB) pour interroger les segments en langage naturel</li><li><span class="arrow">▸</span> Projet d'équipe TAISS 2026 — rôle : nettoyage, clustering, LLM-RAG, reporting</li></ul>
@@ -797,6 +863,7 @@ section[id]{scroll-margin-top:5rem}
       </div>
 
       <div class="project-item glass-card" data-project="cahier-vision" role="button" tabindex="0">
+        <div class="project-media"><img src="assets/fish-detection.webp" alt="Détection de poissons par Faster R-CNN" loading="lazy"></div>
         <div class="proj-header"><div class="proj-icon proj-icon-vision"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 012-2h2M16 4h2a2 2 0 012 2v2M20 16v2a2 2 0 01-2 2h-2M8 20H6a2 2 0 01-2-2v-2" stroke-linecap="round"/><circle cx="12" cy="12" r="3"/></svg></div><div><span class="num">05</span><h3 class="proj-title">Détection de poissons par vision</h3><p class="proj-subtitle">Deep Learning · Faster R-CNN fine-tuné</p></div></div>
         <p class="proj-desc">Détection et identification de 13 espèces de poissons d'aquarium (8 200+ photos) : fine-tuning d'un détecteur Faster R-CNN, évaluation rigoureuse, puis amélioration par augmentation de données et rééquilibrage des classes.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Fine-tuning d'un détecteur Faster R-CNN pré-entraîné (COCO) sur 13 espèces</li><li><span class="arrow">▸</span> Évaluation au mAP@50 et mAP@[50:95], avec précision top-1 par espèce</li><li><span class="arrow">▸</span> Augmentation (miroir, photométrie) et rééquilibrage des classes rares</li><li><span class="arrow">▸</span> Testé sur photos personnelles, y compris prises au téléphone</li></ul>
@@ -814,6 +881,7 @@ section[id]{scroll-margin-top:5rem}
 
 
       <div class="project-item glass-card" data-project="tg-nlp-toolkit" role="button" tabindex="0">
+        <div class="project-media"><img src="assets/nlp-translation.webp" alt="Interface de traduction français-éwé" loading="lazy"></div>
         <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 6h10M4 10h7M4 14h10M4 18h7" stroke-linecap="round"/><path d="M18 6l3 3-3 3M18 14l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><span class="num">07</span><h3 class="proj-title">Kabiyè–Èʋɛ NLP Toolkit</h3><p class="proj-subtitle">Traduction automatique FR ↔ Éwé · NLP pour les langues togolaises</p></div></div>
         <p class="proj-desc">Toolkit open-source de traitement automatique des langues togolaises : traduction automatique français-éwé via un modèle NLLB-200 fine-tuné par LoRA, corpus parallèle de 65 640 paires, API REST, CLI et démo interactive.</p>
         <ul class="highlights"><li><span class="arrow">→</span> Modèle NLLB-200 (600M) fine-tuné par LoRA, publié sur HuggingFace</li><li><span class="arrow">→</span> Corpus parallèle FR ↔ Éwé : 65 640 paires (Bible 1913 + OPUS NLLB)</li><li><span class="arrow">→</span> FR → Éwé : BLEU 18,71 et chrF++ 41,83 (+7,3 pts vs zero-shot)</li><li><span class="arrow">→</span> Déploiement : API FastAPI, CLI batch, démo Gradio sur HuggingFace Spaces</li></ul>
@@ -838,6 +906,7 @@ section[id]{scroll-margin-top:5rem}
       </div>
 
       <div class="project-item glass-card" data-project="rag" role="button" tabindex="0">
+        <div class="project-media"><img src="assets/openmind-rag-interface.webp" alt="Interface de l’assistant OpenMind RAG" loading="lazy"></div>
         <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="8" height="8" rx="1"/><rect x="14" y="3" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="7" rx="1"/><rect x="14" y="14" width="8" height="7" rx="1"/></svg></div><div><span class="num">10</span><h3 class="proj-title">OpenMind RAG</h3><p class="proj-subtitle">Génération augmentée par récupération (RAG)</p></div></div>
         <p class="proj-desc">Système RAG complet : ingestion multi-format, vectorisation, recherche sémantique, re-ranking et réponses avec citations des sources.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Ingestion multi-format (PDF, CSV, DOCX, Markdown, Web)</li><li><span class="arrow">▸</span> Re-ranking + génération avec citations des sources</li><li><span class="arrow">▸</span> LLM hybride (Groq / Ollama) + API FastAPI & Streamlit</li></ul>
@@ -865,6 +934,7 @@ section[id]{scroll-margin-top:5rem}
     <div class="blog-wrap"><div class="blog-grid" id="blogGrid" style="margin-top:3rem">
 
       <div class="blog-card glass-card" onclick="openBlogPost('taiss-2026')">
+        <div class="blog-cover"><img src="assets/blog-prompt-injection.webp" alt="Schéma sur l’injection de prompt dans un agent IA" loading="lazy"></div>
         <p class="blog-date">Août 2026</p>
         <h3 class="blog-title">TAISS 2026 · Ma semaine au Togo AI Summer School</h3>
         <p class="blog-excerpt">Première édition du Togo AI Summer School : les mathématiques derrière les LLM, une filière Data Science (ML, Deep Learning, MLOps) et un projet de segmentation client - retour sur une semaine intense à l'UniPod.</p>
@@ -1636,6 +1706,23 @@ var projectDetailsEn={
   }
 };
 
+var projectVisuals={
+  'tg-nlp-toolkit':[
+    {src:'assets/nlp-translation.webp',alt:'Interface de traduction français-éwé',label:'demo.interface'},
+    {src:'assets/nlp-results.webp',alt:'Courbe de résultats BLEU et chrF++',label:'evaluation.signal'}
+  ],
+  'rag':[
+    {src:'assets/openmind-rag-interface.webp',alt:'Interface de questions-réponses RAG avec citations',label:'demo.interface'},
+    {src:'assets/openmind-rag-architecture.webp',alt:'Architecture Advanced RAG',label:'pipeline.architecture'}
+  ],
+  'cahier-vision':[
+    {src:'assets/fish-detection.webp',alt:'Détection de poissons par Faster R-CNN',label:'model.output'}
+  ],
+  'client-scope':[
+    {src:'assets/data-analysis.webp',alt:'Visualisation de ventes quotidiennes',label:'data.signal'}
+  ]
+};
+
 function openProject(slug){
   var p=(__lang==="en"&&projectDetailsEn[slug])?projectDetailsEn[slug]:projectDetails[slug];
   /* Les cartes peuvent être consultées même lorsqu'un projet n'a pas encore de fiche détaillée. */
@@ -1648,11 +1735,14 @@ function openProject(slug){
   var modal=document.getElementById('project-modal'),content=document.getElementById('project-modal-content');
   var stack=p.stack.map(function(s){return '<span>'+s+'</span>'}).join('');
   var links=p.links.map(function(l){return l.u?'<a href="'+l.u+'" target="_blank" rel="noopener" class="proj-link proj-link-github">'+l.t+'</a>':'<span class="proj-link proj-link-demo" style="opacity:0.6;cursor:default">'+l.t+'</span>'}).join('');
+  var visuals=projectVisuals[slug]||[];
+  var gallery=visuals.length?'<div class="pm-gallery" aria-label="Visuels du projet">'+visuals.map(function(v){return '<figure><img src="'+v.src+'" alt="'+v.alt+'" loading="lazy"><figcaption>'+v.label+'</figcaption></figure>'}).join('')+'</div>':'';
   var demo=p.demo?'<div class="pm-demo"><button class="pm-demo-btn" type="button" onclick="loadProjectDemo(this)">Lancer la démo interactive</button><iframe class="pm-demo-frame" data-src="'+p.demo+'?embed=true" title="Démo interactive" loading="lazy" allow="clipboard-write; autoplay; microphone; camera"></iframe></div>':'';
   content.innerHTML='<button class="modal-close" onclick="closeProjectModal()" aria-label="Fermer"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>'+
     '<p class="pm-meta">'+p.meta+'</p>'+
     '<h2 class="modal-title">'+p.title+'</h2>'+
     '<p class="pm-subtitle">'+p.subtitle+'</p>'+
+    gallery+
     '<div class="modal-body">'+p.body+'</div>'+
     '<div class="pm-stack">'+stack+'</div>'+
     '<div class="pm-links">'+links+'</div>'+demo;
@@ -1674,6 +1764,9 @@ document.querySelectorAll('.project-item').forEach(function(card){
     openProject(card.getAttribute('data-project'));
   });
 });
+
+// ===== INTERFACE BOOT =====
+!function(){var loader=document.getElementById('site-loader');if(!loader)return;var start=document.getElementById('bootStart'),countdown=document.getElementById('bootCountdown');var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=false,timer=0,interval=0,remaining=5;try{seen=sessionStorage.getItem('portfolio-boot-seen')==='1'}catch(e){}function hide(){clearTimeout(timer);clearInterval(interval);loader.classList.add('is-hidden');document.body.classList.remove('booting')}function begin(){if(loader.classList.contains('is-starting'))return;loader.classList.add('is-starting');if(start){start.textContent='Loading interface...';start.setAttribute('aria-busy','true')}if(countdown)countdown.textContent='system ready · opening portfolio';try{sessionStorage.setItem('portfolio-boot-seen','1')}catch(e){}window.setTimeout(hide,reduced?0:260)}if(seen||reduced){hide();return}if(start)start.addEventListener('click',begin);document.addEventListener('keydown',function(e){if(e.key==='Enter'&&!loader.classList.contains('is-hidden')){e.preventDefault();begin()}});interval=window.setInterval(function(){remaining--;if(countdown&&remaining>0)countdown.textContent='auto-start in 0'+remaining+'s';if(remaining<=0){clearInterval(interval);begin()}},1000)}();
 
 </script>
 </body>
