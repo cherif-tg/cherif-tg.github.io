@@ -118,6 +118,10 @@ nav .links a.active{font-weight:500}
 #back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
 #back-to-top:hover{background:var(--accent-dark);transform:translateY(-2px)}
 #back-to-top svg{width:1.25rem;height:1.25rem}
+/* Progression globale du portfolio : un fil de données discret, synchronisé avec le scroll */
+#scroll-progress{position:fixed;top:0;left:0;width:0;height:2px;z-index:70;background:linear-gradient(90deg,var(--accent-dark),var(--accent-light));box-shadow:0 0 10px rgba(91,140,90,.42);border-radius:0 999px 999px 0;pointer-events:none;transition:width .08s linear}
+#scroll-progress::after{content:"";position:absolute;right:-2px;top:-1px;width:4px;height:4px;border-radius:50%;background:var(--accent-light);box-shadow:0 0 0 2px rgba(168,200,167,.18),0 0 10px rgba(91,140,90,.7)}
+@media (prefers-reduced-motion:reduce){#scroll-progress{transition:none;box-shadow:none}#scroll-progress::after{box-shadow:none}}
 
 /* ===== HERO ===== */
 #hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
@@ -573,6 +577,8 @@ section[id]{scroll-margin-top:5rem}
 </style>
 </head>
 <body>
+
+<div id="scroll-progress" role="progressbar" aria-label="Progression de lecture" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
 
 <nav id="navbar">
   <div class="inner">
@@ -1275,9 +1281,11 @@ setLang(__lang);
 // Typewriter (bilingue)
 (function(){var el=document.getElementById('typewriter');if(!el)return;var WORDS={'fr':['Machine Learning','Analyse statistique','Modélisation prédictive','Deep Learning','NLP & RAG','Big Data','Sécurité des Applications d\'IA'],'en':['Machine Learning','Statistical Analysis','Predictive Modeling','Deep Learning','NLP & RAG','Big Data','AI Application Security']};var wi=0,ci=0,del=false,sp=80,timer=null;function list(){return WORDS[__lang]||WORDS.fr}function tick(){var w=list()[wi];if(!del){el.textContent=w.substring(0,ci+1);ci++;if(ci===w.length){del=true;sp=2000}else{sp=60+Math.random()*40}}else{el.textContent=w.substring(0,ci-1);ci--;if(ci===0){del=false;wi=(wi+1)%list().length;sp=300}else{sp=30}}timer=setTimeout(tick,sp)}document.addEventListener('i18n:change',function(){clearTimeout(timer);del=false;wi=0;ci=0;sp=80;el.textContent='';setTimeout(tick,120)});setTimeout(tick,1500)})();
 
-// Navbar + Back to top
-var nb=document.getElementById('navbar'),bt=document.getElementById('back-to-top');
-window.addEventListener('scroll',function(){if(nb)nb.classList.toggle('scrolled',window.scrollY>20);if(bt)bt.classList.toggle('visible',window.scrollY>500)});
+// Navbar + Back to top + progression globale du scroll
+var nb=document.getElementById('navbar'),bt=document.getElementById('back-to-top'),scrollProgress=document.getElementById('scroll-progress'),scrollTick=false;
+function updateScrollUI(){var max=document.documentElement.scrollHeight-window.innerHeight,p=max>0?Math.max(0,Math.min(1,window.scrollY/max)):0;if(scrollProgress){scrollProgress.style.width=(p*100).toFixed(2)+'%';scrollProgress.setAttribute('aria-valuenow',String(Math.round(p*100)))}if(nb)nb.classList.toggle('scrolled',window.scrollY>20);if(bt)bt.classList.toggle('visible',window.scrollY>500)}
+window.addEventListener('scroll',function(){if(!scrollTick){scrollTick=true;requestAnimationFrame(function(){updateScrollUI();scrollTick=false})}},{passive:true});
+window.addEventListener('resize',updateScrollUI);updateScrollUI();
 
 // Scroll reveal
 var ob=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
