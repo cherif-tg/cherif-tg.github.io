@@ -844,9 +844,18 @@ section[id]{scroll-margin-top:5rem}
   <div class="section fade-in"><div class="proj-head"><div><p class="section-label">&gt; projets</p><h2 class="section-title">Ce que j'ai construit</h2></div><div class="proj-nav"><button id="projPrev" class="proj-nav-btn" type="button" aria-label="Faire défiler vers la gauche"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button><button id="projNext" class="proj-nav-btn" type="button" aria-label="Faire défiler vers la droite"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button></div></div>
     <div class="proj-wrap" style="margin-top:1.5rem"><div class="proj-track" id="projTrack">
 
+      <div class="project-item glass-card" data-project="sentinelle" role="button" tabindex="0">
+        <div class="project-media"><img src="assets/sentinelle-lome.webp" alt="Schéma de l’architecture Sentinelle Lomé pour la cartographie du risque d’inondation" loading="lazy"></div>
+        <div class="proj-header"><div class="proj-icon proj-icon-data"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18" stroke-linecap="round"/><circle cx="12" cy="12" r="8"/><path d="M8 8l8 8M16 8l-8 8" stroke-linecap="round"/></svg></div><div><span class="num">01</span><span class="proj-badge">Nouveau</span><h3 class="proj-title">Sentinelle Lomé — Risque d’inondation</h3><p class="proj-subtitle">Data Science géospatiale · Prototype en cours de cadrage</p></div></div>
+        <p class="proj-desc">Plateforme de data science de bout en bout pour cartographier le risque d’inondation du Grand Lomé, estimer l’exposition du bâti et préparer des alertes utiles aux acteurs locaux.</p>
+        <ul class="highlights"><li><span class="arrow">▸</span> Données satellitaires et géospatiales : Sentinel-1/2, pluie, relief et bâti</li><li><span class="arrow">▸</span> Pipeline de données : Earth Engine → HDFS/Parquet → Spark + Sedona</li><li><span class="arrow">▸</span> Trois modèles : susceptibilité, déclenchement pluie-risque et exposition</li><li><span class="arrow">▸</span> API FastAPI, dashboard Streamlit et piste d’alertes SMS/WhatsApp multilingues</li></ul>
+        <div class="stack"><span>Python</span><span>Earth Engine</span><span>HDFS</span><span>Spark</span><span>Sedona</span><span>FastAPI</span><span>Streamlit</span><span>MLflow</span></div>
+        <div class="proj-links"><a href="https://github.com/cherif-tg/Sentinelle" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a></div>
+      </div>
+
       <div class="project-item glass-card" data-project="client-scope" role="button" tabindex="0">
         <div class="project-media"><img src="assets/data-analysis.webp" alt="Visualisation de données temporelles" loading="lazy"></div>
-        <div class="proj-header"><div class="proj-icon proj-icon-data"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke-linecap="round"/><circle cx="17" cy="9" r="2.5"/><path d="M16 15.1c2.5.4 4 2.4 4 4.9" stroke-linecap="round"/></svg></div><div><span class="num">01</span><h3 class="proj-title">Client Scope — Segmentation RFM</h3><p class="proj-subtitle">Projet d'équipe TAISS 2026 · Data Science</p></div></div>
+        <div class="proj-header"><div class="proj-icon proj-icon-data"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke-linecap="round"/><circle cx="17" cy="9" r="2.5"/><path d="M16 15.1c2.5.4 4 2.4 4 4.9" stroke-linecap="round"/></svg></div><div><span class="num">02</span><h3 class="proj-title">Client Scope — Segmentation RFM</h3><p class="proj-subtitle">Projet d'équipe TAISS 2026 · Data Science</p></div></div>
         <p class="proj-desc">Segmentation de près de 5 900 clients d'un e-commerce britannique (1M+ transactions, 2009-2011) par la méthode RFM et clustering K-Means, jusqu'à des recommandations marketing actionnables par segment — avec interrogation en langage naturel des résultats.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> RFM + K-Means : k=4 retenu par lecture croisée du coude et du score de silhouette</li><li><span class="arrow">▸</span> 4 segments actionnables : Champions (74 % du CA), Fidèles en retrait, Occasionnels récents, Endormis</li><li><span class="arrow">▸</span> Couche RAG (LangChain + ChromaDB) pour interroger les segments en langage naturel</li><li><span class="arrow">▸</span> Projet d'équipe TAISS 2026 — rôle : nettoyage, clustering, LLM-RAG, reporting</li></ul>
         <div class="stack"><span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>K-Means</span><span>ChromaDB</span><span>LangChain</span></div>
@@ -854,7 +863,7 @@ section[id]{scroll-margin-top:5rem}
       </div>
 
       <div class="project-item glass-card" data-project="cahier-agent" role="button" tabindex="0">
-        <div class="proj-header"><div class="proj-icon proj-icon-ml"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v2m4-2v2M10 19v2m4-2v2M3 10h2m-2 4h2m14-4h2m-2 4h2" stroke-linecap="round"/></svg></div><div><span class="num">02</span><h3 class="proj-title">Agent IA — Planificateur de voyages</h3><p class="proj-subtitle">IA agentique · Projet final du cahier de vacances</p></div></div>
+        <div class="proj-header"><div class="proj-icon proj-icon-ml"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v2m4-2v2M10 19v2m4-2v2M3 10h2m-2 4h2m14-4h2m-2 4h2" stroke-linecap="round"/></svg></div><div><span class="num">03</span><h3 class="proj-title">Agent IA — Planificateur de voyages</h3><p class="proj-subtitle">IA agentique · Projet final du cahier de vacances</p></div></div>
         <p class="proj-desc">Un agent qui compose des voyages complets sous contrainte de budget : vols et activités en SQL, sélection d'hôtels par recherche sémantique sur 135 brochures PDF, boucle de décision avec ajustements intelligents et réservation sécurisée — le tout dans une application Streamlit.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> 3 outils : vols et activités (SQL), hôtels (recherche sémantique sur 135 PDF)</li><li><span class="arrow">▸</span> Boucle d'agent : plan → évaluation du budget → ajustement → nouvelle tentative</li><li><span class="arrow">▸</span> Explore les dates voisines quand le budget ne passe pas — sans qu'on le lui demande</li><li><span class="arrow">▸</span> Réservation avec garde-fou : aucune écriture sans validation explicite</li></ul>
         <div class="stack"><span>Python</span><span>Streamlit</span><span>SQL</span><span>SQLite</span><span>sentence-transformers</span></div>
@@ -862,7 +871,7 @@ section[id]{scroll-margin-top:5rem}
       </div>
 
       <div class="project-item glass-card" data-project="cahier-cdm" role="button" tabindex="0">
-        <div class="proj-header"><div class="proj-icon proj-icon-togo"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0z" stroke-linejoin="round"/><path d="M7 6H4a3 3 0 003 3M17 6h3a3 3 0 01-3 3" stroke-linecap="round"/></svg></div><div><span class="num">03</span><span class="proj-badge">Bonus Togo</span><h3 class="proj-title">Togo 2030 — Cap sur la Coupe du Monde</h3><p class="proj-subtitle">Machine Learning · Simulation de tournoi</p></div></div>
+        <div class="proj-header"><div class="proj-icon proj-icon-togo"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0z" stroke-linejoin="round"/><path d="M7 6H4a3 3 0 003 3M17 6h3a3 3 0 01-3 3" stroke-linecap="round"/></svg></div><div><span class="num">04</span><span class="proj-badge">Bonus Togo</span><h3 class="proj-title">Togo 2030 — Cap sur la Coupe du Monde</h3><p class="proj-subtitle">Machine Learning · Simulation de tournoi</p></div></div>
         <p class="proj-desc">Et si le Togo jouait la Coupe du Monde 2030 ? Un Random Forest entraîné sur l'ère moderne du football international, puis le Togo intégré au tableau final : chaque match prédit, les vainqueurs avancent, jusqu'à son parcours complet. Le modèle ne fait aucun cadeau — et c'est tout l'intérêt.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Random Forest (200 arbres) sur la forme récente des équipes — ~2 prédictions sur 3</li><li><span class="arrow">▸</span> Les écarts de forme dominent : la dynamique récente pèse plus que l'avantage du terrain</li><li><span class="arrow">▸</span> Simulation complète du tableau 2030, avec le Togo à la place du Nigéria</li><li><span class="arrow">▸</span> Lecture rigoureuse d'une probabilité — sans la confondre avec un vœu</li></ul>
         <div class="stack"><span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>Random Forest</span><span>Matplotlib</span></div>
@@ -870,7 +879,7 @@ section[id]{scroll-margin-top:5rem}
       </div>
 
       <div class="project-item glass-card" data-project="cahier-tour" role="button" tabindex="0">
-        <div class="proj-header"><div class="proj-icon proj-icon-togo"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4z" stroke-linejoin="round"/><path d="M8 2v16M16 6v16" stroke-linecap="round"/></svg></div><div><span class="num">04</span><span class="proj-badge">Bonus Togo</span><h3 class="proj-title">Tour du Togo 2027 — Étapes & optimisation</h3><p class="proj-subtitle">Clustering & algorithmes · Adaptation au contexte togolais</p></div></div>
+        <div class="proj-header"><div class="proj-icon proj-icon-togo"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4z" stroke-linejoin="round"/><path d="M8 2v16M16 6v16" stroke-linecap="round"/></svg></div><div><span class="num">05</span><span class="proj-badge">Bonus Togo</span><h3 class="proj-title">Tour du Togo 2027 — Étapes & optimisation</h3><p class="proj-subtitle">Clustering & algorithmes · Adaptation au contexte togolais</p></div></div>
         <p class="proj-desc">Et si on appliquait les algorithmes du Tour de France à mon pays ? Découpage des localités du Togo en étapes par K-Means et CAH, puis tracé du parcours optimal par plus proche voisin et 2-opt — le Tour du Togo tient en 7 étapes.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> K-Means vs CAH : découpage comparé par silhouette et contraintes métier</li><li><span class="arrow">▸</span> Distances GPS par haversine (correction de longitude) et matrice des distances</li><li><span class="arrow">▸</span> Optimisation glouton + 2-opt, testée sur tous les départs possibles</li><li><span class="arrow">▸</span> Données géographiques du Togo construites pour l'occasion (GeoJSON + carte)</li></ul>
         <div class="stack"><span>Python</span><span>Scikit-learn</span><span>K-Means</span><span>CAH</span><span>Matplotlib</span></div>
@@ -879,7 +888,7 @@ section[id]{scroll-margin-top:5rem}
 
       <div class="project-item glass-card" data-project="cahier-vision" role="button" tabindex="0">
         <div class="project-media"><img src="assets/fish-detection.webp" alt="Détection de poissons par Faster R-CNN" loading="lazy"></div>
-        <div class="proj-header"><div class="proj-icon proj-icon-vision"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 012-2h2M16 4h2a2 2 0 012 2v2M20 16v2a2 2 0 01-2 2h-2M8 20H6a2 2 0 01-2-2v-2" stroke-linecap="round"/><circle cx="12" cy="12" r="3"/></svg></div><div><span class="num">05</span><h3 class="proj-title">Détection de poissons par vision</h3><p class="proj-subtitle">Deep Learning · Faster R-CNN fine-tuné</p></div></div>
+        <div class="proj-header"><div class="proj-icon proj-icon-vision"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 012-2h2M16 4h2a2 2 0 012 2v2M20 16v2a2 2 0 01-2 2h-2M8 20H6a2 2 0 01-2-2v-2" stroke-linecap="round"/><circle cx="12" cy="12" r="3"/></svg></div><div><span class="num">06</span><h3 class="proj-title">Détection de poissons par vision</h3><p class="proj-subtitle">Deep Learning · Faster R-CNN fine-tuné</p></div></div>
         <p class="proj-desc">Détection et identification de 13 espèces de poissons d'aquarium (8 200+ photos) : fine-tuning d'un détecteur Faster R-CNN, évaluation rigoureuse, puis amélioration par augmentation de données et rééquilibrage des classes.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Fine-tuning d'un détecteur Faster R-CNN pré-entraîné (COCO) sur 13 espèces</li><li><span class="arrow">▸</span> Évaluation au mAP@50 et mAP@[50:95], avec précision top-1 par espèce</li><li><span class="arrow">▸</span> Augmentation (miroir, photométrie) et rééquilibrage des classes rares</li><li><span class="arrow">▸</span> Testé sur photos personnelles, y compris prises au téléphone</li></ul>
         <div class="stack"><span>Python</span><span>PyTorch</span><span>Torchvision</span><span>Faster R-CNN</span><span>Torchmetrics</span></div>
@@ -887,7 +896,7 @@ section[id]{scroll-margin-top:5rem}
       </div>
 
       <div class="project-item glass-card" data-project="cahier-rag" role="button" tabindex="0">
-        <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14 3v5h5" stroke-linejoin="round"/><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z" stroke-linejoin="round"/><circle cx="11.5" cy="14.5" r="2.5"/><path d="M13.4 16.4L16 19" stroke-linecap="round"/></svg></div><div><span class="num">06</span><h3 class="proj-title">Assistant RAG — Hôtel Le Belvédère</h3><p class="proj-subtitle">RAG & LLM · Réponses sourcées</p></div></div>
+        <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14 3v5h5" stroke-linejoin="round"/><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z" stroke-linejoin="round"/><circle cx="11.5" cy="14.5" r="2.5"/><path d="M13.4 16.4L16 19" stroke-linecap="round"/></svg></div><div><span class="num">07</span><h3 class="proj-title">Assistant RAG — Hôtel Le Belvédère</h3><p class="proj-subtitle">RAG & LLM · Réponses sourcées</p></div></div>
         <p class="proj-desc">Un assistant virtuel qui répond aux questions des clients d'un hôtel à partir de sa documentation réelle : 5 PDF transformés en rubriques vectorisées et recherche sémantique — avec l'honnêteté de dire « je ne sais pas » quand l'information n'existe pas.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Démonstration des limites du LLM seul : réponses inventées et hors sujet</li><li><span class="arrow">▸</span> Pipeline RAG complet : extraction PDF → rubriques → embeddings → recherche par similarité</li><li><span class="arrow">▸</span> Questions pièges gérées : l'assistant refuse d'inventer quand l'information est absente</li><li><span class="arrow">▸</span> Comparaison des 3 approches : LLM seul, tout dans le prompt, RAG</li></ul>
         <div class="stack"><span>Python</span><span>pypdf</span><span>sentence-transformers</span><span>scikit-learn</span></div>
@@ -897,19 +906,11 @@ section[id]{scroll-margin-top:5rem}
 
       <div class="project-item glass-card" data-project="tg-nlp-toolkit" role="button" tabindex="0">
         <div class="project-media"><img src="assets/nlp-translation.webp" alt="Interface de traduction français-éwé" loading="lazy"></div>
-        <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 6h10M4 10h7M4 14h10M4 18h7" stroke-linecap="round"/><path d="M18 6l3 3-3 3M18 14l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><span class="num">07</span><h3 class="proj-title">Kabiyè–Èʋɛ NLP Toolkit</h3><p class="proj-subtitle">Traduction automatique FR ↔ Éwé · NLP pour les langues togolaises</p></div></div>
+        <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 6h10M4 10h7M4 14h10M4 18h7" stroke-linecap="round"/><path d="M18 6l3 3-3 3M18 14l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><span class="num">08</span><h3 class="proj-title">Kabiyè–Èʋɛ NLP Toolkit</h3><p class="proj-subtitle">Traduction automatique FR ↔ Éwé · NLP pour les langues togolaises</p></div></div>
         <p class="proj-desc">Toolkit open-source de traitement automatique des langues togolaises : traduction automatique français-éwé via un modèle NLLB-200 fine-tuné par LoRA, corpus parallèle de 65 640 paires, API REST, CLI et démo interactive.</p>
         <ul class="highlights"><li><span class="arrow">→</span> Modèle NLLB-200 (600M) fine-tuné par LoRA, publié sur HuggingFace</li><li><span class="arrow">→</span> Corpus parallèle FR ↔ Éwé : 65 640 paires (Bible 1913 + OPUS NLLB)</li><li><span class="arrow">→</span> FR → Éwé : BLEU 18,71 et chrF++ 41,83 (+7,3 pts vs zero-shot)</li><li><span class="arrow">→</span> Déploiement : API FastAPI, CLI batch, démo Gradio sur HuggingFace Spaces</li></ul>
         <div class="stack"><span>Python</span><span>HuggingFace</span><span>NLLB-200</span><span>LoRA</span><span>FastAPI</span><span>Gradio</span><span>Transformers</span><span>SentencePiece</span></div>
         <div class="proj-links"><a href="https://github.com/cherif-tg/tg_nlp_toolkit" target="_blank" rel="noopener" class="proj-link proj-link-github"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Voir sur GitHub</a><a href="https://huggingface.co/spaces/cheriftenga/nllb-ewe-demo" target="_blank" rel="noopener" class="proj-link proj-link-demo">Démo en ligne</a></div>
-      </div>
-
-      <div class="project-item glass-card" data-project="paludisme" role="button" tabindex="0">
-        <div class="proj-header"><div class="proj-icon proj-icon-vision"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l5 5" stroke-linecap="round"/><circle cx="8.5" cy="11" r="1.5" fill="currentColor" stroke="none"/><circle cx="13.5" cy="11" r="1.5" fill="currentColor" stroke="none"/></svg></div><div><span class="num">08</span><h3 class="proj-title">Analyse et Détection du Paludisme</h3><p class="proj-subtitle">Projet de Fin de Licence &bull; 2026</p></div></div>
-        <p class="proj-desc">Analyse approfondie de sources de données hétérogènes (frottis sanguins, symptômes, données hématologiques) avec une architecture de traitement de données critiques en temps réel.</p>
-        <ul class="highlights"><li><span class="arrow">▸</span> Architecture SI multicouche : collecte (NLP + Vision + tabulaire), traitement ML, API de diffusion</li><li><span class="arrow">▸</span> Pipeline de données robuste sur 100 000+ dossiers simulés via Apache PySpark</li><li><span class="arrow">▸</span> Modèles ML/DL : XGBoost + ResNet-50 fine-tuné pour 8 pathologies (SHAP + Grad-CAM)</li><li><span class="arrow">▸</span> Déploiement : API FastAPI + Streamlit + mode hors-ligne ONNX</li></ul>
-        <div class="stack"><span>Python</span><span>PyTorch</span><span>Scikit-learn</span><span>XGBoost</span><span>spaCy</span><span>PySpark</span><span>FastAPI</span><span>Streamlit</span><span>ONNX</span><span>MongoDB</span></div>
-        <div class="proj-links"><span class="proj-link proj-link-demo" style="opacity:0.5;cursor:default">Dépôt à venir</span></div>
       </div>
 
       <div class="project-item glass-card" data-project="fraude" role="button" tabindex="0">
@@ -1574,6 +1575,20 @@ var activeCat="Tous",activeIdx=0,grid=document.getElementById("skillGrid"),detai
 
 // ===== PROJECT DETAILS MODAL =====
 var projectDetails={
+  'sentinelle':{
+    meta:'Data Science géospatiale · Prototype · 2026',
+    title:'Sentinelle Lomé',
+    subtitle:'Cartographie dynamique du risque d’inondation du Grand Lomé et exposition du bâti.',
+    stack:['Python','Earth Engine','HDFS','Spark','Sedona','FastAPI','Streamlit','MLflow'],
+    links:[{t:'GitHub',u:'https://github.com/cherif-tg/Sentinelle'}],
+    body:'<h3>Contexte</h3><p>Sentinelle Lomé est un projet de data science de bout en bout qui cherche à répondre à une question concrète : pour une pluie donnée, quels quartiers sont inondés, combien de bâtiments et de personnes sont exposés, et à partir de quel seuil faut-il alerter&nbsp;?</p>'+
+      '<h3>Architecture</h3><ul>'+
+      '<li>Sources satellitaires et géospatiales : Sentinel-1/2, pluie, modèle numérique de terrain et données du bâti.</li>'+
+      '<li>Chaîne de traitement : Earth Engine → HDFS/Parquet → Spark + Sedona → données de risque.</li>'+
+      '<li>Trois modèles complémentaires : susceptibilité par cellule, déclenchement pluie-risque et exposition des bâtiments et de la population.</li>'+
+      '<li>Restitution par API FastAPI et dashboard Streamlit, avec une piste d’alertes SMS/WhatsApp et validation humaine.</li></ul>'+
+      '<h3>Statut</h3><p>Le dépôt est un prototype en cours de cadrage. Aucun résultat de modèle n’est encore publié ; les performances seront évaluées après l’accès aux exports réels et la calibration des seuils.</p>'
+  },
   'tg-nlp-toolkit':{
     meta:'NLP · Langues togolaises · 2026',
     title:'Kabiyè–Èʋɛ NLP Toolkit',
@@ -1589,20 +1604,6 @@ var projectDetails={
       '<li>Développement d\'une API REST FastAPI (endpoint de traduction), d\'une CLI de traitement batch et de tests automatisés.</li></ul>'+
       '<h3>Résultats</h3><p>Sur le jeu de test (6 564 paires jamais vues en entraînement), le fine-tuning apporte une amélioration significative en direction français-éwé : chrF++ de 34,96 à 41,83 et BLEU de 11,38 à 18,71 par rapport au modèle zero-shot. La qualité du corpus est documentée de façon transparente (datasheet), et un test de référence vérifié par des locuteurs natifs est en cours.</p>'+
       '<h3>Compétences mobilisées</h3><p>Traduction automatique neuronale, fine-tuning par LoRA, évaluation de modèles (BLEU, chrF++), construction et filtrage de corpus multilingues, développement d\'API et de démos interactives.</p>'
-  },
-  'paludisme':{
-    meta:'Projet de fin de licence · 2026',
-    title:'Analyse et Détection du Paludisme',
-    subtitle:'Architecture de traitement de données critiques pour la détection de pathologies liées au paludisme.',
-    stack:['Python','PyTorch','Scikit-learn','XGBoost','spaCy','PySpark','FastAPI','Streamlit','ONNX','MongoDB'],
-    links:[{t:'Dépôt à venir',u:''}],
-    body:'<h3>Contexte</h3><p>Projet de fin de licence portant sur l\'analyse de sources de données hétérogènes — frottis sanguins, symptômes cliniques et données hématologiques — pour la détection et le suivi de pathologies liées au paludisme.</p>'+
-      '<h3>Réalisations</h3><ul>'+
-      '<li>Conception d\'une architecture d\'information multicouche : collecte multi-modale (NLP, vision par ordinateur, données tabulaires), traitement par machine learning et diffusion via API.</li>'+
-      '<li>Construction d\'un pipeline de données robuste sur plus de 100 000 dossiers simulés avec Apache PySpark.</li>'+
-      '<li>Entraînement de modèles XGBoost et ResNet-50 fine-tuné pour la classification de huit pathologies, avec interprétabilité par SHAP et Grad-CAM.</li>'+
-      '<li>Déploiement d\'une API FastAPI et d\'une interface Streamlit, avec un mode hors-ligne optimisé via ONNX.</li></ul>'+
-      '<h3>Perspectives</h3><p>Le dépôt du projet sera publié prochainement. Le travail se poursuit sur la validation des modèles et l\'industrialisation du pipeline.</p>'
   },
   'fraude':{
     meta:'Machine Learning appliqué · 2025',
@@ -1648,6 +1649,19 @@ var projectDetails={
 };
 
 var projectDetailsEn={
+  'sentinelle':{
+    meta:'Geospatial Data Science · Prototype · 2026',
+    title:'Sentinelle Lomé',
+    subtitle:'Dynamic mapping of flood risk in Greater Lomé and built-environment exposure.',
+    stack:['Python','Earth Engine','HDFS','Spark','Sedona','FastAPI','Streamlit','MLflow'],
+    links:[{t:'GitHub',u:'https://github.com/cherif-tg/Sentinelle'}],
+    body:'<h3>Context</h3><p>Sentinelle Lomé is an end-to-end data science project addressing a concrete question: for a given rainfall event, which Greater Lomé neighborhoods are flooded, how many buildings and people are exposed, and when should an alert be triggered?</p>'+
+      '<h3>Architecture</h3><ul>'+
+      '<li>Satellite and geospatial sources: Sentinel-1/2, rainfall, digital elevation and building data.</li>'+      '<li>Processing chain: Earth Engine → HDFS/Parquet → Spark + Sedona → risk data.</li>'+
+      '<li>Three complementary models: cell susceptibility, rainfall-to-risk triggering and building/population exposure.</li>'+
+      '<li>FastAPI and Streamlit delivery, with a human-validated SMS/WhatsApp alerting track.</li></ul>'+
+      '<h3>Status</h3><p>The repository is a prototype currently being scoped. No model results have been published yet; performance will be evaluated after real exports are available and thresholds are calibrated.</p>'
+  },
   'tg-nlp-toolkit':{
     meta:'NLP · Togolese languages · 2026',
     title:'Kabiyè–Èʋɛ NLP Toolkit',
@@ -1663,20 +1677,6 @@ var projectDetailsEn={
       '<li>Developed a FastAPI REST API (translation endpoint), a batch CLI and automated tests.</li></ul>'+
       '<h3>Results</h3><p>On the test set (6,564 pairs never seen in training), fine-tuning brings a significant improvement in the French-to-Ewe direction: chrF++ from 34.96 to 41.83 and BLEU from 11.38 to 18.71 compared with the zero-shot model. Corpus quality is documented transparently (datasheet), and a reference evaluation verified by native speakers is in progress.</p>'+
       '<h3>Skills</h3><p>Neural machine translation, LoRA fine-tuning, model evaluation (BLEU, chrF++), multilingual corpus building and filtering, API and interactive demo development.</p>'
-  },
-  'paludisme':{
-    meta:'Final year project · 2026',
-    title:'Malaria Analysis & Detection',
-    subtitle:'Critical data processing architecture for the detection of malaria-related pathologies.',
-    stack:['Python','PyTorch','Scikit-learn','XGBoost','spaCy','PySpark','FastAPI','Streamlit','ONNX','MongoDB'],
-    links:[{t:'Repository coming soon',u:''}],
-    body:'<h3>Context</h3><p>Final year project analyzing heterogeneous data sources - blood smears, clinical symptoms and hematological data - for the detection and monitoring of malaria-related pathologies.</p>'+
-      '<h3>Achievements</h3><ul>'+
-      '<li>Designed a multi-layer information architecture: multimodal collection (NLP, computer vision, tabular data), machine learning processing and API distribution.</li>'+
-      '<li>Built a robust data pipeline over 100,000+ simulated records with Apache PySpark.</li>'+
-      '<li>Trained XGBoost and fine-tuned ResNet-50 models to classify eight pathologies, with interpretability through SHAP and Grad-CAM.</li>'+
-      '<li>Deployed a FastAPI API and a Streamlit interface, with an offline mode optimized via ONNX.</li></ul>'+
-      '<h3>Next steps</h3><p>The repository will be published soon. Work continues on model validation and pipeline industrialization.</p>'
   },
   'fraude':{
     meta:'Applied Machine Learning · 2025',
@@ -1722,6 +1722,7 @@ var projectDetailsEn={
 };
 
 var projectVisuals={
+  'sentinelle':[{src:'assets/sentinelle-lome.webp',alt:'Architecture Sentinelle Lomé pour la cartographie du risque d’inondation',label:'system.architecture'}],
   'tg-nlp-toolkit':[
     {src:'assets/nlp-translation.webp',alt:'Interface de traduction français-éwé',label:'demo.interface'},
     {src:'assets/nlp-results.webp',alt:'Courbe de résultats BLEU et chrF++',label:'evaluation.signal'}
