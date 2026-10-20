@@ -1006,6 +1006,7 @@ body.dark footer{background:#0D1210;color:var(--warm-500);border-top-color:rgba(
       </div>
 
       <div class="project-item glass-card" data-project="cahier-agent" role="button" tabindex="0">
+        <div class="project-media"><img src="assets/travel-agent.svg" alt="Architecture visuelle de l’agent IA de planification de voyages" loading="lazy"></div>
         <div class="proj-header"><div class="proj-icon proj-icon-ml"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v2m4-2v2M10 19v2m4-2v2M3 10h2m-2 4h2m14-4h2m-2 4h2" stroke-linecap="round"/></svg></div><div><span class="num">03</span><h3 class="proj-title">Agent IA — Planificateur de voyages</h3><p class="proj-subtitle">IA agentique · Projet final du cahier de vacances</p></div></div>
         <p class="proj-desc">Un agent qui compose des voyages complets sous contrainte de budget : vols et activités en SQL, sélection d'hôtels par recherche sémantique sur 135 brochures PDF, boucle de décision avec ajustements intelligents et réservation sécurisée — le tout dans une application Streamlit.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> 3 outils : vols et activités (SQL), hôtels (recherche sémantique sur 135 PDF)</li><li><span class="arrow">▸</span> Boucle d'agent : plan → évaluation du budget → ajustement → nouvelle tentative</li><li><span class="arrow">▸</span> Explore les dates voisines quand le budget ne passe pas — sans qu'on le lui demande</li><li><span class="arrow">▸</span> Réservation avec garde-fou : aucune écriture sans validation explicite</li></ul>
@@ -1014,6 +1015,7 @@ body.dark footer{background:#0D1210;color:var(--warm-500);border-top-color:rgba(
       </div>
 
       <div class="project-item glass-card" data-project="cahier-cdm" role="button" tabindex="0">
+        <div class="project-media"><img src="assets/togo-2030.svg" alt="Visualisation de la simulation Togo 2030 et de ses probabilités" loading="lazy"></div>
         <div class="proj-header"><div class="proj-icon proj-icon-togo"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0z" stroke-linejoin="round"/><path d="M7 6H4a3 3 0 003 3M17 6h3a3 3 0 01-3 3" stroke-linecap="round"/></svg></div><div><span class="num">04</span><span class="proj-badge">Bonus Togo</span><h3 class="proj-title">Togo 2030 — Cap sur la Coupe du Monde</h3><p class="proj-subtitle">Machine Learning · Simulation de tournoi</p></div></div>
         <p class="proj-desc">Et si le Togo jouait la Coupe du Monde 2030 ? Un Random Forest entraîné sur l'ère moderne du football international, puis le Togo intégré au tableau final : chaque match prédit, les vainqueurs avancent, jusqu'à son parcours complet. Le modèle ne fait aucun cadeau — et c'est tout l'intérêt.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Random Forest (200 arbres) sur la forme récente des équipes — ~2 prédictions sur 3</li><li><span class="arrow">▸</span> Les écarts de forme dominent : la dynamique récente pèse plus que l'avantage du terrain</li><li><span class="arrow">▸</span> Simulation complète du tableau 2030, avec le Togo à la place du Nigéria</li><li><span class="arrow">▸</span> Lecture rigoureuse d'une probabilité — sans la confondre avec un vœu</li></ul>
@@ -1022,6 +1024,7 @@ body.dark footer{background:#0D1210;color:var(--warm-500);border-top-color:rgba(
       </div>
 
       <div class="project-item glass-card" data-project="cahier-tour" role="button" tabindex="0">
+        <div class="project-media"><img src="assets/tour-togo.svg" alt="Carte stylisée du parcours optimisé du Tour du Togo" loading="lazy"></div>
         <div class="proj-header"><div class="proj-icon proj-icon-togo"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4z" stroke-linejoin="round"/><path d="M8 2v16M16 6v16" stroke-linecap="round"/></svg></div><div><span class="num">05</span><span class="proj-badge">Bonus Togo</span><h3 class="proj-title">Tour du Togo 2027 — Étapes & optimisation</h3><p class="proj-subtitle">Clustering & algorithmes · Adaptation au contexte togolais</p></div></div>
         <p class="proj-desc">Et si on appliquait les algorithmes du Tour de France à mon pays ? Découpage des localités du Togo en étapes par K-Means et CAH, puis tracé du parcours optimal par plus proche voisin et 2-opt — le Tour du Togo tient en 7 étapes.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> K-Means vs CAH : découpage comparé par silhouette et contraintes métier</li><li><span class="arrow">▸</span> Distances GPS par haversine (correction de longitude) et matrice des distances</li><li><span class="arrow">▸</span> Optimisation glouton + 2-opt, testée sur tous les départs possibles</li><li><span class="arrow">▸</span> Données géographiques du Togo construites pour l'occasion (GeoJSON + carte)</li></ul>
@@ -1039,6 +1042,7 @@ body.dark footer{background:#0D1210;color:var(--warm-500);border-top-color:rgba(
       </div>
 
       <div class="project-item glass-card" data-project="cahier-rag" role="button" tabindex="0">
+        <div class="project-media"><img src="assets/hotel-rag.webp" alt="Illustration du pipeline RAG de l’assistant hôtelier" loading="lazy"></div>
         <div class="proj-header"><div class="proj-icon proj-icon-nlp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14 3v5h5" stroke-linejoin="round"/><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z" stroke-linejoin="round"/><circle cx="11.5" cy="14.5" r="2.5"/><path d="M13.4 16.4L16 19" stroke-linecap="round"/></svg></div><div><span class="num">07</span><h3 class="proj-title">Assistant RAG — Hôtel Le Belvédère</h3><p class="proj-subtitle">RAG & LLM · Réponses sourcées</p></div></div>
         <p class="proj-desc">Un assistant virtuel qui répond aux questions des clients d'un hôtel à partir de sa documentation réelle : 5 PDF transformés en rubriques vectorisées et recherche sémantique — avec l'honnêteté de dire « je ne sais pas » quand l'information n'existe pas.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Démonstration des limites du LLM seul : réponses inventées et hors sujet</li><li><span class="arrow">▸</span> Pipeline RAG complet : extraction PDF → rubriques → embeddings → recherche par similarité</li><li><span class="arrow">▸</span> Questions pièges gérées : l'assistant refuse d'inventer quand l'information est absente</li><li><span class="arrow">▸</span> Comparaison des 3 approches : LLM seul, tout dans le prompt, RAG</li></ul>
@@ -1057,6 +1061,7 @@ body.dark footer{background:#0D1210;color:var(--warm-500);border-top-color:rgba(
       </div>
 
       <div class="project-item glass-card" data-project="fraude" role="button" tabindex="0">
+        <div class="project-media"><img src="assets/fraud-detection.svg" alt="Réseau de transactions et anomalie détectée" loading="lazy"></div>
         <div class="proj-header"><div class="proj-icon proj-icon-data"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l2.5 7.5H22l-6 4.5 2.5 7.5L12 17l-6.5 4.5L8 14l-6-4.5h7.5z"/></svg></div><div><span class="num">09</span><h3 class="proj-title">Système de Détection de Fraude</h3><p class="proj-subtitle">Machine Learning appliqué à la détection d'anomalies</p></div></div>
         <p class="proj-desc">Système intelligent de détection de transactions frauduleuses en temps réel, combinant modèles supervisés et non supervisés.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Analyse exploratoire sur données transactionnelles réelles</li><li><span class="arrow">▸</span> Modèles : Isolation Forest, Auto-encodeurs, XGBoost</li><li><span class="arrow">▸</span> Pipeline de feature engineering avancé</li><li><span class="arrow">▸</span> Dashboard monitoring avec Power BI</li></ul>
@@ -1074,6 +1079,7 @@ body.dark footer{background:#0D1210;color:var(--warm-500);border-top-color:rgba(
       </div>
 
       <div class="project-item glass-card" data-project="sara" role="button" tabindex="0">
+        <div class="project-media"><img src="assets/sara-lexicon.svg" alt="Visualisation linguistique du lexique Sara" loading="lazy"></div>
         <div class="proj-header"><div class="proj-icon proj-icon-ml"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M17 18H7a2 2 0 01-2-2v-1h14v1a2 2 0 01-2 2z" stroke-linejoin="round"/><path d="M21 15a2 2 0 01-2 2m-14 0a2 2 0 01-2-2"/></svg></div><div><span class="num">11</span><h3 class="proj-title">Traitement du Lexique Sara</h3><p class="proj-subtitle">NLP appliqué aux langues africaines</p></div></div>
         <p class="proj-desc">Traitement automatique du langage naturel appliqué au lexique Sara. Analyse lexicale et modélisation linguistique.</p>
         <ul class="highlights"><li><span class="arrow">▸</span> Constitution d'un corpus lexical en langue Sara</li><li><span class="arrow">▸</span> Analyse morphologique et extraction de racines</li><li><span class="arrow">▸</span> Modélisation statistique des patterns linguistiques</li></ul>
@@ -1897,6 +1903,24 @@ var projectVisuals={
   ],
   'client-scope':[
     {src:'assets/data-analysis.webp',alt:'Visualisation de ventes quotidiennes',label:'data.signal'}
+  ],
+  'cahier-agent':[
+    {src:'assets/travel-agent.svg',alt:'Architecture visuelle de l’agent IA de planification de voyages',label:'agent.loop'}
+  ],
+  'cahier-cdm':[
+    {src:'assets/togo-2030.svg',alt:'Visualisation de la simulation Togo 2030 et de ses probabilités',label:'forecast.signal'}
+  ],
+  'cahier-tour':[
+    {src:'assets/tour-togo.svg',alt:'Carte stylisée du parcours optimisé du Tour du Togo',label:'route.optimization'}
+  ],
+  'cahier-rag':[
+    {src:'assets/hotel-rag.webp',alt:'Illustration du pipeline RAG de l’assistant hôtelier',label:'retrieval.signal'}
+  ],
+  'fraude':[
+    {src:'assets/fraud-detection.svg',alt:'Réseau de transactions et anomalie détectée',label:'anomaly.signal'}
+  ],
+  'sara':[
+    {src:'assets/sara-lexicon.svg',alt:'Visualisation linguistique du lexique Sara',label:'language.signal'}
   ]
 };
 
